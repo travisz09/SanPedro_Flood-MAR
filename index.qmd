@@ -23,20 +23,60 @@ plain-language-summary: |
 key-points:
   
 date: last-modified
+citeproc: true
 bibliography: references.bib
 #| citation:
   #| container-title: ATUR Broad Suitability Analysis
-csl: agujournal2019.csl
+csl: apa.csl
 number-sections: true
 jupyter: python3
 ---
 
 ## Introduction
 
-Please see [Identifying suitable zones for integrated aquifer recharge and flood control in arid Qatar using GIS-based multi-criteria decision-making](https://www.sciencedirect.com/science/article/pii/S2352801X24000602#bib49) (@aloui2024)
+Please see [Identifying suitable zones for integrated aquifer recharge and flood control in arid Qatar using GIS-based multi-criteria decision-making](https://www.sciencedirect.com/science/article/pii/S2352801X24000602#bib49) [@aloui2024]
+
+### Study Area
+
+![San Pedro watershed, study area.](images/SanPedro_Reference_Painted.png){#fig-studyArea}
 
 ## Data & Methods {#sec-data-methods}
 
+### Thematic Layers
+
+All data layers were processed in ArcGIS Pro v3.4.0 unless otherwise indicated. Data layers were converted into raster data as needed, with a 30m resolution, matching the SRTM elevation raster (see @sec-elev).
+
+#### Elevation {#sec-elev}
+
+Higher elevations are at lower flood risk due to naturally occurring drainage, frequently in the form of surface runoff. While lower elevations have higher surface water flow accumulation (**CITATION NEEDED**) which can promote infiltration (**CITATION NEEDED**).
+
+Elevation data acquired from NASA Shuttle Radar Topography Mission (SRTM) 30m resolution global Digital Elevation Model (DEM), accessed via Google Earth Engine (GEE) (**DATA CITATION**).
+
+![San Pedro elevation 30m NASA SRTM.](images/SanPedro_Elev.png){#fig-elev}
+
+#### Slope
+
+Steeper slopes tend to promote surface flow and high erosion. Gentler slopes however have decreased surface water flow rates, increasing residence time, and potentially resulting in flooding during times of heavy rainfall or snowmelt (**CITATION NEEDED**).
+
+Slope data was calculated as a first order derivative of the elevation data.
+
+![San Pedro slope.](images/SanPedro_Slope.png){#fig-slope}
+
+#### Lineament Density
+
+Lineaments such as faults and fractures fundamentally influence water flow dynamics.
+
+**This layer is not yet available, but I believe that Ryan is working on this concept**
+
+See @aloui2024 section 3.1.3 Lineament density (LD) for additional methods on generating lineament features from a DEM.
+
+#### Drainage Density
+
+High drainage density increases flood susceptibility via rapid water accumulation through channels (**CITATION NEEDED**). Additionally, the increased flow rate in areas with high drainage density reduces the residence time of surface water, limiting recharge potential (**CITATION NEEDED**) and regions of high drainage density have been frequently associated with less permiable soils (**CITATION NEEDED**).
+
+Drainage density was calculated using the USGS National Hydrography Dataset (NHD) flowline features (**Data Citation**). This dataset consisted of both natural and engineered flowlines, including such things as underground pipes. Line density was calculated in Km of flowline per Km², using a search kernel of 1 Km.
+
+![San Pedro drainage density. Line density calculated using a 1 Km search kernel.](images/SanPedro_DrainDense.png){#fig-drain}
 
 ## Conclusion
 
