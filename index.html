@@ -7,11 +7,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Travis Zalesky">
-<meta name="author" content="Rowan Cockett">
-<meta name="dcterms.date" content="2024-11-13">
-<meta name="keywords" content="La Palma, Earthquakes">
+<meta name="dcterms.date" content="2024-11-14">
+<meta name="keywords" content="Arizona Tri University Recharge (ATUR), San Pedro Watershed, Managed Aquifer Recharge, Suitability Analysis">
 
-<title>La Palma Earthquake Mechanisms</title>
+<title>San Pedro Flood-MAR</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -47,7 +46,7 @@ div.csl-indent {
 }</style>
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -66,53 +65,20 @@ div.csl-indent {
     document.body.classList.add('hypothesis-enabled');
   });
 </script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
 
-<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<meta name="citation_title" content="La Palma Earthquake Mechanisms">
-<meta name="citation_abstract" content="In September 2021, a significant jump in seismic activity on the island of La Palma (Canary Islands, Spain) signaled the start of a volcanic crisis that still continues at the time of writing. Earthquake data is continually collected and published by the Instituto Geográphico Nacional (IGN). ...
+<meta name="citation_title" content="San Pedro Flood-MAR">
+<meta name="citation_abstract" content="Continuation of ATUR [Broad Suitability Analysis](https://travisz09.github.io/ATUR-Broad-Suitability-Analysis/) with emphasis on San Pedro watershed. By narrowing the focus of this analysis I hope to achieve additional progress that will help to inform the broader analysis downstream. Methods and analysis closely following @aloui2024
 ">
-<meta name="citation_keywords" content="La Palma,Earthquakes">
+<meta name="citation_keywords" content="Arizona Tri University Recharge (ATUR),San Pedro Watershed,Managed Aquifer Recharge,Suitability Analysis">
 <meta name="citation_author" content="Travis Zalesky">
-<meta name="citation_author" content="Rowan Cockett">
-<meta name="citation_publication_date" content="2024-11-13">
-<meta name="citation_cover_date" content="2024-11-13">
+<meta name="citation_publication_date" content="2024-11-14">
+<meta name="citation_cover_date" content="2024-11-14">
 <meta name="citation_year" content="2024">
-<meta name="citation_online_date" content="2024-11-13">
+<meta name="citation_online_date" content="2024-11-14">
 <meta name="citation_language" content="en">
-<meta name="citation_journal_title" content="Earth and Space Science">
 <meta name="citation_reference" content="citation_title=Strategies for the development of volcanic hazard maps in monogenetic volcanic fields: The example of La Palma (Canary Islands);,citation_author=José Marrero;,citation_author=Alicia García;,citation_author=Manuel Berrocoso;,citation_author=Ángeles Llinares;,citation_author=Antonio Rodríguez-Losada;,citation_author=R. Ortiz;,citation_publication_date=2019-07;,citation_cover_date=2019-07;,citation_year=2019;,citation_doi=10.1186/s13617-019-0085-5;,citation_volume=8;,citation_journal_title=Journal of Applied Volcanology;">
+<meta name="citation_reference" content="citation_title=Identifying suitable zones for integrated aquifer recharge and flood control in arid qatar using GIS-based multi-criteria decision-making;,citation_author=Sarra Aloui;,citation_author=Adel Zghibi;,citation_author=Annamaria Mazzoni;,citation_author=Adel Elomri;,citation_author=Tareq Al-Ansari;,citation_publication_date=2024-05;,citation_cover_date=2024-05;,citation_year=2024;,citation_doi=10.1016/j.gsd.2024.101137;,citation_issn=2352-801X;,citation_volume=25;,citation_journal_title=Groundwater for Sustainable Development;">
 </head>
 
 <body>
@@ -120,14 +86,14 @@ window.Quarto = {
 <header id="title-block-header" class="quarto-title-block default toc-left page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">La Palma Earthquake Mechanisms</h1>
+      <h1 class="title">San Pedro Flood-MAR</h1>
           </div>
 
     
     <div class="quarto-title-meta-container">
       <div class="quarto-title-meta-column-start">
             <div class="quarto-title-meta-author">
-          <div class="quarto-title-meta-heading">Authors</div>
+          <div class="quarto-title-meta-heading">Author</div>
           <div class="quarto-title-meta-heading">Affiliation</div>
           
                 <div class="quarto-title-meta-contents">
@@ -135,15 +101,7 @@ window.Quarto = {
           </div>
                 <div class="quarto-title-meta-contents">
                     <p class="affiliation">
-                        Curvenote
-                      </p>
-                  </div>
-                      <div class="quarto-title-meta-contents">
-            <p class="author">Rowan Cockett <a href="https://orcid.org/0000-0002-7859-8394" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
-          </div>
-                <div class="quarto-title-meta-contents">
-                    <p class="affiliation">
-                        Curvenote
+                        University of Arizona
                       </p>
                   </div>
                     </div>
@@ -154,7 +112,7 @@ window.Quarto = {
                 <div>
             <div class="quarto-title-meta-heading">Published</div>
             <div class="quarto-title-meta-contents">
-              <p class="date">November 13, 2024</p>
+              <p class="date">November 14, 2024</p>
             </div>
           </div>
           
@@ -168,14 +126,14 @@ window.Quarto = {
     <div>
       <div class="abstract">
         <div class="block-title">Abstract</div>
-        <p>In September 2021, a significant jump in seismic activity on the island of La Palma (Canary Islands, Spain) signaled the start of a volcanic crisis that still continues at the time of writing. Earthquake data is continually collected and published by the Instituto Geográphico Nacional (IGN). …</p>
+        <p>Continuation of ATUR <a href="https://travisz09.github.io/ATUR-Broad-Suitability-Analysis/">Broad Suitability Analysis</a> with emphasis on San Pedro watershed. By narrowing the focus of this analysis I hope to achieve additional progress that will help to inform the broader analysis downstream. Methods and analysis closely following <span class="citation" data-cites="aloui2024">Aloui et al. (<a href="#ref-aloui2024" role="doc-biblioref">2024</a>)</span></p>
       </div>
     </div>
 
     <div>
       <div class="keywords">
         <div class="block-title">Keywords</div>
-        <p>La Palma, Earthquakes</p>
+        <p>Arizona Tri University Recharge (ATUR), San Pedro Watershed, Managed Aquifer Recharge, Suitability Analysis</p>
       </div>
     </div>
 
@@ -187,12 +145,18 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">1</span> Introduction</a></li>
-  <li><a href="#sec-data-methods" id="toc-sec-data-methods" class="nav-link" data-scroll-target="#sec-data-methods"><span class="header-section-number">2</span> Data &amp; Methods</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">1</span> Introduction</a>
+  <ul class="collapse">
+  <li><a href="#study-area" id="toc-study-area" class="nav-link" data-scroll-target="#study-area"><span class="header-section-number">1.1</span> Study Area</a></li>
+  </ul></li>
+  <li><a href="#sec-data-methods" id="toc-sec-data-methods" class="nav-link" data-scroll-target="#sec-data-methods"><span class="header-section-number">2</span> Data &amp; Methods</a>
+  <ul class="collapse">
+  <li><a href="#thematic-layers" id="toc-thematic-layers" class="nav-link" data-scroll-target="#thematic-layers"><span class="header-section-number">2.1</span> Thematic Layers</a></li>
+  </ul></li>
   <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion"><span class="header-section-number">3</span> Conclusion</a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
-<div class="quarto-alternate-notebooks"><h2>Notebooks</h2><ul><li><a href="index-preview.html"><i class="bi bi-journal-code"></i>Article Notebook</a></li><li><a href="notebooks/data-screening-preview.html"><i class="bi bi-journal-code"></i>Data Screening</a></li></ul></div></nav>
+<div class="quarto-alternate-notebooks"><h2>Notebooks</h2><ul><li><a href="notebooks/data-screening-preview.html"><i class="bi bi-journal-code"></i>Data Screening</a></li></ul></div></nav>
 </div>
 <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
 </div>
@@ -205,140 +169,92 @@ window.Quarto = {
 
 <section id="introduction" class="level2" data-number="1">
 <h2 data-number="1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">1</span> Introduction</h2>
-<div id="cell-fig-timeline" class="cell" data-execution_count="2">
-<div class="cell-output cell-output-display">
-<div id="fig-timeline" class="quarto-float quarto-figure quarto-figure-center anchored" alt="An event plot of the years of the last 8 eruptions on La Palma.">
+<p>Please see <a href="https://www.sciencedirect.com/science/article/pii/S2352801X24000602#bib49">Identifying suitable zones for integrated aquifer recharge and flood control in arid Qatar using GIS-based multi-criteria decision-making</a> <span class="citation" data-cites="aloui2024">(<a href="#ref-aloui2024" role="doc-biblioref">Aloui et al., 2024</a>)</span></p>
+<section id="study-area" class="level3" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="study-area"><span class="header-section-number">1.1</span> Study Area</h3>
+<div id="fig-studyArea" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-timeline-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="index_files/figure-html/fig-timeline-output-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figure&nbsp;1: Timeline of recent earthquakes on La Palma"><img src="index_files/figure-html/fig-timeline-output-1.png" alt="An event plot of the years of the last 8 eruptions on La Palma." width="466" height="115" class="figure-img"></a>
+<div aria-describedby="fig-studyArea-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/SanPedro_Reference_Painted.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figure&nbsp;1: San Pedro watershed, study area."><img src="images/SanPedro_Reference_Painted.png" class="img-fluid figure-img"></a>
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-timeline-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1: Timeline of recent earthquakes on La Palma
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-studyArea-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: San Pedro watershed, study area.
 </figcaption>
 </figure>
 </div>
-</div>
-<a class="quarto-notebook-link" id="nblink-1" href="index-preview.html#cell-fig-timeline">Source: Article Notebook</a></div>
-<p>Based on data up to and including 1971, eruptions on La Palma happen every 79.8 years on average.</p>
-<p>Studies of the magma systems feeding the volcano, such as <span class="citation" data-cites="marrero2019">Marrero et al. (<a href="#ref-marrero2019" role="doc-biblioref">2019</a>)</span>, have proposed that there are two main magma reservoirs feeding the Cumbre Vieja volcano; one in the mantle (30-40km depth) which charges and in turn feeds a shallower crustal reservoir (10-20km depth).</p>
-<p>Eight eruptions have been recorded since the late 1400s (<a href="#fig-timeline" class="quarto-xref">Figure&nbsp;1</a>).</p>
-<p>Data and methods are discussed in <a href="#sec-data-methods" class="quarto-xref">Section&nbsp;2</a>.</p>
-<p>Let <span class="math inline">\(x\)</span> denote the number of eruptions in a year. Then, <span class="math inline">\(x\)</span> can be modeled by a Poisson distribution</p>
-<p><span id="eq-poisson"><span class="math display">\[
-p(x) = \frac{e^{-\lambda} \lambda^{x}}{x !}
-\tag{1}\]</span></span></p>
-<p>where <span class="math inline">\(\lambda\)</span> is the rate of eruptions per year. Using <a href="#eq-poisson" class="quarto-xref">Equation&nbsp;1</a>, the probability of an eruption in the next <span class="math inline">\(t\)</span> years can be calculated.</p>
-<div id="tbl-history" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-history-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;1: Recent historic eruptions on La Palma
-</figcaption>
-<div aria-describedby="tbl-history-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Name</th>
-<th>Year</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Current</td>
-<td>2021</td>
-</tr>
-<tr class="even">
-<td>Teneguía</td>
-<td>1971</td>
-</tr>
-<tr class="odd">
-<td>Nambroque</td>
-<td>1949</td>
-</tr>
-<tr class="even">
-<td>El Charco</td>
-<td>1712</td>
-</tr>
-<tr class="odd">
-<td>Volcán San Antonio</td>
-<td>1677</td>
-</tr>
-<tr class="even">
-<td>Volcán San Martin</td>
-<td>1646</td>
-</tr>
-<tr class="odd">
-<td>Tajuya near El Paso</td>
-<td>1585</td>
-</tr>
-<tr class="even">
-<td>Montaña Quemada</td>
-<td>1492</td>
-</tr>
-</tbody>
-</table>
-</div>
-</figure>
-</div>
-<p><a href="#tbl-history" class="quarto-xref">Table&nbsp;1</a> summarises the eruptions recorded since the colonization of the islands by Europeans in the late 1400s.</p>
-<div id="fig-map" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-map-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="images/la-palma-map.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Figure&nbsp;2: Map of La Palma"><img src="images/la-palma-map.png" class="img-fluid figure-img"></a>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-map-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2: Map of La Palma
-</figcaption>
-</figure>
-</div>
-<p>La Palma is one of the west most islands in the Volcanic Archipelago of the Canary Islands (<a href="#fig-map" class="quarto-xref">Figure&nbsp;2</a>).</p>
-<div class="quarto-embed-nb-cell">
-<div id="cell-fig-spatial-plot" class="cell" data-execution_count="7">
-<div class="cell-output cell-output-display">
-<div id="fig-spatial-plot" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A scatterplot of earthquake locations plotting latitude against longitude.">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-spatial-plot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="index_files/figure-html/notebooks-data-screening-fig-spatial-plot-output-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Figure&nbsp;3: Locations of earthquakes on La Palma since 2017."><img src="index_files/figure-html/notebooks-data-screening-fig-spatial-plot-output-1.png" alt="A scatterplot of earthquake locations plotting latitude against longitude." width="917" height="799" class="figure-img"></a>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-spatial-plot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3: Locations of earthquakes on La Palma since 2017.
-</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</div>
-<p><a href="#fig-spatial-plot" class="quarto-xref">Figure&nbsp;3</a> shows the location of recent Earthquakes on La Palma.</p>
+</section>
 </section>
 <section id="sec-data-methods" class="level2" data-number="2">
 <h2 data-number="2" class="anchored" data-anchor-id="sec-data-methods"><span class="header-section-number">2</span> Data &amp; Methods</h2>
+<section id="thematic-layers" class="level3" data-number="2.1">
+<h3 data-number="2.1" class="anchored" data-anchor-id="thematic-layers"><span class="header-section-number">2.1</span> Thematic Layers</h3>
+<p>All data layers were processed in ArcGIS Pro v3.4.0 unless otherwise indicated. Data layers were converted into raster data as needed, with a 30m resolution, matching the SRTM elevation raster (see <a href="#sec-elev" class="quarto-xref">Section&nbsp;2.1.1</a>).</p>
+<section id="sec-elev" class="level4" data-number="2.1.1">
+<h4 data-number="2.1.1" class="anchored" data-anchor-id="sec-elev"><span class="header-section-number">2.1.1</span> Elevation</h4>
+<p>Higher elevations are at lower flood risk due to naturally occurring drainage, frequently in the form of surface runoff. While lower elevations have higher surface water flow accumulation (<strong>CITATION NEEDED</strong>) which can promote infiltration (<strong>CITATION NEEDED</strong>).</p>
+<p>Elevation data acquired from NASA Shuttle Radar Topography Mission (SRTM) 30m resolution global Digital Elevation Model (DEM), accessed via Google Earth Engine (GEE) (<strong>DATA CITATION</strong>).</p>
+<div id="fig-elev" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-elev-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/SanPedro_Elev.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Figure&nbsp;2: San Pedro elevation 30m NASA SRTM."><img src="images/SanPedro_Elev.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-elev-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: San Pedro elevation 30m NASA SRTM.
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="slope" class="level4" data-number="2.1.2">
+<h4 data-number="2.1.2" class="anchored" data-anchor-id="slope"><span class="header-section-number">2.1.2</span> Slope</h4>
+<p>Steeper slopes tend to promote surface flow and high erosion. Gentler slopes however have decreased surface water flow rates, increasing residence time, and potentially resulting in flooding during times of heavy rainfall or snowmelt (<strong>CITATION NEEDED</strong>).</p>
+<p>Slope data was calculated as a first order derivative of the elevation data.</p>
+<div id="fig-slope" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-slope-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/SanPedro_Slope.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Figure&nbsp;3: San Pedro slope."><img src="images/SanPedro_Slope.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-slope-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: San Pedro slope.
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="lineament-density" class="level4" data-number="2.1.3">
+<h4 data-number="2.1.3" class="anchored" data-anchor-id="lineament-density"><span class="header-section-number">2.1.3</span> Lineament Density</h4>
+<p>Lineaments such as faults and fractures fundamentally influence water flow dynamics.</p>
+<p><strong>This layer is not yet available, but I believe that Ryan is working on this concept</strong></p>
+<p>See <span class="citation" data-cites="aloui2024">Aloui et al. (<a href="#ref-aloui2024" role="doc-biblioref">2024</a>)</span> section 3.1.3 Lineament density (LD) for additional methods on generating lineament features from a DEM.</p>
+</section>
+<section id="drainage-density" class="level4" data-number="2.1.4">
+<h4 data-number="2.1.4" class="anchored" data-anchor-id="drainage-density"><span class="header-section-number">2.1.4</span> Drainage Density</h4>
+<p>High drainage density increases flood susceptibility via rapid water accumulation through channels (<strong>CITATION NEEDED</strong>). Additionally, the increased flow rate in areas with high drainage density reduces the residence time of surface water, limiting recharge potential (<strong>CITATION NEEDED</strong>) and regions of high drainage density have been frequently associated with less permiable soils (<strong>CITATION NEEDED</strong>).</p>
+<p>Drainage density was calculated using the USGS National Hydrography Dataset (NHD) flowline features (<strong>Data Citation</strong>). This dataset consisted of both natural and engineered flowlines, including such things as underground pipes. Line density was calculated in Km of flowline per Km², using a search kernel of 1 Km.</p>
+<div id="fig-drain" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-drain-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/SanPedro_DrainDense.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Figure&nbsp;4: San Pedro drainage density. Line density calculated using a 1 Km search kernel."><img src="images/SanPedro_DrainDense.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-drain-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4: San Pedro drainage density. Line density calculated using a 1 Km search kernel.
+</figcaption>
+</figure>
+</div>
+</section>
+</section>
 </section>
 <section id="conclusion" class="level2" data-number="3">
 <h2 data-number="3" class="anchored" data-anchor-id="conclusion"><span class="header-section-number">3</span> Conclusion</h2>
 </section>
 <section id="references" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="references">References</h2>
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
-<div id="ref-marrero2019" class="csl-entry" role="listitem">
-Marrero, José, Alicia García, Manuel Berrocoso, Ángeles Llinares, Antonio Rodríguez-Losada, and R. Ortiz. 2019. <span>“Strategies for the Development of Volcanic Hazard Maps in Monogenetic Volcanic Fields: The Example of <span>La</span> <span>Palma</span> (<span>Canary</span> <span>Islands</span>).”</span> <em>Journal of Applied Volcanology</em> 8 (July). <a href="https://doi.org/10.1186/s13617-019-0085-5">https://doi.org/10.1186/s13617-019-0085-5</a>.
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
+<div id="ref-aloui2024" class="csl-entry" role="listitem">
+Aloui, S., Zghibi, A., Mazzoni, A., Elomri, A., &amp; Al-Ansari, T. (2024). Identifying suitable zones for integrated aquifer recharge and flood control in arid qatar using GIS-based multi-criteria decision-making. <em>Groundwater for Sustainable Development</em>, <em>25</em>, 101137. <a href="https://doi.org/10.1016/j.gsd.2024.101137">https://doi.org/10.1016/j.gsd.2024.101137</a>
 </div>
 </div>
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{zalesky2024,
-  author = {Zalesky, Travis and Cockett, Rowan},
-  title = {La {Palma} {Earthquake} {Mechanisms}},
-  date = {2024-11-13},
-  langid = {en},
-  abstract = {In September 2021, a significant jump in seismic activity
-    on the island of La Palma (Canary Islands, Spain) signaled the start
-    of a volcanic crisis that still continues at the time of writing.
-    Earthquake data is continually collected and published by the
-    Instituto Geográphico Nacional (IGN). ...}
-}
-</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-zalesky2024" class="csl-entry quarto-appendix-citeas" role="listitem">
-Zalesky, Travis, and Rowan Cockett. 2024. <span>“La Palma Earthquake
-Mechanisms.”</span> Earth and Space Science. November 13, 2024.
-</div></div></section></div></main>
+</main>
 <!-- /main column -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
