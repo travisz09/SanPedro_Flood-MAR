@@ -30,6 +30,7 @@ bibliography: references.bib
 csl: apa.csl
 number-sections: true
 jupyter: python3
+encoding: 'UTF-8'
 ---
 
 ## Introduction
@@ -77,6 +78,211 @@ High drainage density increases flood susceptibility via rapid water accumulatio
 Drainage density was calculated using the USGS National Hydrography Dataset (NHD) flowline features (**Data Citation**). This dataset consisted of both natural and engineered flowlines, including such things as underground pipes. Line density was calculated in Km of flowline per Km², using a search kernel of 1 Km.
 
 ![San Pedro drainage density. Line density calculated using a 1 Km search kernel.](images/SanPedro_DrainDense.png){#fig-drain}
+
+#### Precipitation
+
+Precipitation is the primary source of freshwater for aquifer recharge, as well as being the prevailing force driving regional flooding (**CITATION NEEDED**).
+
+Precipitation data was obtained from OSU PRISM data using 30-year normals 800 m resolution, subsequently downscaled to match the SRTM 30 m resolution using bilinear interpolation (**DATA CITATION**). The PRISM dataset extends approximately 10 Km S of the US-Mexico border, but unfortunately it does not cover the entire watershed. The extent of the uncovered portion of the watershed is approximately 1,200 Km², representing roughly 12% of the total area.
+
+::: callout-note
+*In the San Pedro watershed precipitation is highly correlated with elevation. Using a simple linear trendline across the entire watershed elevation accounts for 51% of the variance in precipitation, increasing to 81% when using an E-W transect located at the US-Mexico border (data not shown). This corelation could potentially be leveraged to fill in the missing data through a variety of interpolation techniques.*
+:::
+
+![San Pedro average annual precipitation. Derived from OSU PRISM 30-year normals (800 m), downscaled to 30 m resolution.](images/SanPedro_Precip.png){#fig-precip}
+
+#### Lithology
+
+The characteristics of surface rock profoundly impact recharge, as the primary factor governing permeability (**CITATION NEEDED**).
+
+Lithology data from the USGS State Geologic Map Compilation (**DATA CITATION**). Depending on how the geologic units are defined (i.e. by "Unit Name", primary, secondary, tertiary lithology, or combination) there are upwards of 25 distinct geologic units which must be classified. The USGS SGMC terminates at the US-Mexico border, and it is not clear if any relevant data within Mexico can be located. The extent of the uncovered portion of the watershed is approximately 1,800 Km², representing roughly 16% of the total area.
+
+##### **PLEASE ADVISE!**
+
+| Geologic Unit Name | Suitability Classification (1-10) |
+|:-----------------------------------------------|:----------------------|
+| Early Proterozoic granitic rocks |  |
+| Quaternary surficial deposits, undivided |  |
+| Early Proterozoic metasedimentary rocks |  |
+| Pliocene to middle Miocene deposits |  |
+| Early Tertiary to Late Cretaceous granitic rocks |  |
+| Middle Proterozoic diabase |  |
+| Cretaceous to Late Jurassic sedimentary rocks with minor volcanic rocks |  |
+| Mississippian, Devonian, and Cambrian sedimentary rocks |  |
+| Paleozoic sedimentary rocks |  |
+| Early Tertiary to Late Cretaceous volcanic rocks |  |
+| Jurassic volcanic rocks |  |
+| Middle Miocene to Oligocene granitic rocks |  |
+| Middle Miocene to Oligocene volcanic rocks |  |
+| Jurassic granitic rocks |  |
+| Early Proterozoic metamorphic rocks |  |
+| Early Tertiary to Late Cretaceous muscovite-bearing granitic rocks |  |
+| Holocene surficial deposits |  |
+| Middle Miocene to Oligocene sedimentary rocks |  |
+| Early Pleistocene to latest Pliocene surficial deposits |  |
+| Middle Proterozoic sedimentary rocks |  |
+| Middle Proterozoic granitic rocks |  |
+| Permian to Pennsylvanian sedimentary rocks |  |
+| Jurassic sedimentary and volcanic rocks |  |
+| Tertiary to Early Proterozoic gneissic rocks |  |
+| Holocene river alluvium |  |
+
+![San Pedro lithology.](images/SanPedro_Lith.png){#fig-lith}
+
+#### Soil Type
+
+Soil texture influences infiltration via it's impacts on porosity and adhesion (**CITATION NEEDED**). Finer soil textures increase runoff, reducing infiltration, and visa versa (**CITATION NEEDED**).
+
+**Original soil data source unknown. Presumably USGS Soil Survey(?). PLEASE ADVISE!**
+
+Soil type is classified into 1 of 7 soil hydrologic groups... *Additional details about classification methods*
+
+As with the USGS lithology data, the soils data ends abruptly at the US-Mexico border. At this time data availability within Mexico has not been identified.
+
+These USGS(?) classifications were assigned an additional suitability classification ranking from 1-10 according to @tbl-soil
+
+| Class | Count (pixels)\* | Text | Value |
+|:------------:|:------------:|:------------------------------:|:------------:|
+| A | 62559472 | Group A soils consist of deep, well drained sands or gravelly sands with high infiltration and low runoff rates. | 10 |
+| B | 76665198 | Group B soils consist of deep well drained soils with a moderately fine to moderately coarse texture and a moderate rate of infiltration and runoff. | 8 |
+| C | 88491710 | Group C consists of soils with a layer that impedes the downward movement of water or fine textured soils and a slow rate of infiltration. | 5 |
+| D | 155095790 | Group D consists of soils with a very slow infiltration rate and high runoff potential. This group is composed of clays that have a high shrink-swell potential, soils with a high water table, soils that have a clay pan or clay layer at or near the surface, and soils that are shallow over nearly impervious material. | 2 |
+| A/D | 43192 | Group A/D soils naturally have a very slow infiltration rate due to a high water table but will have high infiltration and low runoff rates if drained. | 7 |
+| B/D | 18456 | Group B/D soils naturally have a very slow infiltration rate due to a high water table but will have a moderate rate of infiltration and runoff if drained. | 6 |
+| C/D | 217771 | Group C/D soils naturally have a very slow infiltration rate due to a high water table but will have a slow rate of infiltration if drained. | 3 |
+
+: Soil hydrologic group. {#tbl-soil .striped}
+
+*\* Full HUC8 study area.*
+
+![San Pedro soils hydrologic group.](images/SanPedro_Soil.png){#fig-soil}
+
+#### NDVI
+Normalized Difference Vegetation Index (NDVI) is a proxy for vegetation health and cover. High NDVI reduces flood risk and promotes infiltration due to vegetation's ability to reduce surface runoff flow rate, and create macro-pores in the soil (**CITATION NEEDED**).
+
+NDVI is a highly seasonally dependent index. To account for normal seasonal variation, a 10-year mean NDVI was calculated using Landsat 8 and 9 imagery from early 2013 (launch of LS-8) through 2023 (**DATA CITATION**). NDVI preprocessing and analysis was carried out in Google Earth Engine using the Javascript editor.
+
+```default
+// San Pedro NDVI
+// Travis Zalesky
+// ATUR
+// 11/14/24
+// 
+
+// Import module for usefull landsat functions
+var landsatFunctions = require('users/travisz09/UsefulFunctions:LandsatFunctions')
+
+// Study Area
+print('San Pedro', sanPedro);
+
+// Map setup
+Map.centerObject(sanPedro, 8);
+
+Map.addLayer(ee.Image().byte().paint(sanPedro, 'black', 2), {}, 'San Pedro');
+
+// Study period
+var startDate = '2013-01-01';  // First year of LS-8
+var endDate = '2024-01-01';  // Exclusive end date
+
+// Landsat coll
+var cloudFilter = 10;  // 10% max cloud cover
+var landsat  = ee.ImageCollection('LANDSAT/LC08/C02/T1_L2')
+  // Combine Lst-9 and Lst-8
+  .merge(ee.ImageCollection('LANDSAT/LC09/C02/T1_L2'))  
+  .filterDate(startDate, endDate)
+  .filterBounds(sanPedro)
+  // Filter by paths and rows to return minimum images for full coverage
+  .filter(ee.Filter.or(
+    ee.Filter.and(
+      ee.Filter.eq('WRS_PATH', 35),
+      ee.Filter.eq('WRS_ROW', 37)),
+    ee.Filter.and(
+      ee.Filter.eq('WRS_PATH', 35),
+      ee.Filter.eq('WRS_ROW', 38)),
+    ee.Filter.and(
+      ee.Filter.eq('WRS_PATH', 36),
+      ee.Filter.eq('WRS_ROW', 37))))
+  .sort('system:time_start')  // Sort by date
+  // .filter(ee.Filter.lt('CLOUD_COVER', cloudFilter));
+  .map(landsatFunctions.renameL8)  // Rename bands
+  
+print('Landsat Collection', landsat);
+Map.addLayer(ee.Image().byte().paint(landsat.limit(3),
+ 'blue', 1), {}, 'Landsat')
+
+
+landsat = landsat.map(landsatFunctions.addMask)
+
+var NDVI = landsat.map(function(img) {
+  var ndvi = img.normalizedDifference(['NIR', 'RED'])
+    .rename('ndvi');
+  
+  return img.addBands(ndvi)
+})
+
+Map.addLayer(NDVI.select('ndvi').limit(3), {
+  min: 0,
+  max: 0.4,
+  palette: ['red', 'yellow', 'green']
+}, 'NDVI', false)
+
+var meanNDVI = NDVI.select('ndvi').mean()
+
+meanNDVI = meanNDVI.clip(sanPedro);
+
+print('Mean NDVI', meanNDVI)
+Map.addLayer(meanNDVI, {
+  min: 0,
+  max: 0.3,
+  palette: ['red', 'yellow', 'green']
+}, 'Mean NDVI')
+
+Export.image.toDrive({
+  image: meanNDVI, 
+  description: 'SanPedroNDVI_10yrMean',
+  folder: 'ATUR/Data',
+  fileNamePrefix: 'SanPedroNDVI_10yrMean',
+  region: sanPedro,
+  scale: 30,
+  crs: 'EPSG:32612'
+})
+```
+
+![San Pedro 10-year mean NDVI.](images/SanPedro_NDVI.png){#fig-ndvi}
+
+#### Land use/land cover
+Infiltration and runoff rates are highly influenced by land cover (**CITATION NEEDED**). ESRI 2020 Global Land Use Land Cover from Sentinel-2 (ESRI LULC) is a 10-m resolution global land cover dataset derived from proprietary machine-learning algorithm run on Sentinel-2 satellite imagery (**DATA CITATION**). ESRI LULC was accessed and clipped to the study area using Google Earth Engine. The pixel resolution was reduced to 30 m.
+
+```default
+// Land Use Land Cover
+// Travis Zalesky
+// ATUR
+// 11/14/24
+
+var studyArea = ee.FeatureCollection("projects/ee-travisz09/assets/ATUR/WBDHU8_OuterBoundary_Project");
+
+var esri_lulc10 = ee.ImageCollection("projects/sat-io/open-datasets/landcover/ESRI_Global-LULC_10m")
+  .filterBounds(studyArea)
+  .mosaic()
+  .clip(studyArea);
+  
+print(esri_lulc10)
+
+Export.image.toDrive({
+  image: esri_lulc10, 
+  description: 'ESRI_LULC_10m_mergedClipped',
+  folder: 'ATUR/Data',
+  fileNamePrefix: 'ESRI_LULC_10m_clip',
+  region: studyArea,
+  scale: 30,
+  crs: 'EPSG:32612',
+  maxPixels: 1e12
+})
+```
+
+#### Stormwater Drainage Density
+
+**I am unaware of any data availability for this layer. PLEASE ADVISE!**
 
 ## Conclusion
 
