@@ -172,6 +172,443 @@ Methods and analysis closely following Aloui et al.
         <graphic mimetype="image" mime-subtype="png" xlink:href="images/SanPedro_DrainDense.png" />
       </fig>
     </sec>
+    <sec id="precipitation">
+      <title>2.1.5 Precipitation</title>
+      <p>Precipitation is the primary source of freshwater for aquifer
+      recharge, as well as being the prevailing force driving regional
+      flooding (<bold>CITATION NEEDED</bold>).</p>
+      <p>Precipitation data was obtained from OSU PRISM data using
+      30-year normals 800 m resolution, subsequently downscaled to match
+      the SRTM 30 m resolution using bilinear interpolation (<bold>DATA
+      CITATION</bold>). The PRISM dataset extends approximately 10 Km S
+      of the US-Mexico border, but unfortunately it does not cover the
+      entire watershed. The extent of the uncovered portion of the
+      watershed is approximately 1,200 Km², representing roughly 12% of
+      the total area.</p>
+      <boxed-text>
+      <p><bold>Note</bold></p>
+      <p><italic>In the San Pedro watershed precipitation is highly
+      correlated with elevation. Using a simple linear trendline across
+      the entire watershed elevation accounts for 51% of the variance in
+      precipitation, increasing to 81% when using an E-W transect
+      located at the US-Mexico border (data not shown). This corelation
+      could potentially be leveraged to fill in the missing data through
+      a variety of interpolation techniques.</italic></p>
+      </boxed-text>
+      <fig id="fig-precip">
+        <caption><p>Figure 5: San Pedro average annual precipitation.
+        Derived from OSU PRISM 30-year normals (800 m), downscaled to 30
+        m resolution.</p></caption>
+        <graphic mimetype="image" mime-subtype="png" xlink:href="images/SanPedro_Precip.png" />
+      </fig>
+    </sec>
+    <sec id="lithology">
+      <title>2.1.6 Lithology</title>
+      <p>The characteristics of surface rock profoundly impact recharge,
+      as the primary factor governing permeability (<bold>CITATION
+      NEEDED</bold>).</p>
+      <p>Lithology data from the USGS State Geologic Map Compilation
+      (<bold>DATA CITATION</bold>). Depending on how the geologic units
+      are defined (i.e. by “Unit Name”, primary, secondary, tertiary
+      lithology, or combination) there are upwards of 25 distinct
+      geologic units which must be classified. The USGS SGMC terminates
+      at the US-Mexico border, and it is not clear if any relevant data
+      within Mexico can be located. The extent of the uncovered portion
+      of the watershed is approximately 1,800 Km², representing roughly
+      16% of the total area.</p>
+      <sec id="please-advise">
+        <title>2.1.6.1 <bold>PLEASE ADVISE!</bold></title>
+        <table-wrap>
+          <table>
+            <colgroup>
+              <col width="68%" />
+              <col width="32%" />
+            </colgroup>
+            <thead>
+              <tr>
+                <th align="left">Geologic Unit Name</th>
+                <th align="left">Suitability Classification (1-10)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td align="left">Early Proterozoic granitic rocks</td>
+                <td align="left"></td>
+              </tr>
+              <tr>
+                <td align="left">Quaternary surficial deposits,
+                undivided</td>
+                <td align="left"></td>
+              </tr>
+              <tr>
+                <td align="left">Early Proterozoic metasedimentary
+                rocks</td>
+                <td align="left"></td>
+              </tr>
+              <tr>
+                <td align="left">Pliocene to middle Miocene
+                deposits</td>
+                <td align="left"></td>
+              </tr>
+              <tr>
+                <td align="left">Early Tertiary to Late Cretaceous
+                granitic rocks</td>
+                <td align="left"></td>
+              </tr>
+              <tr>
+                <td align="left">Middle Proterozoic diabase</td>
+                <td align="left"></td>
+              </tr>
+              <tr>
+                <td align="left">Cretaceous to Late Jurassic sedimentary
+                rocks with minor volcanic rocks</td>
+                <td align="left"></td>
+              </tr>
+              <tr>
+                <td align="left">Mississippian, Devonian, and Cambrian
+                sedimentary rocks</td>
+                <td align="left"></td>
+              </tr>
+              <tr>
+                <td align="left">Paleozoic sedimentary rocks</td>
+                <td align="left"></td>
+              </tr>
+              <tr>
+                <td align="left">Early Tertiary to Late Cretaceous
+                volcanic rocks</td>
+                <td align="left"></td>
+              </tr>
+              <tr>
+                <td align="left">Jurassic volcanic rocks</td>
+                <td align="left"></td>
+              </tr>
+              <tr>
+                <td align="left">Middle Miocene to Oligocene granitic
+                rocks</td>
+                <td align="left"></td>
+              </tr>
+              <tr>
+                <td align="left">Middle Miocene to Oligocene volcanic
+                rocks</td>
+                <td align="left"></td>
+              </tr>
+              <tr>
+                <td align="left">Jurassic granitic rocks</td>
+                <td align="left"></td>
+              </tr>
+              <tr>
+                <td align="left">Early Proterozoic metamorphic
+                rocks</td>
+                <td align="left"></td>
+              </tr>
+              <tr>
+                <td align="left">Early Tertiary to Late Cretaceous
+                muscovite-bearing granitic rocks</td>
+                <td align="left"></td>
+              </tr>
+              <tr>
+                <td align="left">Holocene surficial deposits</td>
+                <td align="left"></td>
+              </tr>
+              <tr>
+                <td align="left">Middle Miocene to Oligocene sedimentary
+                rocks</td>
+                <td align="left"></td>
+              </tr>
+              <tr>
+                <td align="left">Early Pleistocene to latest Pliocene
+                surficial deposits</td>
+                <td align="left"></td>
+              </tr>
+              <tr>
+                <td align="left">Middle Proterozoic sedimentary
+                rocks</td>
+                <td align="left"></td>
+              </tr>
+              <tr>
+                <td align="left">Middle Proterozoic granitic rocks</td>
+                <td align="left"></td>
+              </tr>
+              <tr>
+                <td align="left">Permian to Pennsylvanian sedimentary
+                rocks</td>
+                <td align="left"></td>
+              </tr>
+              <tr>
+                <td align="left">Jurassic sedimentary and volcanic
+                rocks</td>
+                <td align="left"></td>
+              </tr>
+              <tr>
+                <td align="left">Tertiary to Early Proterozoic gneissic
+                rocks</td>
+                <td align="left"></td>
+              </tr>
+              <tr>
+                <td align="left">Holocene river alluvium</td>
+                <td align="left"></td>
+              </tr>
+            </tbody>
+          </table>
+        </table-wrap>
+        <fig id="fig-lith">
+          <caption><p>Figure 6: San Pedro lithology.</p></caption>
+          <graphic mimetype="image" mime-subtype="png" xlink:href="images/SanPedro_Lith.png" />
+        </fig>
+      </sec>
+    </sec>
+    <sec id="soil-type">
+      <title>2.1.7 Soil Type</title>
+      <p>Soil texture influences infiltration via it’s impacts on
+      porosity and adhesion (<bold>CITATION NEEDED</bold>). Finer soil
+      textures increase runoff, reducing infiltration, and visa versa
+      (<bold>CITATION NEEDED</bold>).</p>
+      <p><bold>Original soil data source unknown. Presumably USGS Soil
+      Survey(?). PLEASE ADVISE!</bold></p>
+      <p>Soil type is classified into 1 of 7 soil hydrologic groups…
+      <italic>Additional details about classification
+      methods</italic></p>
+      <p>As with the USGS lithology data, the soils data ends abruptly
+      at the US-Mexico border. At this time data availability within
+      Mexico has not been identified.</p>
+      <p>These USGS(?) classifications were assigned an additional
+      suitability classification ranking from 1-10 according to
+      <xref alt="Table 1" rid="tbl-soil">Table 1</xref></p>
+      <fig id="tbl-soil">
+        <caption><p>Table 1: Soil hydrologic group.</p></caption>
+        <table-wrap>
+          <table>
+            <colgroup>
+              <col width="19%" />
+              <col width="19%" />
+              <col width="43%" />
+              <col width="19%" />
+            </colgroup>
+            <thead>
+              <tr>
+                <th align="center">Class</th>
+                <th align="center">Count (pixels)*</th>
+                <th align="center">Text</th>
+                <th align="center">Value</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td align="center">A</td>
+                <td align="center">62559472</td>
+                <td align="center">Group A soils consist of deep, well
+                drained sands or gravelly sands with high infiltration
+                and low runoff rates.</td>
+                <td align="center">10</td>
+              </tr>
+              <tr>
+                <td align="center">B</td>
+                <td align="center">76665198</td>
+                <td align="center">Group B soils consist of deep well
+                drained soils with a moderately fine to moderately
+                coarse texture and a moderate rate of infiltration and
+                runoff.</td>
+                <td align="center">8</td>
+              </tr>
+              <tr>
+                <td align="center">C</td>
+                <td align="center">88491710</td>
+                <td align="center">Group C consists of soils with a
+                layer that impedes the downward movement of water or
+                fine textured soils and a slow rate of
+                infiltration.</td>
+                <td align="center">5</td>
+              </tr>
+              <tr>
+                <td align="center">D</td>
+                <td align="center">155095790</td>
+                <td align="center">Group D consists of soils with a very
+                slow infiltration rate and high runoff potential. This
+                group is composed of clays that have a high shrink-swell
+                potential, soils with a high water table, soils that
+                have a clay pan or clay layer at or near the surface,
+                and soils that are shallow over nearly impervious
+                material.</td>
+                <td align="center">2</td>
+              </tr>
+              <tr>
+                <td align="center">A/D</td>
+                <td align="center">43192</td>
+                <td align="center">Group A/D soils naturally have a very
+                slow infiltration rate due to a high water table but
+                will have high infiltration and low runoff rates if
+                drained.</td>
+                <td align="center">7</td>
+              </tr>
+              <tr>
+                <td align="center">B/D</td>
+                <td align="center">18456</td>
+                <td align="center">Group B/D soils naturally have a very
+                slow infiltration rate due to a high water table but
+                will have a moderate rate of infiltration and runoff if
+                drained.</td>
+                <td align="center">6</td>
+              </tr>
+              <tr>
+                <td align="center">C/D</td>
+                <td align="center">217771</td>
+                <td align="center">Group C/D soils naturally have a very
+                slow infiltration rate due to a high water table but
+                will have a slow rate of infiltration if drained.</td>
+                <td align="center">3</td>
+              </tr>
+            </tbody>
+          </table>
+        </table-wrap>
+      </fig>
+      <p><italic>* Full HUC8 study area.</italic></p>
+      <fig id="fig-soil">
+        <caption><p>Figure 7: San Pedro soils hydrologic
+        group.</p></caption>
+        <graphic mimetype="image" mime-subtype="png" xlink:href="images/SanPedro_Soil.png" />
+      </fig>
+    </sec>
+    <sec id="ndvi">
+      <title>2.1.8 NDVI</title>
+      <p>Normalized Difference Vegetation Index (NDVI) is a proxy for
+      vegetation health and cover. High NDVI reduces flood risk and
+      promotes infiltration due to vegetation’s ability to reduce
+      surface runoff flow rate, and create macro-pores in the soil
+      (<bold>CITATION NEEDED</bold>).</p>
+      <p>NDVI is a highly seasonally dependent index. To account for
+      normal seasonal variation, a 10-year mean NDVI was calculated
+      using Landsat 8 and 9 imagery from early 2013 (launch of LS-8)
+      through 2023 (<bold>DATA CITATION</bold>). NDVI preprocessing and
+      analysis was carried out in Google Earth Engine using the
+      Javascript editor.</p>
+      <code language="default">// San Pedro NDVI
+// Travis Zalesky
+// ATUR
+// 11/14/24
+// 
+
+// Import module for usefull landsat functions
+var landsatFunctions = require('users/travisz09/UsefulFunctions:LandsatFunctions')
+
+// Study Area
+print('San Pedro', sanPedro);
+
+// Map setup
+Map.centerObject(sanPedro, 8);
+
+Map.addLayer(ee.Image().byte().paint(sanPedro, 'black', 2), {}, 'San Pedro');
+
+// Study period
+var startDate = '2013-01-01';  // First year of LS-8
+var endDate = '2024-01-01';  // Exclusive end date
+
+// Landsat coll
+var cloudFilter = 10;  // 10% max cloud cover
+var landsat  = ee.ImageCollection('LANDSAT/LC08/C02/T1_L2')
+  // Combine Lst-9 and Lst-8
+  .merge(ee.ImageCollection('LANDSAT/LC09/C02/T1_L2'))  
+  .filterDate(startDate, endDate)
+  .filterBounds(sanPedro)
+  // Filter by paths and rows to return minimum images for full coverage
+  .filter(ee.Filter.or(
+    ee.Filter.and(
+      ee.Filter.eq('WRS_PATH', 35),
+      ee.Filter.eq('WRS_ROW', 37)),
+    ee.Filter.and(
+      ee.Filter.eq('WRS_PATH', 35),
+      ee.Filter.eq('WRS_ROW', 38)),
+    ee.Filter.and(
+      ee.Filter.eq('WRS_PATH', 36),
+      ee.Filter.eq('WRS_ROW', 37))))
+  .sort('system:time_start')  // Sort by date
+  // .filter(ee.Filter.lt('CLOUD_COVER', cloudFilter));
+  .map(landsatFunctions.renameL8)  // Rename bands
+  
+print('Landsat Collection', landsat);
+Map.addLayer(ee.Image().byte().paint(landsat.limit(3),
+ 'blue', 1), {}, 'Landsat')
+
+
+landsat = landsat.map(landsatFunctions.addMask)
+
+var NDVI = landsat.map(function(img) {
+  var ndvi = img.normalizedDifference(['NIR', 'RED'])
+    .rename('ndvi');
+  
+  return img.addBands(ndvi)
+})
+
+Map.addLayer(NDVI.select('ndvi').limit(3), {
+  min: 0,
+  max: 0.4,
+  palette: ['red', 'yellow', 'green']
+}, 'NDVI', false)
+
+var meanNDVI = NDVI.select('ndvi').mean()
+
+meanNDVI = meanNDVI.clip(sanPedro);
+
+print('Mean NDVI', meanNDVI)
+Map.addLayer(meanNDVI, {
+  min: 0,
+  max: 0.3,
+  palette: ['red', 'yellow', 'green']
+}, 'Mean NDVI')
+
+Export.image.toDrive({
+  image: meanNDVI, 
+  description: 'SanPedroNDVI_10yrMean',
+  folder: 'ATUR/Data',
+  fileNamePrefix: 'SanPedroNDVI_10yrMean',
+  region: sanPedro,
+  scale: 30,
+  crs: 'EPSG:32612'
+})</code>
+      <fig id="fig-ndvi">
+        <caption><p>Figure 8: San Pedro 10-year mean NDVI.</p></caption>
+        <graphic mimetype="image" mime-subtype="png" xlink:href="images/SanPedro_NDVI.png" />
+      </fig>
+    </sec>
+    <sec id="land-useland-cover">
+      <title>2.1.9 Land use/land cover</title>
+      <p>Infiltration and runoff rates are highly influenced by land
+      cover (<bold>CITATION NEEDED</bold>). ESRI 2020 Global Land Use
+      Land Cover from Sentinel-2 (ESRI LULC) is a 10-m resolution global
+      land cover dataset derived from proprietary machine-learning
+      algorithm run on Sentinel-2 satellite imagery (<bold>DATA
+      CITATION</bold>). ESRI LULC was accessed and clipped to the study
+      area using Google Earth Engine. The pixel resolution was reduced
+      to 30 m.</p>
+      <code language="default">// Land Use Land Cover
+// Travis Zalesky
+// ATUR
+// 11/14/24
+
+var studyArea = ee.FeatureCollection(&quot;projects/ee-travisz09/assets/ATUR/WBDHU8_OuterBoundary_Project&quot;);
+
+var esri_lulc10 = ee.ImageCollection(&quot;projects/sat-io/open-datasets/landcover/ESRI_Global-LULC_10m&quot;)
+  .filterBounds(studyArea)
+  .mosaic()
+  .clip(studyArea);
+  
+print(esri_lulc10)
+
+Export.image.toDrive({
+  image: esri_lulc10, 
+  description: 'ESRI_LULC_10m_mergedClipped',
+  folder: 'ATUR/Data',
+  fileNamePrefix: 'ESRI_LULC_10m_clip',
+  region: studyArea,
+  scale: 30,
+  crs: 'EPSG:32612',
+  maxPixels: 1e12
+})</code>
+    </sec>
+    <sec id="stormwater-drainage-density">
+      <title>2.1.10 Stormwater Drainage Density</title>
+      <p><bold>I am unaware of any data availability for this layer.
+      PLEASE ADVISE!</bold></p>
+    </sec>
   </sec>
 </sec>
 <sec id="conclusion">
@@ -204,333 +641,6 @@ Methods and analysis closely following Aloui et al.
 </ref-list>
 </back>
 
-<sub-article article-type="notebook" id="nb-4-nb-1">
-<front-stub>
-<title-group>
-<article-title>Data Screening</article-title>
-</title-group>
-<contrib-group>
-<contrib contrib-type="author">
-<contrib-id contrib-id-type="orcid">0000-0002-0760-5497</contrib-id>
-<name>
-<surname>Purves</surname>
-<given-names>Steve</given-names>
-</name>
-<string-name>Steve Purves</string-name>
 
-</contrib>
-<contrib contrib-type="author">
-<name>
-<surname>Wickham</surname>
-<given-names>Charlotte</given-names>
-</name>
-<string-name>Charlotte Wickham</string-name>
-
-<xref ref-type="author-note" rid="auth-note-2-nb-1">2</xref>
-</contrib>
-</contrib-group>
-<author-notes>
-<fn id="auth-note-2-nb-1" fn-type="author-note" symbol="2">Edited original
-notebook by Steve Purves</fn>
-</author-notes>
-</front-stub>
-
-<body>
-<sec id="cell-25276572-nb-1" specific-use="notebook-content">
-<preformat>import pandas as pd
-import matplotlib.pyplot as plt</preformat>
-</sec>
-<sec id="cell-7f05db89-nb-1" specific-use="notebook-content">
-<p>Import <monospace>la-palma.csv</monospace> - a clean subset of
-<ext-link ext-link-type="uri" xlink:href="https://github.com/Notebooks-Now/submission-quarto-full/blob/main/data/catalogoComunSV_1663233588717.csv"><monospace>catalogoComunSV_1663233588717.csv</monospace></ext-link>:</p>
-</sec>
-<sec id="da2659e5-nb-1" specific-use="notebook-content">
-<preformat>df = pd.read_csv('la-palma.csv')
-df['DateTime'] = pd.to_datetime(df['DateTime'])
-df = df.sort_values(by=['DateTime'], ascending=True)
-df.head()</preformat>
-<boxed-text>
-  <table-wrap>
-    <table border="1">
-      <thead>
-        <tr style="text-align: right;">
-          <th></th>
-          <th>Longitude</th>
-          <th>Latitude</th>
-          <th>Depth(km)</th>
-          <th>Magnitude</th>
-          <th>DateTime</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>11346</td>
-          <td>-17.8349</td>
-          <td>28.5346</td>
-          <td>26.0</td>
-          <td>1.6</td>
-          <td>2017-03-09 23:44:06+00:00</td>
-        </tr>
-        <tr>
-          <td>11343</td>
-          <td>-17.8459</td>
-          <td>28.5491</td>
-          <td>27.0</td>
-          <td>2.0</td>
-          <td>2017-03-10 00:16:10+00:00</td>
-        </tr>
-        <tr>
-          <td>11344</td>
-          <td>-17.8863</td>
-          <td>28.5008</td>
-          <td>20.0</td>
-          <td>2.1</td>
-          <td>2017-03-10 00:16:11+00:00</td>
-        </tr>
-        <tr>
-          <td>11345</td>
-          <td>-17.8657</td>
-          <td>28.5204</td>
-          <td>30.0</td>
-          <td>1.6</td>
-          <td>2017-03-10 03:20:26+00:00</td>
-        </tr>
-        <tr>
-          <td>11342</td>
-          <td>-17.7156</td>
-          <td>28.5985</td>
-          <td>0.0</td>
-          <td>1.6</td>
-          <td>2017-08-21 02:06:55+00:00</td>
-        </tr>
-      </tbody>
-    </table>
-  </table-wrap>
-</boxed-text>
-</sec>
-<sec id="ae1253df-nb-1" specific-use="notebook-content">
-<preformat>df.describe()</preformat>
-<boxed-text>
-  <table-wrap>
-    <table border="1">
-      <thead>
-        <tr style="text-align: right;">
-          <th></th>
-          <th>Longitude</th>
-          <th>Latitude</th>
-          <th>Depth(km)</th>
-          <th>Magnitude</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>count</td>
-          <td>11347.000000</td>
-          <td>11347.000000</td>
-          <td>11347.000000</td>
-          <td>11347.000000</td>
-        </tr>
-        <tr>
-          <td>mean</td>
-          <td>-17.844062</td>
-          <td>28.568893</td>
-          <td>14.089345</td>
-          <td>2.432423</td>
-        </tr>
-        <tr>
-          <td>std</td>
-          <td>0.027345</td>
-          <td>0.021899</td>
-          <td>8.624787</td>
-          <td>0.705282</td>
-        </tr>
-        <tr>
-          <td>min</td>
-          <td>-17.995800</td>
-          <td>28.310200</td>
-          <td>0.000000</td>
-          <td>0.200000</td>
-        </tr>
-        <tr>
-          <td>25%</td>
-          <td>-17.854100</td>
-          <td>28.558000</td>
-          <td>10.100000</td>
-          <td>1.900000</td>
-        </tr>
-        <tr>
-          <td>50%</td>
-          <td>-17.838700</td>
-          <td>28.564000</td>
-          <td>11.300000</td>
-          <td>2.600000</td>
-        </tr>
-        <tr>
-          <td>75%</td>
-          <td>-17.829700</td>
-          <td>28.574300</td>
-          <td>13.900000</td>
-          <td>2.900000</td>
-        </tr>
-        <tr>
-          <td>max</td>
-          <td>-17.705700</td>
-          <td>28.697800</td>
-          <td>46.900000</td>
-          <td>5.100000</td>
-        </tr>
-      </tbody>
-    </table>
-  </table-wrap>
-</boxed-text>
-</sec>
-<sec id="cell-81b4dfb2-nb-1" specific-use="notebook-content">
-<preformat>df.plot.scatter(x=&quot;Longitude&quot;, y=&quot;Latitude&quot;, figsize=(12,12), grid=&quot;on&quot;);</preformat>
-<boxed-text>
-  <graphic mimetype="image" mime-subtype="png" xlink:href="data-screening_files/figure-jats/cell-5-output-1.png" />
-</boxed-text>
-</sec>
-<sec id="cell-19a1ba0d-nb-1" specific-use="notebook-content">
-<sec id="filter-nb-1">
-  <title>Filter</title>
-  <p>Also some rows seem to be missing depth measurements, (see
-  differences in the <bold>count</bold> for columns above) - take only
-  rows with valid depths</p>
-  </sec>
-  <sec id="e56a69b3-nb-1" specific-use="notebook-content">
-  <preformat>df = df[df['Depth(km)'].notna()]
-df.describe()</preformat>
-  <boxed-text>
-    <table-wrap>
-      <table border="1">
-        <thead>
-          <tr style="text-align: right;">
-            <th></th>
-            <th>Longitude</th>
-            <th>Latitude</th>
-            <th>Depth(km)</th>
-            <th>Magnitude</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>count</td>
-            <td>11347.000000</td>
-            <td>11347.000000</td>
-            <td>11347.000000</td>
-            <td>11347.000000</td>
-          </tr>
-          <tr>
-            <td>mean</td>
-            <td>-17.844062</td>
-            <td>28.568893</td>
-            <td>14.089345</td>
-            <td>2.432423</td>
-          </tr>
-          <tr>
-            <td>std</td>
-            <td>0.027345</td>
-            <td>0.021899</td>
-            <td>8.624787</td>
-            <td>0.705282</td>
-          </tr>
-          <tr>
-            <td>min</td>
-            <td>-17.995800</td>
-            <td>28.310200</td>
-            <td>0.000000</td>
-            <td>0.200000</td>
-          </tr>
-          <tr>
-            <td>25%</td>
-            <td>-17.854100</td>
-            <td>28.558000</td>
-            <td>10.100000</td>
-            <td>1.900000</td>
-          </tr>
-          <tr>
-            <td>50%</td>
-            <td>-17.838700</td>
-            <td>28.564000</td>
-            <td>11.300000</td>
-            <td>2.600000</td>
-          </tr>
-          <tr>
-            <td>75%</td>
-            <td>-17.829700</td>
-            <td>28.574300</td>
-            <td>13.900000</td>
-            <td>2.900000</td>
-          </tr>
-          <tr>
-            <td>max</td>
-            <td>-17.705700</td>
-            <td>28.697800</td>
-            <td>46.900000</td>
-            <td>5.100000</td>
-          </tr>
-        </tbody>
-      </table>
-    </table-wrap>
-  </boxed-text>
-  </sec>
-  <sec id="cell-1368822d-nb-1" specific-use="notebook-content">
-  <preformat>plt.figure(figsize=(20,6))
-plt.subplot(1,3,1)
-df[&quot;Latitude&quot;].plot.hist(bins=20, density=True)
-plt.subplot(1,3,2)
-df[&quot;Longitude&quot;].plot.hist(bins=20, density=True)
-plt.subplot(1,3,3)
-df[&quot;Depth(km)&quot;].plot.hist(bins=50, density=True)</preformat>
-  <boxed-text>
-    <graphic mimetype="image" mime-subtype="png" xlink:href="data-screening_files/figure-jats/cell-7-output-1.png" />
-  </boxed-text>
-  </sec>
-  <sec id="da7ad095-nb-1" specific-use="notebook-content">
-</sec>
-<sec id="spatial-plot-nb-1">
-  <title>Spatial Plot</title>
-  <p>Scatter plot the spatial locations of events</p>
-  </sec>
-  <sec id="cell-fig-spatial-plot-nb-1" specific-use="notebook-content">
-  <preformat>#| label: fig-spatial-plot
-#| fig-cap: Locations of earthquakes on La Palma since 2017.
-#| fig-alt: A scatterplot of earthquake locations plotting latitude against longitude.
-from matplotlib import colormaps
-cmap = colormaps['viridis_r']
-ax = df.plot.scatter(x=&quot;Longitude&quot;, y=&quot;Latitude&quot;, 
-                     s=47-df[&quot;Depth(km)&quot;], c=df[&quot;Magnitude&quot;], 
-                     figsize=(12,10), grid=&quot;on&quot;, cmap=cmap)
-colorbar = ax.collections[0].colorbar
-colorbar.set_label(&quot;Magnitude&quot;)
-
-plt.show()</preformat>
-  <boxed-text>
-    <fig id="fig-spatial-plot-nb-1">
-      <caption><p>Locations of earthquakes on La Palma since
-      2017.</p></caption>
-      <graphic mimetype="image" mime-subtype="png" xlink:href="data-screening_files/figure-jats/fig-spatial-plot-output-1.png" />
-    </fig>
-  </boxed-text>
-  </sec>
-  <sec id="cell-22ac5ce7-nb-1" specific-use="notebook-content">
-  <sec id="timeline-plot-nb-1">
-    <title>Timeline Plot</title>
-    <p>Scatter plot the event time series and look for any quantization
-    issues. Have times &amp; dates been loaded correctly?</p>
-    <p>ax = df.plot.scatter(x=‘DateTime’, y=‘Depth(km)’, figsize=(20,8))
-    ax.set_ylim(50,0);</p>
-    </sec>
-  </sec>
-</sec>
-</body>
-
-
-
-<back>
-</back>
-
-
-</sub-article>
 
 </article>
