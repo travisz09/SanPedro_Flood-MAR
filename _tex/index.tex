@@ -347,14 +347,39 @@ data.
 
 \subsubsection{Lineament Density}\label{lineament-density}
 
-Lineaments such as faults and fractures fundamentally influence water
-flow dynamics.
+\begin{tcolorbox}[enhanced jigsaw, bottomtitle=1mm, toptitle=1mm, arc=.35mm, leftrule=.75mm, breakable, opacitybacktitle=0.6, opacityback=0, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, colback=white, left=2mm, coltitle=black, colframe=quarto-callout-note-color-frame, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, titlerule=0mm, toprule=.15mm, rightrule=.15mm]
 
-\textbf{This layer is not yet available, but I believe that Ryan is
-working on this concept}
+\emph{Section may be more properly titled} Fault Density\emph{.}
+
+\end{tcolorbox}
+
+Lineaments such as faults and fractures fundamentally influence water
+flow dynamics (\textbf{CITATION NEEDED}).
+
+Lineaments were obtained from the combination of two data sources, the
+AZ State Geologic Map (\textbf{DATA CITATION}) and the USGS Faults of
+Arizona maps (\textbf{DATA CITATION}). \emph{Additional details about
+how the data was ``merged'' (\textbf{Ryan})\ldots{}}
+
+As with the Lithology layer (see below), the faults data layer ends
+abruptly at the US-Mexico border.
+
+Fault density was calculated as line density in Km of fault per Km²,
+using a 1Km search kernel.
 
 See Aloui et al. (2024) section 3.1.3 Lineament density (LD) for
 additional methods on generating lineament features from a DEM.
+
+\begin{figure}[H]
+
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{images/SanPedro_Faults.png}}
+
+}
+
+\caption{San Pedro fault density. Line density calculated using a 1 Km
+search kernel.}
+
+\end{figure}%
 
 \subsubsection{Drainage Density}\label{drainage-density}
 
@@ -363,7 +388,7 @@ accumulation through channels (\textbf{CITATION NEEDED}). Additionally,
 the increased flow rate in areas with high drainage density reduces the
 residence time of surface water, limiting recharge potential
 (\textbf{CITATION NEEDED}) and regions of high drainage density have
-been frequently associated with less permiable soils (\textbf{CITATION
+been frequently associated with less permeable soils (\textbf{CITATION
 NEEDED}).
 
 Drainage density was calculated using the USGS National Hydrography
@@ -399,10 +424,10 @@ unfortunately it does not cover the entire watershed. The extent of the
 uncovered portion of the watershed is approximately 1,200 Km²,
 representing roughly 12\% of the total area.
 
-\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-note-color-frame, bottomrule=.15mm, left=2mm, opacitybacktitle=0.6, arc=.35mm, breakable, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, coltitle=black, titlerule=0mm, rightrule=.15mm, colback=white, bottomtitle=1mm, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, opacityback=0, toptitle=1mm]
+\begin{tcolorbox}[enhanced jigsaw, bottomtitle=1mm, toptitle=1mm, arc=.35mm, leftrule=.75mm, breakable, opacitybacktitle=0.6, opacityback=0, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, colback=white, left=2mm, coltitle=black, colframe=quarto-callout-note-color-frame, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, titlerule=0mm, toprule=.15mm, rightrule=.15mm]
 
 \emph{In the San Pedro watershed precipitation is highly correlated with
-elevation. Using a simple linear trendline across the entire watershed
+elevation. Using a simple linear trend line across the entire watershed
 elevation accounts for 51\% of the variance in precipitation, increasing
 to 81\% when using an E-W transect located at the US-Mexico border (data
 not shown). This corelation could potentially be leveraged to fill in
@@ -605,7 +630,7 @@ out in Google Earth Engine using the Javascript editor.
 \NormalTok{// 11/14/24}
 \NormalTok{// }
 
-\NormalTok{// Import module for usefull landsat functions}
+\NormalTok{// Import module for useful landsat functions}
 \NormalTok{var landsatFunctions = require(\textquotesingle{}users/travisz09/UsefulFunctions:LandsatFunctions\textquotesingle{})}
 
 \NormalTok{// Study Area}
@@ -707,6 +732,16 @@ satellite imagery (\textbf{DATA CITATION}). ESRI LULC was accessed and
 clipped to the study area using Google Earth Engine. The pixel
 resolution was reduced to 30 m.
 
+\begin{figure}[H]
+
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{images/SanPedro_LULC.png}}
+
+}
+
+\caption{San Pedro land cover.}
+
+\end{figure}%
+
 \begin{Shaded}
 \begin{Highlighting}[]
 \NormalTok{// Land Use Land Cover}
@@ -741,6 +776,23 @@ Density}\label{stormwater-drainage-density}
 
 \textbf{I am unaware of any data availability for this layer. PLEASE
 ADVISE!}
+
+\begin{tcolorbox}[enhanced jigsaw, bottomtitle=1mm, toptitle=1mm, arc=.35mm, leftrule=.75mm, breakable, opacitybacktitle=0.6, opacityback=0, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, colback=white, left=2mm, coltitle=black, colframe=quarto-callout-note-color-frame, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, titlerule=0mm, toprule=.15mm, rightrule=.15mm]
+
+\emph{I was able to locate sewer data for
+\href{https://cosvazgis-sierravista.hub.arcgis.com/maps/bd8411bd3f1a485395f057636aa94b09/explore?location=31.560760\%2C-110.206043\%2C-1.00}{Sierra
+Vista}, the largest city in the San Pedro watershed. It is unclear if
+this layer includes stormwater drains as well as domestic treated
+sewage, or if the two systems are integrated. Additionally, I was not
+able to locate sewer data from any other cities/towns/municipalities in
+the region.}
+
+\emph{Due to the uncertain nature of the available data, as well as it's
+limited extent, I am inclined to skip this layer for the purposes of
+this analysis, unless otherwise instructed. I remain open to suggestions
+for additional or alternative data sources.}
+
+\end{tcolorbox}
 
 \section{Conclusion}\label{conclusion}
 

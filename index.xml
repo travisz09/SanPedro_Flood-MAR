@@ -141,14 +141,31 @@ Methods and analysis closely following Aloui et al.
     </sec>
     <sec id="lineament-density">
       <title>2.1.3 Lineament Density</title>
+      <boxed-text>
+      <p><bold>Note</bold></p>
+      <p><italic>Section may be more properly titled</italic> Fault
+      Density<italic>.</italic></p>
+      </boxed-text>
       <p>Lineaments such as faults and fractures fundamentally influence
-      water flow dynamics.</p>
-      <p><bold>This layer is not yet available, but I believe that Ryan
-      is working on this concept</bold></p>
+      water flow dynamics (<bold>CITATION NEEDED</bold>).</p>
+      <p>Lineaments were obtained from the combination of two data
+      sources, the AZ State Geologic Map (<bold>DATA CITATION</bold>)
+      and the USGS Faults of Arizona maps (<bold>DATA CITATION</bold>).
+      <italic>Additional details about how the data was “merged”
+      (<bold>Ryan</bold>)…</italic></p>
+      <p>As with the Lithology layer (see below), the faults data layer
+      ends abruptly at the US-Mexico border.</p>
+      <p>Fault density was calculated as line density in Km of fault per
+      Km², using a 1Km search kernel.</p>
       <p>See Aloui et al.
       (<xref alt="2024" rid="ref-aloui2024" ref-type="bibr">2024</xref>)
       section 3.1.3 Lineament density (LD) for additional methods on
       generating lineament features from a DEM.</p>
+      <fig>
+        <caption><p>San Pedro fault density. Line density calculated
+        using a 1 Km search kernel.</p></caption>
+        <graphic mimetype="image" mime-subtype="png" xlink:href="images/SanPedro_Faults.png" />
+      </fig>
     </sec>
     <sec id="drainage-density">
       <title>2.1.4 Drainage Density</title>
@@ -158,7 +175,7 @@ Methods and analysis closely following Aloui et al.
       with high drainage density reduces the residence time of surface
       water, limiting recharge potential (<bold>CITATION NEEDED</bold>)
       and regions of high drainage density have been frequently
-      associated with less permiable soils (<bold>CITATION
+      associated with less permeable soils (<bold>CITATION
       NEEDED</bold>).</p>
       <p>Drainage density was calculated using the USGS National
       Hydrography Dataset (NHD) flowline features (<bold>Data
@@ -188,7 +205,7 @@ Methods and analysis closely following Aloui et al.
       <boxed-text>
       <p><bold>Note</bold></p>
       <p><italic>In the San Pedro watershed precipitation is highly
-      correlated with elevation. Using a simple linear trendline across
+      correlated with elevation. Using a simple linear trend line across
       the entire watershed elevation accounts for 51% of the variance in
       precipitation, increasing to 81% when using an E-W transect
       located at the US-Mexico border (data not shown). This corelation
@@ -487,7 +504,7 @@ Methods and analysis closely following Aloui et al.
 // 11/14/24
 // 
 
-// Import module for usefull landsat functions
+// Import module for useful landsat functions
 var landsatFunctions = require('users/travisz09/UsefulFunctions:LandsatFunctions')
 
 // Study Area
@@ -579,6 +596,10 @@ Export.image.toDrive({
       CITATION</bold>). ESRI LULC was accessed and clipped to the study
       area using Google Earth Engine. The pixel resolution was reduced
       to 30 m.</p>
+      <fig>
+        <caption><p>San Pedro land cover.</p></caption>
+        <graphic mimetype="image" mime-subtype="png" xlink:href="images/SanPedro_LULC.png" />
+      </fig>
       <code language="default">// Land Use Land Cover
 // Travis Zalesky
 // ATUR
@@ -608,6 +629,21 @@ Export.image.toDrive({
       <title>2.1.10 Stormwater Drainage Density</title>
       <p><bold>I am unaware of any data availability for this layer.
       PLEASE ADVISE!</bold></p>
+      <boxed-text>
+      <p><bold>Note</bold></p>
+      <p><italic>I was able to locate sewer data for
+      <ext-link ext-link-type="uri" xlink:href="https://cosvazgis-sierravista.hub.arcgis.com/maps/bd8411bd3f1a485395f057636aa94b09/explore?location=31.560760%2C-110.206043%2C-1.00">Sierra
+      Vista</ext-link>, the largest city in the San Pedro watershed. It
+      is unclear if this layer includes stormwater drains as well as
+      domestic treated sewage, or if the two systems are integrated.
+      Additionally, I was not able to locate sewer data from any other
+      cities/towns/municipalities in the region.</italic></p>
+      <p><italic>Due to the uncertain nature of the available data, as
+      well as it’s limited extent, I am inclined to skip this layer for
+      the purposes of this analysis, unless otherwise instructed. I
+      remain open to suggestions for additional or alternative data
+      sources.</italic></p>
+      </boxed-text>
     </sec>
   </sec>
 </sec>

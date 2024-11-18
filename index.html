@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.33">
+<meta name="generator" content="quarto-1.6.36">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Travis Zalesky">
-<meta name="dcterms.date" content="2024-11-15">
+<meta name="dcterms.date" content="2024-11-18">
 <meta name="keywords" content="Arizona Tri University Recharge (ATUR), San Pedro Watershed, Managed Aquifer Recharge, Suitability Analysis">
 
 <title>San Pedro Flood-MAR</title>
@@ -86,10 +86,10 @@ div.csl-indent {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-07ba0ad10f5680c660e360ac31d2f3b6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-01c78b5cd655e4cd89133cf59d535862.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-27262f0026302d056883bfd2faaf8757.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-86e67f1fcd594f562d62505f92e4b4dd.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
@@ -106,10 +106,10 @@ div.csl-indent {
 ">
 <meta name="citation_keywords" content="Arizona Tri University Recharge (ATUR),San Pedro Watershed,Managed Aquifer Recharge,Suitability Analysis">
 <meta name="citation_author" content="Travis Zalesky">
-<meta name="citation_publication_date" content="2024-11-15">
-<meta name="citation_cover_date" content="2024-11-15">
+<meta name="citation_publication_date" content="2024-11-18">
+<meta name="citation_cover_date" content="2024-11-18">
 <meta name="citation_year" content="2024">
-<meta name="citation_online_date" content="2024-11-15">
+<meta name="citation_online_date" content="2024-11-18">
 <meta name="citation_language" content="en">
 <meta name="citation_reference" content="citation_title=Strategies for the development of volcanic hazard maps in monogenetic volcanic fields: The example of La Palma (Canary Islands);,citation_author=José Marrero;,citation_author=Alicia García;,citation_author=Manuel Berrocoso;,citation_author=Ángeles Llinares;,citation_author=Antonio Rodríguez-Losada;,citation_author=R. Ortiz;,citation_publication_date=2019-07;,citation_cover_date=2019-07;,citation_year=2019;,citation_doi=10.1186/s13617-019-0085-5;,citation_volume=8;,citation_journal_title=Journal of Applied Volcanology;">
 <meta name="citation_reference" content="citation_title=Identifying suitable zones for integrated aquifer recharge and flood control in arid qatar using GIS-based multi-criteria decision-making;,citation_author=Sarra Aloui;,citation_author=Adel Zghibi;,citation_author=Annamaria Mazzoni;,citation_author=Adel Elomri;,citation_author=Tareq Al-Ansari;,citation_publication_date=2024-05;,citation_cover_date=2024-05;,citation_year=2024;,citation_doi=10.1016/j.gsd.2024.101137;,citation_issn=2352-801X;,citation_volume=25;,citation_journal_title=Groundwater for Sustainable Development;">
@@ -146,7 +146,7 @@ div.csl-indent {
                 <div>
             <div class="quarto-title-meta-heading">Published</div>
             <div class="quarto-title-meta-contents">
-              <p class="date">November 15, 2024</p>
+              <p class="date">November 18, 2024</p>
             </div>
           </div>
           
@@ -255,18 +255,39 @@ Figure&nbsp;3: San Pedro slope.
 </section>
 <section id="lineament-density" class="level4" data-number="2.1.3">
 <h4 data-number="2.1.3" class="anchored" data-anchor-id="lineament-density"><span class="header-section-number">2.1.3</span> Lineament Density</h4>
-<p>Lineaments such as faults and fractures fundamentally influence water flow dynamics.</p>
-<p><strong>This layer is not yet available, but I believe that Ryan is working on this concept</strong></p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><em>Section may be more properly titled</em> Fault Density<em>.</em></p>
+</div>
+</div>
+<p>Lineaments such as faults and fractures fundamentally influence water flow dynamics (<strong>CITATION NEEDED</strong>).</p>
+<p>Lineaments were obtained from the combination of two data sources, the AZ State Geologic Map (<strong>DATA CITATION</strong>) and the USGS Faults of Arizona maps (<strong>DATA CITATION</strong>). <em>Additional details about how the data was “merged” (<strong>Ryan</strong>)…</em></p>
+<p>As with the Lithology layer (see below), the faults data layer ends abruptly at the US-Mexico border.</p>
+<p>Fault density was calculated as line density in Km of fault per Km², using a 1Km search kernel.</p>
 <p>See <span class="citation" data-cites="aloui2024">Aloui et al. (<a href="#ref-aloui2024" role="doc-biblioref">2024</a>)</span> section 3.1.3 Lineament density (LD) for additional methods on generating lineament features from a DEM.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/SanPedro_Faults.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="San Pedro fault density. Line density calculated using a 1 Km search kernel."><img src="images/SanPedro_Faults.png" class="img-fluid figure-img" alt="San Pedro fault density. Line density calculated using a 1 Km search kernel."></a></p>
+<figcaption>San Pedro fault density. Line density calculated using a 1 Km search kernel.</figcaption>
+</figure>
+</div>
 </section>
 <section id="drainage-density" class="level4" data-number="2.1.4">
 <h4 data-number="2.1.4" class="anchored" data-anchor-id="drainage-density"><span class="header-section-number">2.1.4</span> Drainage Density</h4>
-<p>High drainage density increases flood susceptibility via rapid water accumulation through channels (<strong>CITATION NEEDED</strong>). Additionally, the increased flow rate in areas with high drainage density reduces the residence time of surface water, limiting recharge potential (<strong>CITATION NEEDED</strong>) and regions of high drainage density have been frequently associated with less permiable soils (<strong>CITATION NEEDED</strong>).</p>
+<p>High drainage density increases flood susceptibility via rapid water accumulation through channels (<strong>CITATION NEEDED</strong>). Additionally, the increased flow rate in areas with high drainage density reduces the residence time of surface water, limiting recharge potential (<strong>CITATION NEEDED</strong>) and regions of high drainage density have been frequently associated with less permeable soils (<strong>CITATION NEEDED</strong>).</p>
 <p>Drainage density was calculated using the USGS National Hydrography Dataset (NHD) flowline features (<strong>Data Citation</strong>). This dataset consisted of both natural and engineered flowlines, including such things as underground pipes. Line density was calculated in Km of flowline per Km², using a search kernel of 1 Km.</p>
 <div id="fig-drain" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-drain-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="images/SanPedro_DrainDense.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Figure&nbsp;4: San Pedro drainage density. Line density calculated using a 1 Km search kernel."><img src="images/SanPedro_DrainDense.png" class="img-fluid figure-img"></a>
+<a href="images/SanPedro_DrainDense.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Figure&nbsp;4: San Pedro drainage density. Line density calculated using a 1 Km search kernel."><img src="images/SanPedro_DrainDense.png" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-drain-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;4: San Pedro drainage density. Line density calculated using a 1 Km search kernel.
@@ -288,13 +309,13 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><em>In the San Pedro watershed precipitation is highly correlated with elevation. Using a simple linear trendline across the entire watershed elevation accounts for 51% of the variance in precipitation, increasing to 81% when using an E-W transect located at the US-Mexico border (data not shown). This corelation could potentially be leveraged to fill in the missing data through a variety of interpolation techniques.</em></p>
+<p><em>In the San Pedro watershed precipitation is highly correlated with elevation. Using a simple linear trend line across the entire watershed elevation accounts for 51% of the variance in precipitation, increasing to 81% when using an E-W transect located at the US-Mexico border (data not shown). This corelation could potentially be leveraged to fill in the missing data through a variety of interpolation techniques.</em></p>
 </div>
 </div>
 <div id="fig-precip" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-precip-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="images/SanPedro_Precip.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Figure&nbsp;5: San Pedro average annual precipitation. Derived from OSU PRISM 30-year normals (800 m), downscaled to 30 m resolution."><img src="images/SanPedro_Precip.png" class="img-fluid figure-img"></a>
+<a href="images/SanPedro_Precip.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Figure&nbsp;5: San Pedro average annual precipitation. Derived from OSU PRISM 30-year normals (800 m), downscaled to 30 m resolution."><img src="images/SanPedro_Precip.png" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-precip-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;5: San Pedro average annual precipitation. Derived from OSU PRISM 30-year normals (800 m), downscaled to 30 m resolution.
@@ -425,7 +446,7 @@ Figure&nbsp;5: San Pedro average annual precipitation. Derived from OSU PRISM 30
 <div id="fig-lith" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-lith-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="images/SanPedro_Lith.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Figure&nbsp;6: San Pedro lithology."><img src="images/SanPedro_Lith.png" class="img-fluid figure-img"></a>
+<a href="images/SanPedro_Lith.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="Figure&nbsp;6: San Pedro lithology."><img src="images/SanPedro_Lith.png" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-lith-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;6: San Pedro lithology.
@@ -514,7 +535,7 @@ Table&nbsp;1: Soil hydrologic group.
 <div id="fig-soil" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-soil-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="images/SanPedro_Soil.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="Figure&nbsp;7: San Pedro soils hydrologic group."><img src="images/SanPedro_Soil.png" class="img-fluid figure-img"></a>
+<a href="images/SanPedro_Soil.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8" title="Figure&nbsp;7: San Pedro soils hydrologic group."><img src="images/SanPedro_Soil.png" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-soil-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;7: San Pedro soils hydrologic group.
@@ -532,7 +553,7 @@ Figure&nbsp;7: San Pedro soils hydrologic group.
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>// 11/14/24</span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>// </span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>// Import module for usefull landsat functions</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>// Import module for useful landsat functions</span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>var landsatFunctions = require('users/travisz09/UsefulFunctions:LandsatFunctions')</span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>// Study Area</span>
@@ -612,7 +633,7 @@ Figure&nbsp;7: San Pedro soils hydrologic group.
 <div id="fig-ndvi" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-ndvi-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="images/SanPedro_NDVI.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8" title="Figure&nbsp;8: San Pedro 10-year mean NDVI."><img src="images/SanPedro_NDVI.png" class="img-fluid figure-img"></a>
+<a href="images/SanPedro_NDVI.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9" title="Figure&nbsp;8: San Pedro 10-year mean NDVI."><img src="images/SanPedro_NDVI.png" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ndvi-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;8: San Pedro 10-year mean NDVI.
@@ -623,6 +644,12 @@ Figure&nbsp;8: San Pedro 10-year mean NDVI.
 <section id="land-useland-cover" class="level4" data-number="2.1.9">
 <h4 data-number="2.1.9" class="anchored" data-anchor-id="land-useland-cover"><span class="header-section-number">2.1.9</span> Land use/land cover</h4>
 <p>Infiltration and runoff rates are highly influenced by land cover (<strong>CITATION NEEDED</strong>). ESRI 2020 Global Land Use Land Cover from Sentinel-2 (ESRI LULC) is a 10-m resolution global land cover dataset derived from proprietary machine-learning algorithm run on Sentinel-2 satellite imagery (<strong>DATA CITATION</strong>). ESRI LULC was accessed and clipped to the study area using Google Earth Engine. The pixel resolution was reduced to 30 m.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/SanPedro_LULC.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10" title="San Pedro land cover."><img src="images/SanPedro_LULC.png" class="img-fluid figure-img" alt="San Pedro land cover."></a></p>
+<figcaption>San Pedro land cover.</figcaption>
+</figure>
+</div>
 <div class="sourceCode" id="cb2"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>// Land Use Land Cover</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>// Travis Zalesky</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>// ATUR</span>
@@ -651,6 +678,20 @@ Figure&nbsp;8: San Pedro 10-year mean NDVI.
 <section id="stormwater-drainage-density" class="level4" data-number="2.1.10">
 <h4 data-number="2.1.10" class="anchored" data-anchor-id="stormwater-drainage-density"><span class="header-section-number">2.1.10</span> Stormwater Drainage Density</h4>
 <p><strong>I am unaware of any data availability for this layer. PLEASE ADVISE!</strong></p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><em>I was able to locate sewer data for <a href="https://cosvazgis-sierravista.hub.arcgis.com/maps/bd8411bd3f1a485395f057636aa94b09/explore?location=31.560760%2C-110.206043%2C-1.00">Sierra Vista</a>, the largest city in the San Pedro watershed. It is unclear if this layer includes stormwater drains as well as domestic treated sewage, or if the two systems are integrated. Additionally, I was not able to locate sewer data from any other cities/towns/municipalities in the region.</em></p>
+<p><em>Due to the uncertain nature of the available data, as well as it’s limited extent, I am inclined to skip this layer for the purposes of this analysis, unless otherwise instructed. I remain open to suggestions for additional or alternative data sources.</em></p>
+</div>
+</div>
 </section>
 </section>
 </section>
@@ -750,8 +791,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
   clipboard.on('success', onCopySuccess);
   if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
     const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
       text: getTextToCopy,
       container: window.document.getElementById('quarto-embedded-source-code-modal')
@@ -862,7 +901,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {
