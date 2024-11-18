@@ -65,15 +65,25 @@ Slope data was calculated as a first order derivative of the elevation data.
 
 #### Lineament Density
 
-Lineaments such as faults and fractures fundamentally influence water flow dynamics.
+::: callout-note
+*Section may be more properly titled* Fault Density*.*
+:::
 
-**This layer is not yet available, but I believe that Ryan is working on this concept**
+Lineaments such as faults and fractures fundamentally influence water flow dynamics (**CITATION NEEDED**).
+
+Lineaments were obtained from the combination of two data sources, the AZ State Geologic Map (**DATA CITATION**) and the USGS Faults of Arizona maps (**DATA CITATION**). *Additional details about how the data was "merged" (**Ryan**)...*
+
+As with the Lithology layer (see below), the faults data layer ends abruptly at the US-Mexico border.
+
+Fault density was calculated as line density in Km of fault per Km², using a 1Km search kernel.
 
 See @aloui2024 section 3.1.3 Lineament density (LD) for additional methods on generating lineament features from a DEM.
 
+![San Pedro fault density. Line density calculated using a 1 Km search kernel. ](images/SanPedro_Faults.png)
+
 #### Drainage Density
 
-High drainage density increases flood susceptibility via rapid water accumulation through channels (**CITATION NEEDED**). Additionally, the increased flow rate in areas with high drainage density reduces the residence time of surface water, limiting recharge potential (**CITATION NEEDED**) and regions of high drainage density have been frequently associated with less permiable soils (**CITATION NEEDED**).
+High drainage density increases flood susceptibility via rapid water accumulation through channels (**CITATION NEEDED**). Additionally, the increased flow rate in areas with high drainage density reduces the residence time of surface water, limiting recharge potential (**CITATION NEEDED**) and regions of high drainage density have been frequently associated with less permeable soils (**CITATION NEEDED**).
 
 Drainage density was calculated using the USGS National Hydrography Dataset (NHD) flowline features (**Data Citation**). This dataset consisted of both natural and engineered flowlines, including such things as underground pipes. Line density was calculated in Km of flowline per Km², using a search kernel of 1 Km.
 
@@ -86,7 +96,7 @@ Precipitation is the primary source of freshwater for aquifer recharge, as well 
 Precipitation data was obtained from OSU PRISM data using 30-year normals 800 m resolution, subsequently downscaled to match the SRTM 30 m resolution using bilinear interpolation (**DATA CITATION**). The PRISM dataset extends approximately 10 Km S of the US-Mexico border, but unfortunately it does not cover the entire watershed. The extent of the uncovered portion of the watershed is approximately 1,200 Km², representing roughly 12% of the total area.
 
 ::: callout-note
-*In the San Pedro watershed precipitation is highly correlated with elevation. Using a simple linear trendline across the entire watershed elevation accounts for 51% of the variance in precipitation, increasing to 81% when using an E-W transect located at the US-Mexico border (data not shown). This corelation could potentially be leveraged to fill in the missing data through a variety of interpolation techniques.*
+*In the San Pedro watershed precipitation is highly correlated with elevation. Using a simple linear trend line across the entire watershed elevation accounts for 51% of the variance in precipitation, increasing to 81% when using an E-W transect located at the US-Mexico border (data not shown). This corelation could potentially be leveraged to fill in the missing data through a variety of interpolation techniques.*
 :::
 
 ![San Pedro average annual precipitation. Derived from OSU PRISM 30-year normals (800 m), downscaled to 30 m resolution.](images/SanPedro_Precip.png){#fig-precip}
@@ -169,7 +179,7 @@ NDVI is a highly seasonally dependent index. To account for normal seasonal vari
 // 11/14/24
 // 
 
-// Import module for usefull landsat functions
+// Import module for useful landsat functions
 var landsatFunctions = require('users/travisz09/UsefulFunctions:LandsatFunctions')
 
 // Study Area
@@ -253,6 +263,8 @@ Export.image.toDrive({
 #### Land use/land cover
 Infiltration and runoff rates are highly influenced by land cover (**CITATION NEEDED**). ESRI 2020 Global Land Use Land Cover from Sentinel-2 (ESRI LULC) is a 10-m resolution global land cover dataset derived from proprietary machine-learning algorithm run on Sentinel-2 satellite imagery (**DATA CITATION**). ESRI LULC was accessed and clipped to the study area using Google Earth Engine. The pixel resolution was reduced to 30 m.
 
+![San Pedro land cover.](images/SanPedro_LULC.png)
+
 ```default
 // Land Use Land Cover
 // Travis Zalesky
@@ -283,6 +295,12 @@ Export.image.toDrive({
 #### Stormwater Drainage Density
 
 **I am unaware of any data availability for this layer. PLEASE ADVISE!**
+
+::: callout-note
+*I was able to locate sewer data for [Sierra Vista](https://cosvazgis-sierravista.hub.arcgis.com/maps/bd8411bd3f1a485395f057636aa94b09/explore?location=31.560760%2C-110.206043%2C-1.00), the largest city in the San Pedro watershed. It is unclear if this layer includes stormwater drains as well as domestic treated sewage, or if the two systems are integrated. Additionally, I was not able to locate sewer data from any other cities/towns/municipalities in the region.*
+
+*Due to the uncertain nature of the available data, as well as it's limited extent, I am inclined to skip this layer for the purposes of this analysis, unless otherwise instructed. I remain open to suggestions for additional or alternative data sources.*
+:::
 
 ## Conclusion
 
