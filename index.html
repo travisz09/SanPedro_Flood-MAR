@@ -205,6 +205,19 @@ div.csl-indent {
 <section id="introduction" class="level2" data-number="1">
 <h2 data-number="1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">1</span> Introduction</h2>
 <p>Please see <a href="https://www.sciencedirect.com/science/article/pii/S2352801X24000602#bib49">Identifying suitable zones for integrated aquifer recharge and flood control in arid Qatar using GIS-based multi-criteria decision-making</a> <span class="citation" data-cites="aloui2024">(<a href="#ref-aloui2024" role="doc-biblioref">Aloui et al., 2024</a>)</span></p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><em>All images have been scaled-down to reduce file sized on git-hub. For original, presentation quality graphics, please contact Travis.</em></p>
+</div>
+</div>
 <section id="study-area" class="level3" data-number="1.1">
 <h3 data-number="1.1" class="anchored" data-anchor-id="study-area"><span class="header-section-number">1.1</span> Study Area</h3>
 <div id="fig-studyArea" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -650,12 +663,6 @@ Figure&nbsp;8: San Pedro 10-year mean NDVI.
 <section id="land-useland-cover" class="level4" data-number="2.1.9">
 <h4 data-number="2.1.9" class="anchored" data-anchor-id="land-useland-cover"><span class="header-section-number">2.1.9</span> Land use/land cover</h4>
 <p>Infiltration and runoff rates are highly influenced by land cover (<strong>CITATION NEEDED</strong>). ESRI 2020 Global Land Use Land Cover from Sentinel-2 (ESRI LULC) is a 10-m resolution global land cover dataset derived from proprietary machine-learning algorithm run on Sentinel-2 satellite imagery (<strong>DATA CITATION</strong>). ESRI LULC was accessed and clipped to the study area using Google Earth Engine. The pixel resolution was reduced to 30 m.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="images/SanPedro_LULC.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10" title="San Pedro land cover."><img src="images/SanPedro_LULC.png" class="img-fluid figure-img" alt="San Pedro land cover."></a></p>
-<figcaption>San Pedro land cover.</figcaption>
-</figure>
-</div>
 <div class="sourceCode" id="cb2"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>// Land Use Land Cover</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>// Travis Zalesky</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>// ATUR</span>
@@ -680,6 +687,72 @@ Figure&nbsp;8: San Pedro 10-year mean NDVI.
 <span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>  crs: 'EPSG:32612',</span>
 <span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>  maxPixels: 1e12</span>
 <span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Following extraction from GEE. LULC was classified from 1-5 according to <a href="#tbl-lulc" class="quarto-xref">Table&nbsp;3</a>.</p>
+<div id="tbl-lulc" class="striped quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-lulc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;3: Land use/cover.
+</figcaption>
+<div aria-describedby="tbl-lulc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="table-striped caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Category</th>
+<th style="text-align: right;">Suitability</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Water</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Trees</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Grass</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Flooded Vegetation</td>
+<td style="text-align: right;">5</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Crops</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Scrub/Shrub</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Built area</td>
+<td style="text-align: right;">5</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Bare ground</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Snow Ice</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Clouds</td>
+<td style="text-align: right;">1</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/SanPedro_LULC.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10" title="San Pedro land cover."><img src="images/SanPedro_LULC.png" class="img-fluid figure-img" alt="San Pedro land cover."></a></p>
+<figcaption>San Pedro land cover.</figcaption>
+</figure>
+</div>
 </section>
 <section id="stormwater-drainage-density" class="level4" data-number="2.1.10">
 <h4 data-number="2.1.10" class="anchored" data-anchor-id="stormwater-drainage-density"><span class="header-section-number">2.1.10</span> Stormwater Drainage Density</h4>
@@ -703,7 +776,116 @@ Note
 </section>
 <section id="flood-suitability-susceptibility" class="level3" data-number="2.2">
 <h3 data-number="2.2" class="anchored" data-anchor-id="flood-suitability-susceptibility"><span class="header-section-number">2.2</span> Flood Suitability (Susceptibility)</h3>
-<p><strong>All thematic layer weighting for initial map directly from <span class="citation" data-cites="aloui2024">Aloui et al. (<a href="#ref-aloui2024" role="doc-biblioref">2024</a>)</span> and subject to change in latter iterations.</strong></p>
+<p><strong>All thematic layer weighting for initial map directly from <span class="citation" data-cites="aloui2024">Aloui et al. (<a href="#ref-aloui2024" role="doc-biblioref">2024</a>)</span> and are subject to change in latter iterations.</strong></p>
+<div id="tbl-flood" class="striped quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-flood-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;4: Flood Susceptibility classification and weighting.
+</figcaption>
+<div aria-describedby="tbl-flood-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="table-striped caption-top table">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 41%">
+<col style="width: 12%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Layer</th>
+<th style="text-align: left;">Classification Schema</th>
+<th style="text-align: right;">Weight*</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Elevation</td>
+<td style="text-align: left;"><em>Quantiles</em> <br> 578(min) — 1140 =&gt; 5 <br> 1140 — 1307 =&gt; 4 <br> 1307 — 1420 =&gt; 3 <br> 1420 — 1536 =&gt; 2 <br> 1536 — 2876(max) =&gt; 1 <br></td>
+<td style="text-align: right;">0.17</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Slope</td>
+<td style="text-align: left;"><em>Manual <span class="citation" data-cites="aloui2024">(<a href="#ref-aloui2024" role="doc-biblioref">Aloui et al., 2024</a>)</span></em> <br> 0(min) — 2 =&gt; 5 <br> 2 — 6 =&gt; 4 <br> 6 — 12 =&gt; 3 <br> 12 — 18 =&gt; 2 <br> 18 — 72.7(max) =&gt; 1 <br></td>
+<td style="text-align: right;">0.11</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Lineaments</td>
+<td style="text-align: left;"><em>Equal Int <span class="citation" data-cites="aloui2024">(<a href="#ref-aloui2024" role="doc-biblioref">Aloui et al., 2024</a>)</span></em><br> 0(min) — 0.5 =&gt; 5 <br> 0.5 — 1 =&gt; 4 <br> 1 — 1.5 =&gt; 3 <br> 1.5 — 2 =&gt; 2 <br> 2 — 2.6(max) =&gt; 1 <br></td>
+<td style="text-align: right;">0.04</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Drainage</td>
+<td style="text-align: left;"><em>Equal Int <span class="citation" data-cites="aloui2024">(<a href="#ref-aloui2024" role="doc-biblioref">Aloui et al., 2024</a>)</span></em><br> 0(min) — 0.5 =&gt; 5 <br> 0.5 — 1 =&gt; 4 <br> 1 — 1.5 =&gt; 3 <br> 1.5 — 2 =&gt; 2 <br> 2 — 7.6(max) =&gt; 1 <br></td>
+<td style="text-align: right;">0.07</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Precip</td>
+<td style="text-align: left;"><em>Equal Int (br=121mm)</em> <br> 284.2(min) — 405.1 =&gt; 5 <br> 405.1 — 525.9 =&gt; 4 <br> 525.9 — 647.7 =&gt; 3 <br> 647.7 — 767.6 =&gt; 2 <br> 767.6 — 888.4(max) =&gt; 1 <br></td>
+<td style="text-align: right;">0.06</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Lithology</td>
+<td style="text-align: left;"><em>Categorical (Neha)</em> <br> See <a href="#tbl-lith" class="quarto-xref">Table&nbsp;1</a></td>
+<td style="text-align: right;">0.09</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Soil</td>
+<td style="text-align: left;"><em>Categorical (Ryan)</em> <br> See <a href="#tbl-soil" class="quarto-xref">Table&nbsp;2</a></td>
+<td style="text-align: right;">0.03</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NDVI</td>
+<td style="text-align: left;"><em>Equal Int <span class="citation" data-cites="aloui2024">(<a href="#ref-aloui2024" role="doc-biblioref">Aloui et al., 2024</a>)</span></em><br> -0.1(min) — 0 =&gt; 5 <br> 0 — 0.1 =&gt; 4 <br> 0.1 — 0.2 =&gt; 3 <br> 0.2 — 0.3 =&gt; 2 <br> 0.3 — 0.4(max) =&gt; 1 <br></td>
+<td style="text-align: right;">0.02</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">LULC</td>
+<td style="text-align: left;"><em>Categorical (Travis)</em> <br> See <a href="#tbl-lulc" class="quarto-xref">Table&nbsp;3</a></td>
+<td style="text-align: right;">0.19</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p>* Weights total = 0.78 ≠ 1 due to missing “Stormwater Drainage Density” layer.</p>
+<section id="categorized-rasters" class="level4" data-number="2.2.1">
+<h4 data-number="2.2.1" class="anchored" data-anchor-id="categorized-rasters"><span class="header-section-number">2.2.1</span> Categorized Rasters</h4>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><em>I’ve exceeded the git-hub file size limit for this project. These images will be made available through an alternate file-sharing service</em></p>
+</div>
+</div>
+<p>![San Pedro elevation classification.]</p>
+<p>![San Pedro slope classification.]</p>
+<p>![San Pedro lineament density classification.]</p>
+<p>![San Pedro drainage density classification.]</p>
+<p>![San Pedro precipitation classification.]</p>
+<p>![San Pedro lithology classification.]</p>
+<p>![San Pedro soil classification.]</p>
+<p>![San Pedro NDVI classification.]</p>
+<p>![San Pedro land use/cover classification.]</p>
+</section>
+<section id="flood-susceptibility" class="level4" data-number="2.2.2">
+<h4 data-number="2.2.2" class="anchored" data-anchor-id="flood-susceptibility"><span class="header-section-number">2.2.2</span> Flood Susceptibility</h4>
+<div id="fig-flood" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-flood-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/SanPedro_FloodSusceptibility.png" class="lightbox" data-gallery="quarto-lightbox-gallery-11" title="Figure&nbsp;9: San Pedro flood susceptibility analysis."><img src="images/SanPedro_FloodSusceptibility.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-flood-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;9: San Pedro flood susceptibility analysis.
+</figcaption>
+</figure>
+</div>
+</section>
 </section>
 </section>
 <section id="conclusion" class="level2" data-number="3">

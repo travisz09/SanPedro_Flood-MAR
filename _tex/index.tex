@@ -277,6 +277,13 @@ suitable zones for integrated aquifer recharge and flood control in arid
 Qatar using GIS-based multi-criteria decision-making} (Aloui et al.,
 2024)
 
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, bottomrule=.15mm, coltitle=black, arc=.35mm, colback=white, colbacktitle=quarto-callout-note-color!10!white, opacityback=0, opacitybacktitle=0.6, leftrule=.75mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, toptitle=1mm, titlerule=0mm, bottomtitle=1mm, left=2mm, toprule=.15mm, breakable, colframe=quarto-callout-note-color-frame]
+
+\emph{All images have been scaled-down to reduce file sized on git-hub.
+For original, presentation quality graphics, please contact Travis.}
+
+\end{tcolorbox}
+
 \subsection{Study Area}\label{study-area}
 
 \begin{figure}
@@ -420,7 +427,7 @@ unfortunately it does not cover the entire watershed. The extent of the
 uncovered portion of the watershed is approximately 1,200 Km²,
 representing roughly 12\% of the total area.
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, colbacktitle=quarto-callout-note-color!10!white, opacityback=0, leftrule=.75mm, colback=white, bottomrule=.15mm, colframe=quarto-callout-note-color-frame, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, left=2mm, toptitle=1mm, bottomtitle=1mm, breakable, rightrule=.15mm, toprule=.15mm, arc=.35mm, titlerule=0mm, opacitybacktitle=0.6]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, bottomrule=.15mm, coltitle=black, arc=.35mm, colback=white, colbacktitle=quarto-callout-note-color!10!white, opacityback=0, opacitybacktitle=0.6, leftrule=.75mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, toptitle=1mm, titlerule=0mm, bottomtitle=1mm, left=2mm, toprule=.15mm, breakable, colframe=quarto-callout-note-color-frame]
 
 \emph{In the San Pedro watershed precipitation is highly correlated with
 elevation. Using a simple linear trend line across the entire watershed
@@ -459,7 +466,7 @@ and it is not clear if any relevant data within Mexico can be located.
 The extent of the uncovered portion of the watershed is approximately
 1,800 Km², representing roughly 16\% of the total area.
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, colbacktitle=quarto-callout-warning-color!10!white, opacityback=0, leftrule=.75mm, colback=white, bottomrule=.15mm, colframe=quarto-callout-warning-color-frame, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Warning}, left=2mm, toptitle=1mm, bottomtitle=1mm, breakable, rightrule=.15mm, toprule=.15mm, arc=.35mm, titlerule=0mm, opacitybacktitle=0.6]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, bottomrule=.15mm, coltitle=black, arc=.35mm, colback=white, colbacktitle=quarto-callout-warning-color!10!white, opacityback=0, opacitybacktitle=0.6, leftrule=.75mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Warning}, toptitle=1mm, titlerule=0mm, bottomtitle=1mm, left=2mm, toprule=.15mm, breakable, colframe=quarto-callout-warning-color-frame]
 
 \textbf{This method of classification, already arduous for San Pedro,
 with 25 unique categories, will not be scalable to the broader study
@@ -749,16 +756,6 @@ satellite imagery (\textbf{DATA CITATION}). ESRI LULC was accessed and
 clipped to the study area using Google Earth Engine. The pixel
 resolution was reduced to 30 m.
 
-\begin{figure}[H]
-
-{\centering \pandocbounded{\includegraphics[keepaspectratio]{images/SanPedro_LULC.png}}
-
-}
-
-\caption{San Pedro land cover.}
-
-\end{figure}%
-
 \begin{Shaded}
 \begin{Highlighting}[]
 \NormalTok{// Land Use Land Cover}
@@ -788,13 +785,50 @@ resolution was reduced to 30 m.
 \end{Highlighting}
 \end{Shaded}
 
+Following extraction from GEE. LULC was classified from 1-5 according to
+Table~\ref{tbl-lulc}.
+
+\begin{longtable}[]{@{}lr@{}}
+\caption{Land use/cover.}\label{tbl-lulc}\tabularnewline
+\toprule\noalign{}
+Category & Suitability \\
+\midrule\noalign{}
+\endfirsthead
+\toprule\noalign{}
+Category & Suitability \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Water & 1 \\
+Trees & 1 \\
+Grass & 3 \\
+Flooded Vegetation & 5 \\
+Crops & 2 \\
+Scrub/Shrub & 3 \\
+Built area & 5 \\
+Bare ground & 4 \\
+Snow Ice & 1 \\
+Clouds & 1 \\
+\end{longtable}
+
+\begin{figure}[H]
+
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{images/SanPedro_LULC.png}}
+
+}
+
+\caption{San Pedro land cover.}
+
+\end{figure}%
+
 \subsubsection{Stormwater Drainage
 Density}\label{stormwater-drainage-density}
 
 \textbf{I am unaware of any data availability for this layer. PLEASE
 ADVISE!}
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, colbacktitle=quarto-callout-note-color!10!white, opacityback=0, leftrule=.75mm, colback=white, bottomrule=.15mm, colframe=quarto-callout-note-color-frame, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, left=2mm, toptitle=1mm, bottomtitle=1mm, breakable, rightrule=.15mm, toprule=.15mm, arc=.35mm, titlerule=0mm, opacitybacktitle=0.6]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, bottomrule=.15mm, coltitle=black, arc=.35mm, colback=white, colbacktitle=quarto-callout-note-color!10!white, opacityback=0, opacitybacktitle=0.6, leftrule=.75mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, toptitle=1mm, titlerule=0mm, bottomtitle=1mm, left=2mm, toprule=.15mm, breakable, colframe=quarto-callout-note-color-frame]
 
 \emph{I was able to locate sewer data for
 \href{https://cosvazgis-sierravista.hub.arcgis.com/maps/bd8411bd3f1a485395f057636aa94b09/explore?location=31.560760\%2C-110.206043\%2C-1.00}{Sierra
@@ -820,7 +854,104 @@ for additional or alternative data sources.}
 (Susceptibility)}\label{flood-suitability-susceptibility}
 
 \textbf{All thematic layer weighting for initial map directly from Aloui
-et al. (2024) and subject to change in latter iterations.}
+et al. (2024) and are subject to change in latter iterations.}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.1667}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.4167}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.1250}}@{}}
+\caption{Flood Susceptibility classification and
+weighting.}\label{tbl-flood}\tabularnewline
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Layer
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Classification Schema
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+Weight*
+\end{minipage} \\
+\midrule\noalign{}
+\endfirsthead
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Layer
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Classification Schema
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+Weight*
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Elevation & \emph{Quantiles} 578(min) --- 1140 =\textgreater{} 5 1140
+--- 1307 =\textgreater{} 4 1307 --- 1420 =\textgreater{} 3 1420 --- 1536
+=\textgreater{} 2 1536 --- 2876(max) =\textgreater{} 1 & 0.17 \\
+Slope & \emph{Manual (Aloui et al., 2024)} 0(min) --- 2 =\textgreater{}
+5 2 --- 6 =\textgreater{} 4 6 --- 12 =\textgreater{} 3 12 --- 18
+=\textgreater{} 2 18 --- 72.7(max) =\textgreater{} 1 & 0.11 \\
+Lineaments & \emph{Equal Int (Aloui et al., 2024)} 0(min) --- 0.5
+=\textgreater{} 5 0.5 --- 1 =\textgreater{} 4 1 --- 1.5 =\textgreater{}
+3 1.5 --- 2 =\textgreater{} 2 2 --- 2.6(max) =\textgreater{} 1 & 0.04 \\
+Drainage & \emph{Equal Int (Aloui et al., 2024)} 0(min) --- 0.5
+=\textgreater{} 5 0.5 --- 1 =\textgreater{} 4 1 --- 1.5 =\textgreater{}
+3 1.5 --- 2 =\textgreater{} 2 2 --- 7.6(max) =\textgreater{} 1 & 0.07 \\
+Precip & \emph{Equal Int (br=121mm)} 284.2(min) --- 405.1
+=\textgreater{} 5 405.1 --- 525.9 =\textgreater{} 4 525.9 --- 647.7
+=\textgreater{} 3 647.7 --- 767.6 =\textgreater{} 2 767.6 --- 888.4(max)
+=\textgreater{} 1 & 0.06 \\
+Lithology & \emph{Categorical (Neha)} See Table~\ref{tbl-lith} & 0.09 \\
+Soil & \emph{Categorical (Ryan)} See Table~\ref{tbl-soil} & 0.03 \\
+NDVI & \emph{Equal Int (Aloui et al., 2024)} -0.1(min) --- 0
+=\textgreater{} 5 0 --- 0.1 =\textgreater{} 4 0.1 --- 0.2
+=\textgreater{} 3 0.2 --- 0.3 =\textgreater{} 2 0.3 --- 0.4(max)
+=\textgreater{} 1 & 0.02 \\
+LULC & \emph{Categorical (Travis)} See Table~\ref{tbl-lulc} & 0.19 \\
+\end{longtable}
+
+* Weights total = 0.78 ≠ 1 due to missing ``Stormwater Drainage
+Density'' layer.
+
+\subsubsection{Categorized Rasters}\label{categorized-rasters}
+
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, bottomrule=.15mm, coltitle=black, arc=.35mm, colback=white, colbacktitle=quarto-callout-note-color!10!white, opacityback=0, opacitybacktitle=0.6, leftrule=.75mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, toptitle=1mm, titlerule=0mm, bottomtitle=1mm, left=2mm, toprule=.15mm, breakable, colframe=quarto-callout-note-color-frame]
+
+\emph{I've exceeded the git-hub file size limit for this project. These
+images will be made available through an alternate file-sharing service}
+
+\end{tcolorbox}
+
+!{[}San Pedro elevation classification.{]}
+
+!{[}San Pedro slope classification.{]}
+
+!{[}San Pedro lineament density classification.{]}
+
+!{[}San Pedro drainage density classification.{]}
+
+!{[}San Pedro precipitation classification.{]}
+
+!{[}San Pedro lithology classification.{]}
+
+!{[}San Pedro soil classification.{]}
+
+!{[}San Pedro NDVI classification.{]}
+
+!{[}San Pedro land use/cover classification.{]}
+
+\subsubsection{Flood Susceptibility}\label{flood-susceptibility}
+
+\begin{figure}
+
+\centering{
+
+\pandocbounded{\includegraphics[keepaspectratio]{images/SanPedro_FloodSusceptibility.png}}
+
+}
+
+\caption{\label{fig-flood}San Pedro flood susceptibility analysis.}
+
+\end{figure}%
 
 \section{Conclusion}\label{conclusion}
 

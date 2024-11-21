@@ -90,6 +90,12 @@ Methods and analysis closely following Aloui et al.
   arid Qatar using GIS-based multi-criteria decision-making</ext-link>
   (<xref alt="Aloui et al., 2024" rid="ref-aloui2024" ref-type="bibr">Aloui
   et al., 2024</xref>)</p>
+  <boxed-text>
+  <p><bold>Note</bold></p>
+  <p><italic>All images have been scaled-down to reduce file sized on
+  git-hub. For original, presentation quality graphics, please contact
+  Travis.</italic></p>
+  </boxed-text>
   <sec id="study-area">
     <title>1.1 Study Area</title>
     <fig id="fig-studyArea">
@@ -603,10 +609,6 @@ Export.image.toDrive({
       CITATION</bold>). ESRI LULC was accessed and clipped to the study
       area using Google Earth Engine. The pixel resolution was reduced
       to 30 m.</p>
-      <fig>
-        <caption><p>San Pedro land cover.</p></caption>
-        <graphic mimetype="image" mime-subtype="png" xlink:href="images/SanPedro_LULC.png" />
-      </fig>
       <code language="default">// Land Use Land Cover
 // Travis Zalesky
 // ATUR
@@ -631,6 +633,68 @@ Export.image.toDrive({
   crs: 'EPSG:32612',
   maxPixels: 1e12
 })</code>
+      <p>Following extraction from GEE. LULC was classified from 1-5
+      according to
+      <xref alt="Table 3" rid="tbl-lulc">Table 3</xref>.</p>
+      <fig id="tbl-lulc">
+        <caption><p>Table 3: Land use/cover.</p></caption>
+        <table-wrap>
+          <table>
+            <thead>
+              <tr>
+                <th align="left">Category</th>
+                <th align="right">Suitability</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td align="left">Water</td>
+                <td align="right">1</td>
+              </tr>
+              <tr>
+                <td align="left">Trees</td>
+                <td align="right">1</td>
+              </tr>
+              <tr>
+                <td align="left">Grass</td>
+                <td align="right">3</td>
+              </tr>
+              <tr>
+                <td align="left">Flooded Vegetation</td>
+                <td align="right">5</td>
+              </tr>
+              <tr>
+                <td align="left">Crops</td>
+                <td align="right">2</td>
+              </tr>
+              <tr>
+                <td align="left">Scrub/Shrub</td>
+                <td align="right">3</td>
+              </tr>
+              <tr>
+                <td align="left">Built area</td>
+                <td align="right">5</td>
+              </tr>
+              <tr>
+                <td align="left">Bare ground</td>
+                <td align="right">4</td>
+              </tr>
+              <tr>
+                <td align="left">Snow Ice</td>
+                <td align="right">1</td>
+              </tr>
+              <tr>
+                <td align="left">Clouds</td>
+                <td align="right">1</td>
+              </tr>
+            </tbody>
+          </table>
+        </table-wrap>
+      </fig>
+      <fig>
+        <caption><p>San Pedro land cover.</p></caption>
+        <graphic mimetype="image" mime-subtype="png" xlink:href="images/SanPedro_LULC.png" />
+      </fig>
     </sec>
     <sec id="stormwater-drainage-density">
       <title>2.1.10 Stormwater Drainage Density</title>
@@ -663,7 +727,126 @@ Export.image.toDrive({
     <p><bold>All thematic layer weighting for initial map directly from
     Aloui et al.
     (<xref alt="2024" rid="ref-aloui2024" ref-type="bibr">2024</xref>)
-    and subject to change in latter iterations.</bold></p>
+    and are subject to change in latter iterations.</bold></p>
+    <fig id="tbl-flood">
+      <caption><p>Table 4: Flood Susceptibility classification and
+      weighting.</p></caption>
+      <table-wrap>
+        <table>
+          <colgroup>
+            <col width="17%" />
+            <col width="42%" />
+            <col width="12%" />
+          </colgroup>
+          <thead>
+            <tr>
+              <th align="left">Layer</th>
+              <th align="left">Classification Schema</th>
+              <th align="right">Weight*</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td align="left">Elevation</td>
+              <td align="left"><italic>Quantiles</italic> 578(min) —
+              1140 =&gt; 5 1140 — 1307 =&gt; 4 1307 — 1420 =&gt; 3 1420
+              — 1536 =&gt; 2 1536 — 2876(max) =&gt; 1 </td>
+              <td align="right">0.17</td>
+            </tr>
+            <tr>
+              <td align="left">Slope</td>
+              <td align="left"><italic>Manual
+              (<xref alt="Aloui et al., 2024" rid="ref-aloui2024" ref-type="bibr">Aloui
+              et al., 2024</xref>)</italic> 0(min) — 2 =&gt; 5 2 — 6
+              =&gt; 4 6 — 12 =&gt; 3 12 — 18 =&gt; 2 18 — 72.7(max)
+              =&gt; 1 </td>
+              <td align="right">0.11</td>
+            </tr>
+            <tr>
+              <td align="left">Lineaments</td>
+              <td align="left"><italic>Equal Int
+              (<xref alt="Aloui et al., 2024" rid="ref-aloui2024" ref-type="bibr">Aloui
+              et al., 2024</xref>)</italic> 0(min) — 0.5 =&gt; 5 0.5 — 1
+              =&gt; 4 1 — 1.5 =&gt; 3 1.5 — 2 =&gt; 2 2 — 2.6(max) =&gt;
+              1 </td>
+              <td align="right">0.04</td>
+            </tr>
+            <tr>
+              <td align="left">Drainage</td>
+              <td align="left"><italic>Equal Int
+              (<xref alt="Aloui et al., 2024" rid="ref-aloui2024" ref-type="bibr">Aloui
+              et al., 2024</xref>)</italic> 0(min) — 0.5 =&gt; 5 0.5 — 1
+              =&gt; 4 1 — 1.5 =&gt; 3 1.5 — 2 =&gt; 2 2 — 7.6(max) =&gt;
+              1 </td>
+              <td align="right">0.07</td>
+            </tr>
+            <tr>
+              <td align="left">Precip</td>
+              <td align="left"><italic>Equal Int (br=121mm)</italic>
+              284.2(min) — 405.1 =&gt; 5 405.1 — 525.9 =&gt; 4 525.9 —
+              647.7 =&gt; 3 647.7 — 767.6 =&gt; 2 767.6 — 888.4(max)
+              =&gt; 1 </td>
+              <td align="right">0.06</td>
+            </tr>
+            <tr>
+              <td align="left">Lithology</td>
+              <td align="left"><italic>Categorical (Neha)</italic> See
+              <xref alt="Table 1" rid="tbl-lith">Table 1</xref></td>
+              <td align="right">0.09</td>
+            </tr>
+            <tr>
+              <td align="left">Soil</td>
+              <td align="left"><italic>Categorical (Ryan)</italic> See
+              <xref alt="Table 2" rid="tbl-soil">Table 2</xref></td>
+              <td align="right">0.03</td>
+            </tr>
+            <tr>
+              <td align="left">NDVI</td>
+              <td align="left"><italic>Equal Int
+              (<xref alt="Aloui et al., 2024" rid="ref-aloui2024" ref-type="bibr">Aloui
+              et al., 2024</xref>)</italic> -0.1(min) — 0 =&gt; 5 0 —
+              0.1 =&gt; 4 0.1 — 0.2 =&gt; 3 0.2 — 0.3 =&gt; 2 0.3 —
+              0.4(max) =&gt; 1 </td>
+              <td align="right">0.02</td>
+            </tr>
+            <tr>
+              <td align="left">LULC</td>
+              <td align="left"><italic>Categorical (Travis)</italic> See
+              <xref alt="Table 3" rid="tbl-lulc">Table 3</xref></td>
+              <td align="right">0.19</td>
+            </tr>
+          </tbody>
+        </table>
+      </table-wrap>
+    </fig>
+    <p>* Weights total = 0.78 ≠ 1 due to missing “Stormwater Drainage
+    Density” layer.</p>
+    <sec id="categorized-rasters">
+      <title>2.2.1 Categorized Rasters</title>
+      <boxed-text>
+      <p><bold>Note</bold></p>
+      <p><italic>I’ve exceeded the git-hub file size limit for this
+      project. These images will be made available through an alternate
+      file-sharing service</italic></p>
+      </boxed-text>
+      <p>![San Pedro elevation classification.]</p>
+      <p>![San Pedro slope classification.]</p>
+      <p>![San Pedro lineament density classification.]</p>
+      <p>![San Pedro drainage density classification.]</p>
+      <p>![San Pedro precipitation classification.]</p>
+      <p>![San Pedro lithology classification.]</p>
+      <p>![San Pedro soil classification.]</p>
+      <p>![San Pedro NDVI classification.]</p>
+      <p>![San Pedro land use/cover classification.]</p>
+    </sec>
+    <sec id="flood-susceptibility">
+      <title>2.2.2 Flood Susceptibility</title>
+      <fig id="fig-flood">
+        <caption><p>Figure 9: San Pedro flood susceptibility
+        analysis.</p></caption>
+        <graphic mimetype="image" mime-subtype="png" xlink:href="images/SanPedro_FloodSusceptibility.png" />
+      </fig>
+    </sec>
   </sec>
 </sec>
 <sec id="conclusion">
