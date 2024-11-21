@@ -384,7 +384,27 @@ Following extraction from GEE. LULC was classified from 1-5 according to @tbl-lu
 
 #### Categorized Rasters
 
+![San Pedro elevation classification.](images/SanPedro_ElevClassified.png){#fig-elevClass}
 
+![San Pedro slope classification.](images/SanPedro_SlopeClassified.png){#fig-slopeClass}
+
+![San Pedro lineament density classification.](images/SanPedro_LineClassified.png){#fig-lineClass}
+
+![San Pedro drainage density classification.](images/SanPedro_DrainClassified.png){#fig-drainClass}
+
+![San Pedro precipitation classification.](images/SanPedro_PrecipClassified.png){#fig-precipClass}
+
+![San Pedro lithology classification.](images/SanPedro_LithoClassified.png){#fig-lithoClass}
+
+![San Pedro soil classification.](images/SanPedro_SoilClassified.png){#fig-soilClass}
+
+![San Pedro NDVI classification.](images/SanPedro_NDVIClassified.png){#fig-ndviClass}
+
+![San Pedro land use/cover classification.](images/SanPedro_LULCClassified.png){#fig-lulcClass}
+
+#### Flood Susceptibility
+
+![San Pedro flood susceptibility analysis.](images/SanPedro_FloodSusceptibility.png){#fig-flood}
 
 ## Conclusion
 
