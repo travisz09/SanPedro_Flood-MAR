@@ -65,21 +65,15 @@ Slope data was calculated as a first order derivative of the elevation data.
 
 #### Lineament Density
 
-::: callout-note
-*Section may be more properly titled* Fault Density*.*
-:::
-
 Lineaments such as faults and fractures fundamentally influence water flow dynamics (**CITATION NEEDED**).
 
-Lineaments were obtained from the combination of two data sources, the AZ State Geologic Map (**DATA CITATION**) and the USGS Faults of Arizona maps (**DATA CITATION**). *Additional details about how the data was "merged" (**Ryan**)...*
+Lineament density derived from the SRTM layer by application of a mean filter with circular radius of 100 m. This smoothed raster was then subtracted from the original SRTM to create a topographic position index (TPI). The TPI image was then imported into Catalyst (**PCI GEOMATICA SOFTWARE CITATION**) where a segment tracing line algorithm was performed. Roads and stream flowlines were then buffered and subsequently erased from the lineaments, leaving natural faults and other geographic features.  Additional details on lineament generation (**Ryan**).
 
-As with the Lithology layer (see below), the faults data layer ends abruptly at the US-Mexico border.
+As with the Lithology layer (see below), the lineaments data layer ends abruptly at the US-Mexico border.
 
-Fault density was calculated as line density in Km of fault per Km², using a 1Km search kernel.
+Lineament density was calculated as line density in Km of fault per Km², using a 1Km search kernel.
 
-See @aloui2024 section 3.1.3 Lineament density (LD) for additional methods on generating lineament features from a DEM.
-
-![San Pedro fault density. Line density calculated using a 1 Km search kernel. ](images/SanPedro_Faults.png)
+![San Pedro lineament density. Line density calculated using a 1 Km search kernel. ](images/SanPedro_Lineaments.png)
 
 #### Drainage Density
 
@@ -107,37 +101,41 @@ The characteristics of surface rock profoundly impact recharge, as the primary f
 
 Lithology data from the USGS State Geologic Map Compilation (**DATA CITATION**). Depending on how the geologic units are defined (i.e. by "Unit Name", primary, secondary, tertiary lithology, or combination) there are upwards of 25 distinct geologic units which must be classified. The USGS SGMC terminates at the US-Mexico border, and it is not clear if any relevant data within Mexico can be located. The extent of the uncovered portion of the watershed is approximately 1,800 Km², representing roughly 16% of the total area.
 
-##### **PLEASE ADVISE!**
+::: callout-warning
+**This method of classification, already arduous for San Pedro, with 25 unique categories, will not be scalable to the broader study area (245 unique categories). It would be advisable to alter this classification to "GENERALIZE" (19 unique categories), or some other classification schema TBD.**
+:::
 
-| Geologic Unit Name | Suitability Classification (1-10) |
+| Geologic Unit Name | Suitability Classification (1-5) |
 |:-----------------------------------------------|:----------------------|
-| Early Proterozoic granitic rocks |  |
-| Quaternary surficial deposits, undivided |  |
-| Early Proterozoic metasedimentary rocks |  |
-| Pliocene to middle Miocene deposits |  |
-| Early Tertiary to Late Cretaceous granitic rocks |  |
-| Middle Proterozoic diabase |  |
-| Cretaceous to Late Jurassic sedimentary rocks with minor volcanic rocks |  |
-| Mississippian, Devonian, and Cambrian sedimentary rocks |  |
-| Paleozoic sedimentary rocks |  |
-| Early Tertiary to Late Cretaceous volcanic rocks |  |
-| Jurassic volcanic rocks |  |
-| Middle Miocene to Oligocene granitic rocks |  |
-| Middle Miocene to Oligocene volcanic rocks |  |
-| Jurassic granitic rocks |  |
-| Early Proterozoic metamorphic rocks |  |
-| Early Tertiary to Late Cretaceous muscovite-bearing granitic rocks |  |
-| Holocene surficial deposits |  |
-| Middle Miocene to Oligocene sedimentary rocks |  |
-| Early Pleistocene to latest Pliocene surficial deposits |  |
-| Middle Proterozoic sedimentary rocks |  |
-| Middle Proterozoic granitic rocks |  |
-| Permian to Pennsylvanian sedimentary rocks |  |
-| Jurassic sedimentary and volcanic rocks |  |
-| Tertiary to Early Proterozoic gneissic rocks |  |
-| Holocene river alluvium |  |
+| Early Proterozoic granitic rocks | 1 |
+| Quaternary surficial deposits, undivided | 5 |
+| Early Proterozoic metasedimentary rocks | 2 |
+| Pliocene to middle Miocene deposits | 4 |
+| Early Tertiary to Late Cretaceous granitic rocks | 3 |
+| Middle Proterozoic diabase | 1 |
+| Cretaceous to Late Jurassic sedimentary rocks with minor volcanic rocks | 3 |
+| Mississippian, Devonian, and Cambrian sedimentary rocks | 2 |
+| Paleozoic sedimentary rocks | 2 |
+| Early Tertiary to Late Cretaceous volcanic rocks | 3 |
+| Jurassic volcanic rocks | 2 |
+| Middle Miocene to Oligocene granitic rocks | 1 |
+| Middle Miocene to Oligocene volcanic rocks | 2 |
+| Jurassic granitic rocks | 1 |
+| Early Proterozoic metamorphic rocks | 1 |
+| Early Tertiary to Late Cretaceous muscovite-bearing granitic rocks | 1 |
+| Holocene surficial deposits | 5 |
+| Middle Miocene to Oligocene sedimentary rocks | 1 |
+| Early Pleistocene to latest Pliocene surficial deposits | 4 |
+| Middle Proterozoic sedimentary rocks | 2 |
+| Middle Proterozoic granitic rocks | 2 |
+| Permian to Pennsylvanian sedimentary rocks | 2 |
+| Jurassic sedimentary and volcanic rocks | 3 |
+| Tertiary to Early Proterozoic gneissic rocks | 1 |
+| Holocene river alluvium | 5 |
 
-![San Pedro lithology.](images/SanPedro_Lith.png){#fig-lith}
+: Lithology. {#tbl-lith .striped}
+
+![San Pedro lithology. Initial lithology suitability estimates provided by Neha on a 1-10 scale, which was subsequently remapped to a 1-5 scale.](images/SanPedro_Lith.png){#fig-lith}
 
 #### Soil Type
 
@@ -149,7 +147,7 @@ Soil type is classified into 1 of 7 soil hydrologic groups... *Additional detail
 
 As with the USGS lithology data, the soils data ends abruptly at the US-Mexico border. At this time data availability within Mexico has not been identified.
 
-These USGS(?) classifications were assigned an additional suitability classification ranking from 1-10 according to @tbl-soil
+These USGS(?) classifications were assigned an additional suitability classification ranking from 1-5 according to @tbl-soil
 
 | Class | Count (pixels)\* | Text | Value |
 |:------------:|:------------:|:------------------------------:|:------------:|
@@ -165,7 +163,7 @@ These USGS(?) classifications were assigned an additional suitability classifica
 
 *\* Full HUC8 study area.*
 
-![San Pedro soils hydrologic group.](images/SanPedro_Soil.png){#fig-soil}
+![San Pedro soils hydrologic group. Initial soil suitability estimates provided by Ryan on a 1-10 scale, which was subsequently remapped to a 1-5 scale.](images/SanPedro_Soil.png){#fig-soil}
 
 #### NDVI
 Normalized Difference Vegetation Index (NDVI) is a proxy for vegetation health and cover. High NDVI reduces flood risk and promotes infiltration due to vegetation's ability to reduce surface runoff flow rate, and create macro-pores in the soil (**CITATION NEEDED**).
@@ -299,8 +297,16 @@ Export.image.toDrive({
 ::: callout-note
 *I was able to locate sewer data for [Sierra Vista](https://cosvazgis-sierravista.hub.arcgis.com/maps/bd8411bd3f1a485395f057636aa94b09/explore?location=31.560760%2C-110.206043%2C-1.00), the largest city in the San Pedro watershed. It is unclear if this layer includes stormwater drains as well as domestic treated sewage, or if the two systems are integrated. Additionally, I was not able to locate sewer data from any other cities/towns/municipalities in the region.*
 
+*Additionally, this data may be available through Cochise County, but is not publicly available. While it may be possible to reach out to Cochise County representatives to obtain such data, this would not be a scalable approach for the entire state.*
+
 *Due to the uncertain nature of the available data, as well as it's limited extent, I am inclined to skip this layer for the purposes of this analysis, unless otherwise instructed. I remain open to suggestions for additional or alternative data sources.*
 :::
+
+### Flood Suitability (Susceptibility)
+
+**All thematic layer weighting for initial map directly from @aloui2024 and subject to change in latter iterations.**
+
+
 
 ## Conclusion
 
