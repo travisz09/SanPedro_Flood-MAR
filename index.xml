@@ -823,26 +823,56 @@ Export.image.toDrive({
     Density” layer.</p>
     <sec id="categorized-rasters">
       <title>2.2.1 Categorized Rasters</title>
-      <boxed-text>
-      <p><bold>Note</bold></p>
-      <p><italic>I’ve exceeded the git-hub file size limit for this
-      project. These images will be made available through an alternate
-      file-sharing service</italic></p>
-      </boxed-text>
-      <p>![San Pedro elevation classification.]</p>
-      <p>![San Pedro slope classification.]</p>
-      <p>![San Pedro lineament density classification.]</p>
-      <p>![San Pedro drainage density classification.]</p>
-      <p>![San Pedro precipitation classification.]</p>
-      <p>![San Pedro lithology classification.]</p>
-      <p>![San Pedro soil classification.]</p>
-      <p>![San Pedro NDVI classification.]</p>
-      <p>![San Pedro land use/cover classification.]</p>
+      <fig id="fig-elevClass">
+        <caption><p>Figure 9: San Pedro elevation
+        classification.</p></caption>
+        <graphic mimetype="image" mime-subtype="png" xlink:href="images/SanPedro_ElevClassified.png" />
+      </fig>
+      <fig id="fig-slopeClass">
+        <caption><p>Figure 10: San Pedro slope
+        classification.</p></caption>
+        <graphic mimetype="image" mime-subtype="png" xlink:href="images/SanPedro_SlopeClassified.png" />
+      </fig>
+      <fig id="fig-lineClass">
+        <caption><p>Figure 11: San Pedro lineament density
+        classification.</p></caption>
+        <graphic mimetype="image" mime-subtype="png" xlink:href="images/SanPedro_LineClassified.png" />
+      </fig>
+      <fig id="fig-drainClass">
+        <caption><p>Figure 12: San Pedro drainage density
+        classification.</p></caption>
+        <graphic mimetype="image" mime-subtype="png" xlink:href="images/SanPedro_DrainClassified.png" />
+      </fig>
+      <fig id="fig-precipClass">
+        <caption><p>Figure 13: San Pedro precipitation
+        classification.</p></caption>
+        <graphic mimetype="image" mime-subtype="png" xlink:href="images/SanPedro_PrecipClassified.png" />
+      </fig>
+      <fig id="fig-lithoClass">
+        <caption><p>Figure 14: San Pedro lithology
+        classification.</p></caption>
+        <graphic mimetype="image" mime-subtype="png" xlink:href="images/SanPedro_LithoClassified.png" />
+      </fig>
+      <fig id="fig-soilClass">
+        <caption><p>Figure 15: San Pedro soil
+        classification.</p></caption>
+        <graphic mimetype="image" mime-subtype="png" xlink:href="images/SanPedro_SoilClassified.png" />
+      </fig>
+      <fig id="fig-ndviClass">
+        <caption><p>Figure 16: San Pedro NDVI
+        classification.</p></caption>
+        <graphic mimetype="image" mime-subtype="png" xlink:href="images/SanPedro_NDVIClassified.png" />
+      </fig>
+      <fig id="fig-lulcClass">
+        <caption><p>Figure 17: San Pedro land use/cover
+        classification.</p></caption>
+        <graphic mimetype="image" mime-subtype="png" xlink:href="images/SanPedro_LULCClassified.png" />
+      </fig>
     </sec>
     <sec id="flood-susceptibility">
       <title>2.2.2 Flood Susceptibility</title>
       <fig id="fig-flood">
-        <caption><p>Figure 9: San Pedro flood susceptibility
+        <caption><p>Figure 18: San Pedro flood susceptibility
         analysis.</p></caption>
         <graphic mimetype="image" mime-subtype="png" xlink:href="images/SanPedro_FloodSusceptibility.png" />
       </fig>
