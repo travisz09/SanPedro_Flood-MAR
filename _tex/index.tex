@@ -347,37 +347,33 @@ data.
 
 \subsubsection{Lineament Density}\label{lineament-density}
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, opacityback=0, colframe=quarto-callout-note-color-frame, colbacktitle=quarto-callout-note-color!10!white, bottomrule=.15mm, leftrule=.75mm, toprule=.15mm, breakable, colback=white, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, left=2mm, opacitybacktitle=0.6, rightrule=.15mm, toptitle=1mm, titlerule=0mm, arc=.35mm]
-
-\emph{Section may be more properly titled} Fault Density\emph{.}
-
-\end{tcolorbox}
-
 Lineaments such as faults and fractures fundamentally influence water
 flow dynamics (\textbf{CITATION NEEDED}).
 
-Lineaments were obtained from the combination of two data sources, the
-AZ State Geologic Map (\textbf{DATA CITATION}) and the USGS Faults of
-Arizona maps (\textbf{DATA CITATION}). \emph{Additional details about
-how the data was ``merged'' (\textbf{Ryan})\ldots{}}
+Lineament density derived from the SRTM layer by application of a mean
+filter with circular radius of 100 m. This smoothed raster was then
+subtracted from the original SRTM to create a topographic position index
+(TPI). The TPI image was then imported into Catalyst (\textbf{PCI
+GEOMATICA SOFTWARE CITATION}) where a segment tracing line algorithm was
+performed. Roads and stream flowlines were then buffered and
+subsequently erased from the lineaments, leaving natural faults and
+other geographic features. Additional details on lineament generation
+(\textbf{Ryan}).
 
-As with the Lithology layer (see below), the faults data layer ends
+As with the Lithology layer (see below), the lineaments data layer ends
 abruptly at the US-Mexico border.
 
-Fault density was calculated as line density in Km of fault per Km²,
+Lineament density was calculated as line density in Km of fault per Km²,
 using a 1Km search kernel.
-
-See Aloui et al. (2024) section 3.1.3 Lineament density (LD) for
-additional methods on generating lineament features from a DEM.
 
 \begin{figure}[H]
 
-{\centering \pandocbounded{\includegraphics[keepaspectratio]{images/SanPedro_Faults.png}}
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{images/SanPedro_Lineaments.png}}
 
 }
 
-\caption{San Pedro fault density. Line density calculated using a 1 Km
-search kernel.}
+\caption{San Pedro lineament density. Line density calculated using a 1
+Km search kernel.}
 
 \end{figure}%
 
@@ -424,7 +420,7 @@ unfortunately it does not cover the entire watershed. The extent of the
 uncovered portion of the watershed is approximately 1,200 Km²,
 representing roughly 12\% of the total area.
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, opacityback=0, colframe=quarto-callout-note-color-frame, colbacktitle=quarto-callout-note-color!10!white, bottomrule=.15mm, leftrule=.75mm, toprule=.15mm, breakable, colback=white, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, left=2mm, opacitybacktitle=0.6, rightrule=.15mm, toptitle=1mm, titlerule=0mm, arc=.35mm]
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, colbacktitle=quarto-callout-note-color!10!white, opacityback=0, leftrule=.75mm, colback=white, bottomrule=.15mm, colframe=quarto-callout-note-color-frame, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, left=2mm, toptitle=1mm, bottomtitle=1mm, breakable, rightrule=.15mm, toprule=.15mm, arc=.35mm, titlerule=0mm, opacitybacktitle=0.6]
 
 \emph{In the San Pedro watershed precipitation is highly correlated with
 elevation. Using a simple linear trend line across the entire watershed
@@ -463,48 +459,65 @@ and it is not clear if any relevant data within Mexico can be located.
 The extent of the uncovered portion of the watershed is approximately
 1,800 Km², representing roughly 16\% of the total area.
 
-\paragraph{\texorpdfstring{\textbf{PLEASE
-ADVISE!}}{PLEASE ADVISE!}}\label{please-advise}
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, colbacktitle=quarto-callout-warning-color!10!white, opacityback=0, leftrule=.75mm, colback=white, bottomrule=.15mm, colframe=quarto-callout-warning-color-frame, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Warning}, left=2mm, toptitle=1mm, bottomtitle=1mm, breakable, rightrule=.15mm, toprule=.15mm, arc=.35mm, titlerule=0mm, opacitybacktitle=0.6]
+
+\textbf{This method of classification, already arduous for San Pedro,
+with 25 unique categories, will not be scalable to the broader study
+area (245 unique categories). It would be advisable to alter this
+classification to ``GENERALIZE'' (19 unique categories), or some other
+classification schema TBD.}
+
+\end{tcolorbox}
 
 \begin{longtable}[]{@{}
   >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.6761}}
   >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.3239}}@{}}
+\caption{Lithology.}\label{tbl-lith}\tabularnewline
 \toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\raggedright
 Geologic Unit Name
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Suitability Classification (1-10)
+Suitability Classification (1-5)
+\end{minipage} \\
+\midrule\noalign{}
+\endfirsthead
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Geologic Unit Name
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Suitability Classification (1-5)
 \end{minipage} \\
 \midrule\noalign{}
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-Early Proterozoic granitic rocks & \\
-Quaternary surficial deposits, undivided & \\
-Early Proterozoic metasedimentary rocks & \\
-Pliocene to middle Miocene deposits & \\
-Early Tertiary to Late Cretaceous granitic rocks & \\
-Middle Proterozoic diabase & \\
+Early Proterozoic granitic rocks & 1 \\
+Quaternary surficial deposits, undivided & 5 \\
+Early Proterozoic metasedimentary rocks & 2 \\
+Pliocene to middle Miocene deposits & 4 \\
+Early Tertiary to Late Cretaceous granitic rocks & 3 \\
+Middle Proterozoic diabase & 1 \\
 Cretaceous to Late Jurassic sedimentary rocks with minor volcanic rocks
-& \\
-Mississippian, Devonian, and Cambrian sedimentary rocks & \\
-Paleozoic sedimentary rocks & \\
-Early Tertiary to Late Cretaceous volcanic rocks & \\
-Jurassic volcanic rocks & \\
-Middle Miocene to Oligocene granitic rocks & \\
-Middle Miocene to Oligocene volcanic rocks & \\
-Jurassic granitic rocks & \\
-Early Proterozoic metamorphic rocks & \\
-Early Tertiary to Late Cretaceous muscovite-bearing granitic rocks & \\
-Holocene surficial deposits & \\
-Middle Miocene to Oligocene sedimentary rocks & \\
-Early Pleistocene to latest Pliocene surficial deposits & \\
-Middle Proterozoic sedimentary rocks & \\
-Middle Proterozoic granitic rocks & \\
-Permian to Pennsylvanian sedimentary rocks & \\
-Jurassic sedimentary and volcanic rocks & \\
-Tertiary to Early Proterozoic gneissic rocks & \\
-Holocene river alluvium & \\
+& 3 \\
+Mississippian, Devonian, and Cambrian sedimentary rocks & 2 \\
+Paleozoic sedimentary rocks & 2 \\
+Early Tertiary to Late Cretaceous volcanic rocks & 3 \\
+Jurassic volcanic rocks & 2 \\
+Middle Miocene to Oligocene granitic rocks & 1 \\
+Middle Miocene to Oligocene volcanic rocks & 2 \\
+Jurassic granitic rocks & 1 \\
+Early Proterozoic metamorphic rocks & 1 \\
+Early Tertiary to Late Cretaceous muscovite-bearing granitic rocks &
+1 \\
+Holocene surficial deposits & 5 \\
+Middle Miocene to Oligocene sedimentary rocks & 1 \\
+Early Pleistocene to latest Pliocene surficial deposits & 4 \\
+Middle Proterozoic sedimentary rocks & 2 \\
+Middle Proterozoic granitic rocks & 2 \\
+Permian to Pennsylvanian sedimentary rocks & 2 \\
+Jurassic sedimentary and volcanic rocks & 3 \\
+Tertiary to Early Proterozoic gneissic rocks & 1 \\
+Holocene river alluvium & 5 \\
 \end{longtable}
 
 \begin{figure}
@@ -515,7 +528,9 @@ Holocene river alluvium & \\
 
 }
 
-\caption{\label{fig-lith}San Pedro lithology.}
+\caption{\label{fig-lith}San Pedro lithology. Initial lithology
+suitability estimates provided by Neha on a 1-10 scale, which was
+subsequently remapped to a 1-5 scale.}
 
 \end{figure}%
 
@@ -537,7 +552,7 @@ US-Mexico border. At this time data availability within Mexico has not
 been identified.
 
 These USGS(?) classifications were assigned an additional suitability
-classification ranking from 1-10 according to Table~\ref{tbl-soil}
+classification ranking from 1-5 according to Table~\ref{tbl-soil}
 
 \begin{longtable}[]{@{}
   >{\centering\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.1892}}
@@ -605,7 +620,9 @@ if drained. & 3 \\
 
 }
 
-\caption{\label{fig-soil}San Pedro soils hydrologic group.}
+\caption{\label{fig-soil}San Pedro soils hydrologic group. Initial soil
+suitability estimates provided by Ryan on a 1-10 scale, which was
+subsequently remapped to a 1-5 scale.}
 
 \end{figure}%
 
@@ -777,7 +794,7 @@ Density}\label{stormwater-drainage-density}
 \textbf{I am unaware of any data availability for this layer. PLEASE
 ADVISE!}
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, opacityback=0, colframe=quarto-callout-note-color-frame, colbacktitle=quarto-callout-note-color!10!white, bottomrule=.15mm, leftrule=.75mm, toprule=.15mm, breakable, colback=white, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, left=2mm, opacitybacktitle=0.6, rightrule=.15mm, toptitle=1mm, titlerule=0mm, arc=.35mm]
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, colbacktitle=quarto-callout-note-color!10!white, opacityback=0, leftrule=.75mm, colback=white, bottomrule=.15mm, colframe=quarto-callout-note-color-frame, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, left=2mm, toptitle=1mm, bottomtitle=1mm, breakable, rightrule=.15mm, toprule=.15mm, arc=.35mm, titlerule=0mm, opacitybacktitle=0.6]
 
 \emph{I was able to locate sewer data for
 \href{https://cosvazgis-sierravista.hub.arcgis.com/maps/bd8411bd3f1a485395f057636aa94b09/explore?location=31.560760\%2C-110.206043\%2C-1.00}{Sierra
@@ -787,12 +804,23 @@ sewage, or if the two systems are integrated. Additionally, I was not
 able to locate sewer data from any other cities/towns/municipalities in
 the region.}
 
+\emph{Additionally, this data may be available through Cochise County,
+but is not publicly available. While it may be possible to reach out to
+Cochise County representatives to obtain such data, this would not be a
+scalable approach for the entire state.}
+
 \emph{Due to the uncertain nature of the available data, as well as it's
 limited extent, I am inclined to skip this layer for the purposes of
 this analysis, unless otherwise instructed. I remain open to suggestions
 for additional or alternative data sources.}
 
 \end{tcolorbox}
+
+\subsection{Flood Suitability
+(Susceptibility)}\label{flood-suitability-susceptibility}
+
+\textbf{All thematic layer weighting for initial map directly from Aloui
+et al. (2024) and subject to change in latter iterations.}
 
 \section{Conclusion}\label{conclusion}
 

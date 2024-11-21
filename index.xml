@@ -141,30 +141,26 @@ Methods and analysis closely following Aloui et al.
     </sec>
     <sec id="lineament-density">
       <title>2.1.3 Lineament Density</title>
-      <boxed-text>
-      <p><bold>Note</bold></p>
-      <p><italic>Section may be more properly titled</italic> Fault
-      Density<italic>.</italic></p>
-      </boxed-text>
       <p>Lineaments such as faults and fractures fundamentally influence
       water flow dynamics (<bold>CITATION NEEDED</bold>).</p>
-      <p>Lineaments were obtained from the combination of two data
-      sources, the AZ State Geologic Map (<bold>DATA CITATION</bold>)
-      and the USGS Faults of Arizona maps (<bold>DATA CITATION</bold>).
-      <italic>Additional details about how the data was “merged”
-      (<bold>Ryan</bold>)…</italic></p>
-      <p>As with the Lithology layer (see below), the faults data layer
-      ends abruptly at the US-Mexico border.</p>
-      <p>Fault density was calculated as line density in Km of fault per
-      Km², using a 1Km search kernel.</p>
-      <p>See Aloui et al.
-      (<xref alt="2024" rid="ref-aloui2024" ref-type="bibr">2024</xref>)
-      section 3.1.3 Lineament density (LD) for additional methods on
-      generating lineament features from a DEM.</p>
+      <p>Lineament density derived from the SRTM layer by application of
+      a mean filter with circular radius of 100 m. This smoothed raster
+      was then subtracted from the original SRTM to create a topographic
+      position index (TPI). The TPI image was then imported into
+      Catalyst (<bold>PCI GEOMATICA SOFTWARE CITATION</bold>) where a
+      segment tracing line algorithm was performed. Roads and stream
+      flowlines were then buffered and subsequently erased from the
+      lineaments, leaving natural faults and other geographic features.
+      Additional details on lineament generation
+      (<bold>Ryan</bold>).</p>
+      <p>As with the Lithology layer (see below), the lineaments data
+      layer ends abruptly at the US-Mexico border.</p>
+      <p>Lineament density was calculated as line density in Km of fault
+      per Km², using a 1Km search kernel.</p>
       <fig>
-        <caption><p>San Pedro fault density. Line density calculated
+        <caption><p>San Pedro lineament density. Line density calculated
         using a 1 Km search kernel.</p></caption>
-        <graphic mimetype="image" mime-subtype="png" xlink:href="images/SanPedro_Faults.png" />
+        <graphic mimetype="image" mime-subtype="png" xlink:href="images/SanPedro_Lineaments.png" />
       </fig>
     </sec>
     <sec id="drainage-density">
@@ -233,8 +229,16 @@ Methods and analysis closely following Aloui et al.
       within Mexico can be located. The extent of the uncovered portion
       of the watershed is approximately 1,800 Km², representing roughly
       16% of the total area.</p>
-      <sec id="please-advise">
-        <title>2.1.6.1 <bold>PLEASE ADVISE!</bold></title>
+      <boxed-text>
+      <p><bold>Warning</bold></p>
+      <p><bold>This method of classification, already arduous for San
+      Pedro, with 25 unique categories, will not be scalable to the
+      broader study area (245 unique categories). It would be advisable
+      to alter this classification to “GENERALIZE” (19 unique
+      categories), or some other classification schema TBD.</bold></p>
+      </boxed-text>
+      <fig id="tbl-lith">
+        <caption><p>Table 1: Lithology.</p></caption>
         <table-wrap>
           <table>
             <colgroup>
@@ -244,135 +248,137 @@ Methods and analysis closely following Aloui et al.
             <thead>
               <tr>
                 <th align="left">Geologic Unit Name</th>
-                <th align="left">Suitability Classification (1-10)</th>
+                <th align="left">Suitability Classification (1-5)</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td align="left">Early Proterozoic granitic rocks</td>
-                <td align="left"></td>
+                <td align="left">1</td>
               </tr>
               <tr>
                 <td align="left">Quaternary surficial deposits,
                 undivided</td>
-                <td align="left"></td>
+                <td align="left">5</td>
               </tr>
               <tr>
                 <td align="left">Early Proterozoic metasedimentary
                 rocks</td>
-                <td align="left"></td>
+                <td align="left">2</td>
               </tr>
               <tr>
                 <td align="left">Pliocene to middle Miocene
                 deposits</td>
-                <td align="left"></td>
+                <td align="left">4</td>
               </tr>
               <tr>
                 <td align="left">Early Tertiary to Late Cretaceous
                 granitic rocks</td>
-                <td align="left"></td>
+                <td align="left">3</td>
               </tr>
               <tr>
                 <td align="left">Middle Proterozoic diabase</td>
-                <td align="left"></td>
+                <td align="left">1</td>
               </tr>
               <tr>
                 <td align="left">Cretaceous to Late Jurassic sedimentary
                 rocks with minor volcanic rocks</td>
-                <td align="left"></td>
+                <td align="left">3</td>
               </tr>
               <tr>
                 <td align="left">Mississippian, Devonian, and Cambrian
                 sedimentary rocks</td>
-                <td align="left"></td>
+                <td align="left">2</td>
               </tr>
               <tr>
                 <td align="left">Paleozoic sedimentary rocks</td>
-                <td align="left"></td>
+                <td align="left">2</td>
               </tr>
               <tr>
                 <td align="left">Early Tertiary to Late Cretaceous
                 volcanic rocks</td>
-                <td align="left"></td>
+                <td align="left">3</td>
               </tr>
               <tr>
                 <td align="left">Jurassic volcanic rocks</td>
-                <td align="left"></td>
+                <td align="left">2</td>
               </tr>
               <tr>
                 <td align="left">Middle Miocene to Oligocene granitic
                 rocks</td>
-                <td align="left"></td>
+                <td align="left">1</td>
               </tr>
               <tr>
                 <td align="left">Middle Miocene to Oligocene volcanic
                 rocks</td>
-                <td align="left"></td>
+                <td align="left">2</td>
               </tr>
               <tr>
                 <td align="left">Jurassic granitic rocks</td>
-                <td align="left"></td>
+                <td align="left">1</td>
               </tr>
               <tr>
                 <td align="left">Early Proterozoic metamorphic
                 rocks</td>
-                <td align="left"></td>
+                <td align="left">1</td>
               </tr>
               <tr>
                 <td align="left">Early Tertiary to Late Cretaceous
                 muscovite-bearing granitic rocks</td>
-                <td align="left"></td>
+                <td align="left">1</td>
               </tr>
               <tr>
                 <td align="left">Holocene surficial deposits</td>
-                <td align="left"></td>
+                <td align="left">5</td>
               </tr>
               <tr>
                 <td align="left">Middle Miocene to Oligocene sedimentary
                 rocks</td>
-                <td align="left"></td>
+                <td align="left">1</td>
               </tr>
               <tr>
                 <td align="left">Early Pleistocene to latest Pliocene
                 surficial deposits</td>
-                <td align="left"></td>
+                <td align="left">4</td>
               </tr>
               <tr>
                 <td align="left">Middle Proterozoic sedimentary
                 rocks</td>
-                <td align="left"></td>
+                <td align="left">2</td>
               </tr>
               <tr>
                 <td align="left">Middle Proterozoic granitic rocks</td>
-                <td align="left"></td>
+                <td align="left">2</td>
               </tr>
               <tr>
                 <td align="left">Permian to Pennsylvanian sedimentary
                 rocks</td>
-                <td align="left"></td>
+                <td align="left">2</td>
               </tr>
               <tr>
                 <td align="left">Jurassic sedimentary and volcanic
                 rocks</td>
-                <td align="left"></td>
+                <td align="left">3</td>
               </tr>
               <tr>
                 <td align="left">Tertiary to Early Proterozoic gneissic
                 rocks</td>
-                <td align="left"></td>
+                <td align="left">1</td>
               </tr>
               <tr>
                 <td align="left">Holocene river alluvium</td>
-                <td align="left"></td>
+                <td align="left">5</td>
               </tr>
             </tbody>
           </table>
         </table-wrap>
-        <fig id="fig-lith">
-          <caption><p>Figure 6: San Pedro lithology.</p></caption>
-          <graphic mimetype="image" mime-subtype="png" xlink:href="images/SanPedro_Lith.png" />
-        </fig>
-      </sec>
+      </fig>
+      <fig id="fig-lith">
+        <caption><p>Figure 6: San Pedro lithology. Initial lithology
+        suitability estimates provided by Neha on a 1-10 scale, which
+        was subsequently remapped to a 1-5 scale.</p></caption>
+        <graphic mimetype="image" mime-subtype="png" xlink:href="images/SanPedro_Lith.png" />
+      </fig>
     </sec>
     <sec id="soil-type">
       <title>2.1.7 Soil Type</title>
@@ -389,10 +395,10 @@ Methods and analysis closely following Aloui et al.
       at the US-Mexico border. At this time data availability within
       Mexico has not been identified.</p>
       <p>These USGS(?) classifications were assigned an additional
-      suitability classification ranking from 1-10 according to
-      <xref alt="Table 1" rid="tbl-soil">Table 1</xref></p>
+      suitability classification ranking from 1-5 according to
+      <xref alt="Table 2" rid="tbl-soil">Table 2</xref></p>
       <fig id="tbl-soil">
-        <caption><p>Table 1: Soil hydrologic group.</p></caption>
+        <caption><p>Table 2: Soil hydrologic group.</p></caption>
         <table-wrap>
           <table>
             <colgroup>
@@ -480,8 +486,9 @@ Methods and analysis closely following Aloui et al.
       </fig>
       <p><italic>* Full HUC8 study area.</italic></p>
       <fig id="fig-soil">
-        <caption><p>Figure 7: San Pedro soils hydrologic
-        group.</p></caption>
+        <caption><p>Figure 7: San Pedro soils hydrologic group. Initial
+        soil suitability estimates provided by Ryan on a 1-10 scale,
+        which was subsequently remapped to a 1-5 scale.</p></caption>
         <graphic mimetype="image" mime-subtype="png" xlink:href="images/SanPedro_Soil.png" />
       </fig>
     </sec>
@@ -638,6 +645,11 @@ Export.image.toDrive({
       domestic treated sewage, or if the two systems are integrated.
       Additionally, I was not able to locate sewer data from any other
       cities/towns/municipalities in the region.</italic></p>
+      <p><italic>Additionally, this data may be available through
+      Cochise County, but is not publicly available. While it may be
+      possible to reach out to Cochise County representatives to obtain
+      such data, this would not be a scalable approach for the entire
+      state.</italic></p>
       <p><italic>Due to the uncertain nature of the available data, as
       well as it’s limited extent, I am inclined to skip this layer for
       the purposes of this analysis, unless otherwise instructed. I
@@ -645,6 +657,13 @@ Export.image.toDrive({
       sources.</italic></p>
       </boxed-text>
     </sec>
+  </sec>
+  <sec id="flood-suitability-susceptibility">
+    <title>2.2 Flood Suitability (Susceptibility)</title>
+    <p><bold>All thematic layer weighting for initial map directly from
+    Aloui et al.
+    (<xref alt="2024" rid="ref-aloui2024" ref-type="bibr">2024</xref>)
+    and subject to change in latter iterations.</bold></p>
   </sec>
 </sec>
 <sec id="conclusion">

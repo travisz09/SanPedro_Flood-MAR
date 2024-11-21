@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.36">
+<meta name="generator" content="quarto-1.6.37">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Travis Zalesky">
-<meta name="dcterms.date" content="2024-11-18">
+<meta name="dcterms.date" content="2024-11-21">
 <meta name="keywords" content="Arizona Tri University Recharge (ATUR), San Pedro Watershed, Managed Aquifer Recharge, Suitability Analysis">
 
 <title>San Pedro Flood-MAR</title>
@@ -86,7 +86,7 @@ div.csl-indent {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-01c78b5cd655e4cd89133cf59d535862.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-29e2c20b02301cfff04dc8050bf30c7e.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-86e67f1fcd594f562d62505f92e4b4dd.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
@@ -106,10 +106,10 @@ div.csl-indent {
 ">
 <meta name="citation_keywords" content="Arizona Tri University Recharge (ATUR),San Pedro Watershed,Managed Aquifer Recharge,Suitability Analysis">
 <meta name="citation_author" content="Travis Zalesky">
-<meta name="citation_publication_date" content="2024-11-18">
-<meta name="citation_cover_date" content="2024-11-18">
+<meta name="citation_publication_date" content="2024-11-21">
+<meta name="citation_cover_date" content="2024-11-21">
 <meta name="citation_year" content="2024">
-<meta name="citation_online_date" content="2024-11-18">
+<meta name="citation_online_date" content="2024-11-21">
 <meta name="citation_language" content="en">
 <meta name="citation_reference" content="citation_title=Strategies for the development of volcanic hazard maps in monogenetic volcanic fields: The example of La Palma (Canary Islands);,citation_author=José Marrero;,citation_author=Alicia García;,citation_author=Manuel Berrocoso;,citation_author=Ángeles Llinares;,citation_author=Antonio Rodríguez-Losada;,citation_author=R. Ortiz;,citation_publication_date=2019-07;,citation_cover_date=2019-07;,citation_year=2019;,citation_doi=10.1186/s13617-019-0085-5;,citation_volume=8;,citation_journal_title=Journal of Applied Volcanology;">
 <meta name="citation_reference" content="citation_title=Identifying suitable zones for integrated aquifer recharge and flood control in arid qatar using GIS-based multi-criteria decision-making;,citation_author=Sarra Aloui;,citation_author=Adel Zghibi;,citation_author=Annamaria Mazzoni;,citation_author=Adel Elomri;,citation_author=Tareq Al-Ansari;,citation_publication_date=2024-05;,citation_cover_date=2024-05;,citation_year=2024;,citation_doi=10.1016/j.gsd.2024.101137;,citation_issn=2352-801X;,citation_volume=25;,citation_journal_title=Groundwater for Sustainable Development;">
@@ -146,7 +146,7 @@ div.csl-indent {
                 <div>
             <div class="quarto-title-meta-heading">Published</div>
             <div class="quarto-title-meta-contents">
-              <p class="date">November 18, 2024</p>
+              <p class="date">November 21, 2024</p>
             </div>
           </div>
           
@@ -186,6 +186,7 @@ div.csl-indent {
   <li><a href="#sec-data-methods" id="toc-sec-data-methods" class="nav-link" data-scroll-target="#sec-data-methods"><span class="header-section-number">2</span> Data &amp; Methods</a>
   <ul class="collapse">
   <li><a href="#thematic-layers" id="toc-thematic-layers" class="nav-link" data-scroll-target="#thematic-layers"><span class="header-section-number">2.1</span> Thematic Layers</a></li>
+  <li><a href="#flood-suitability-susceptibility" id="toc-flood-suitability-susceptibility" class="nav-link" data-scroll-target="#flood-suitability-susceptibility"><span class="header-section-number">2.2</span> Flood Suitability (Susceptibility)</a></li>
   </ul></li>
   <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion"><span class="header-section-number">3</span> Conclusion</a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
@@ -255,28 +256,14 @@ Figure&nbsp;3: San Pedro slope.
 </section>
 <section id="lineament-density" class="level4" data-number="2.1.3">
 <h4 data-number="2.1.3" class="anchored" data-anchor-id="lineament-density"><span class="header-section-number">2.1.3</span> Lineament Density</h4>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><em>Section may be more properly titled</em> Fault Density<em>.</em></p>
-</div>
-</div>
 <p>Lineaments such as faults and fractures fundamentally influence water flow dynamics (<strong>CITATION NEEDED</strong>).</p>
-<p>Lineaments were obtained from the combination of two data sources, the AZ State Geologic Map (<strong>DATA CITATION</strong>) and the USGS Faults of Arizona maps (<strong>DATA CITATION</strong>). <em>Additional details about how the data was “merged” (<strong>Ryan</strong>)…</em></p>
-<p>As with the Lithology layer (see below), the faults data layer ends abruptly at the US-Mexico border.</p>
-<p>Fault density was calculated as line density in Km of fault per Km², using a 1Km search kernel.</p>
-<p>See <span class="citation" data-cites="aloui2024">Aloui et al. (<a href="#ref-aloui2024" role="doc-biblioref">2024</a>)</span> section 3.1.3 Lineament density (LD) for additional methods on generating lineament features from a DEM.</p>
+<p>Lineament density derived from the SRTM layer by application of a mean filter with circular radius of 100 m. This smoothed raster was then subtracted from the original SRTM to create a topographic position index (TPI). The TPI image was then imported into Catalyst (<strong>PCI GEOMATICA SOFTWARE CITATION</strong>) where a segment tracing line algorithm was performed. Roads and stream flowlines were then buffered and subsequently erased from the lineaments, leaving natural faults and other geographic features. Additional details on lineament generation (<strong>Ryan</strong>).</p>
+<p>As with the Lithology layer (see below), the lineaments data layer ends abruptly at the US-Mexico border.</p>
+<p>Lineament density was calculated as line density in Km of fault per Km², using a 1Km search kernel.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="images/SanPedro_Faults.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="San Pedro fault density. Line density calculated using a 1 Km search kernel."><img src="images/SanPedro_Faults.png" class="img-fluid figure-img" alt="San Pedro fault density. Line density calculated using a 1 Km search kernel."></a></p>
-<figcaption>San Pedro fault density. Line density calculated using a 1 Km search kernel.</figcaption>
+<p><a href="images/SanPedro_Lineaments.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="San Pedro lineament density. Line density calculated using a 1 Km search kernel."><img src="images/SanPedro_Lineaments.png" class="img-fluid figure-img" alt="San Pedro lineament density. Line density calculated using a 1 Km search kernel."></a></p>
+<figcaption>San Pedro lineament density. Line density calculated using a 1 Km search kernel.</figcaption>
 </figure>
 </div>
 </section>
@@ -327,9 +314,26 @@ Figure&nbsp;5: San Pedro average annual precipitation. Derived from OSU PRISM 30
 <h4 data-number="2.1.6" class="anchored" data-anchor-id="lithology"><span class="header-section-number">2.1.6</span> Lithology</h4>
 <p>The characteristics of surface rock profoundly impact recharge, as the primary factor governing permeability (<strong>CITATION NEEDED</strong>).</p>
 <p>Lithology data from the USGS State Geologic Map Compilation (<strong>DATA CITATION</strong>). Depending on how the geologic units are defined (i.e.&nbsp;by “Unit Name”, primary, secondary, tertiary lithology, or combination) there are upwards of 25 distinct geologic units which must be classified. The USGS SGMC terminates at the US-Mexico border, and it is not clear if any relevant data within Mexico can be located. The extent of the uncovered portion of the watershed is approximately 1,800 Km², representing roughly 16% of the total area.</p>
-<section id="please-advise" class="level5" data-number="2.1.6.1">
-<h5 data-number="2.1.6.1" class="anchored" data-anchor-id="please-advise"><span class="header-section-number">2.1.6.1</span> <strong>PLEASE ADVISE!</strong></h5>
-<table class="caption-top table">
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>This method of classification, already arduous for San Pedro, with 25 unique categories, will not be scalable to the broader study area (245 unique categories). It would be advisable to alter this classification to “GENERALIZE” (19 unique categories), or some other classification schema TBD.</strong></p>
+</div>
+</div>
+<div id="tbl-lith" class="striped quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-lith-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1: Lithology.
+</figcaption>
+<div aria-describedby="tbl-lith-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="table-striped caption-top table">
 <colgroup>
 <col style="width: 67%">
 <col style="width: 32%">
@@ -337,123 +341,125 @@ Figure&nbsp;5: San Pedro average annual precipitation. Derived from OSU PRISM 30
 <thead>
 <tr class="header">
 <th style="text-align: left;">Geologic Unit Name</th>
-<th style="text-align: left;">Suitability Classification (1-10)</th>
+<th style="text-align: left;">Suitability Classification (1-5)</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">Early Proterozoic granitic rocks</td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;">1</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Quaternary surficial deposits, undivided</td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;">5</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Early Proterozoic metasedimentary rocks</td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;">2</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Pliocene to middle Miocene deposits</td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;">4</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Early Tertiary to Late Cretaceous granitic rocks</td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;">3</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Middle Proterozoic diabase</td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;">1</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Cretaceous to Late Jurassic sedimentary rocks with minor volcanic rocks</td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;">3</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Mississippian, Devonian, and Cambrian sedimentary rocks</td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;">2</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Paleozoic sedimentary rocks</td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;">2</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Early Tertiary to Late Cretaceous volcanic rocks</td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;">3</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Jurassic volcanic rocks</td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;">2</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Middle Miocene to Oligocene granitic rocks</td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;">1</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Middle Miocene to Oligocene volcanic rocks</td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;">2</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Jurassic granitic rocks</td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;">1</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Early Proterozoic metamorphic rocks</td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;">1</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Early Tertiary to Late Cretaceous muscovite-bearing granitic rocks</td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;">1</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Holocene surficial deposits</td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;">5</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Middle Miocene to Oligocene sedimentary rocks</td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;">1</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Early Pleistocene to latest Pliocene surficial deposits</td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;">4</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Middle Proterozoic sedimentary rocks</td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;">2</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Middle Proterozoic granitic rocks</td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;">2</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Permian to Pennsylvanian sedimentary rocks</td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;">2</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Jurassic sedimentary and volcanic rocks</td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;">3</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Tertiary to Early Proterozoic gneissic rocks</td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;">1</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Holocene river alluvium</td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;">5</td>
 </tr>
 </tbody>
 </table>
+</div>
+</figure>
+</div>
 <div id="fig-lith" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-lith-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="images/SanPedro_Lith.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="Figure&nbsp;6: San Pedro lithology."><img src="images/SanPedro_Lith.png" class="img-fluid figure-img"></a>
+<a href="images/SanPedro_Lith.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="Figure&nbsp;6: San Pedro lithology. Initial lithology suitability estimates provided by Neha on a 1-10 scale, which was subsequently remapped to a 1-5 scale."><img src="images/SanPedro_Lith.png" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-lith-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;6: San Pedro lithology.
+Figure&nbsp;6: San Pedro lithology. Initial lithology suitability estimates provided by Neha on a 1-10 scale, which was subsequently remapped to a 1-5 scale.
 </figcaption>
 </figure>
 </div>
-</section>
 </section>
 <section id="soil-type" class="level4" data-number="2.1.7">
 <h4 data-number="2.1.7" class="anchored" data-anchor-id="soil-type"><span class="header-section-number">2.1.7</span> Soil Type</h4>
@@ -461,11 +467,11 @@ Figure&nbsp;6: San Pedro lithology.
 <p><strong>Original soil data source unknown. Presumably USGS Soil Survey(?). PLEASE ADVISE!</strong></p>
 <p>Soil type is classified into 1 of 7 soil hydrologic groups… <em>Additional details about classification methods</em></p>
 <p>As with the USGS lithology data, the soils data ends abruptly at the US-Mexico border. At this time data availability within Mexico has not been identified.</p>
-<p>These USGS(?) classifications were assigned an additional suitability classification ranking from 1-10 according to <a href="#tbl-soil" class="quarto-xref">Table&nbsp;1</a></p>
+<p>These USGS(?) classifications were assigned an additional suitability classification ranking from 1-5 according to <a href="#tbl-soil" class="quarto-xref">Table&nbsp;2</a></p>
 <div id="tbl-soil" class="striped quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-soil-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;1: Soil hydrologic group.
+Table&nbsp;2: Soil hydrologic group.
 </figcaption>
 <div aria-describedby="tbl-soil-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="table-striped caption-top table">
@@ -535,10 +541,10 @@ Table&nbsp;1: Soil hydrologic group.
 <div id="fig-soil" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-soil-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="images/SanPedro_Soil.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8" title="Figure&nbsp;7: San Pedro soils hydrologic group."><img src="images/SanPedro_Soil.png" class="img-fluid figure-img"></a>
+<a href="images/SanPedro_Soil.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8" title="Figure&nbsp;7: San Pedro soils hydrologic group. Initial soil suitability estimates provided by Ryan on a 1-10 scale, which was subsequently remapped to a 1-5 scale."><img src="images/SanPedro_Soil.png" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-soil-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;7: San Pedro soils hydrologic group.
+Figure&nbsp;7: San Pedro soils hydrologic group. Initial soil suitability estimates provided by Ryan on a 1-10 scale, which was subsequently remapped to a 1-5 scale.
 </figcaption>
 </figure>
 </div>
@@ -689,10 +695,15 @@ Note
 </div>
 <div class="callout-body-container callout-body">
 <p><em>I was able to locate sewer data for <a href="https://cosvazgis-sierravista.hub.arcgis.com/maps/bd8411bd3f1a485395f057636aa94b09/explore?location=31.560760%2C-110.206043%2C-1.00">Sierra Vista</a>, the largest city in the San Pedro watershed. It is unclear if this layer includes stormwater drains as well as domestic treated sewage, or if the two systems are integrated. Additionally, I was not able to locate sewer data from any other cities/towns/municipalities in the region.</em></p>
+<p><em>Additionally, this data may be available through Cochise County, but is not publicly available. While it may be possible to reach out to Cochise County representatives to obtain such data, this would not be a scalable approach for the entire state.</em></p>
 <p><em>Due to the uncertain nature of the available data, as well as it’s limited extent, I am inclined to skip this layer for the purposes of this analysis, unless otherwise instructed. I remain open to suggestions for additional or alternative data sources.</em></p>
 </div>
 </div>
 </section>
+</section>
+<section id="flood-suitability-susceptibility" class="level3" data-number="2.2">
+<h3 data-number="2.2" class="anchored" data-anchor-id="flood-suitability-susceptibility"><span class="header-section-number">2.2</span> Flood Suitability (Susceptibility)</h3>
+<p><strong>All thematic layer weighting for initial map directly from <span class="citation" data-cites="aloui2024">Aloui et al. (<a href="#ref-aloui2024" role="doc-biblioref">2024</a>)</span> and subject to change in latter iterations.</strong></p>
 </section>
 </section>
 <section id="conclusion" class="level2" data-number="3">
