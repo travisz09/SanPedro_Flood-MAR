@@ -388,27 +388,23 @@ Following extraction from GEE. LULC was classified from 1-5 according to @tbl-lu
 
 #### Categorized Rasters
 
-::: callout-note
-*I've exceeded the git-hub file size limit for this project. These images will be made available through an alternate file-sharing service*
-:::
+![San Pedro elevation classification.](images/SanPedro_ElevClassified.png){#fig-elevClass}
 
-![San Pedro elevation classification.]{#fig-elevClass}
+![San Pedro slope classification.](images/SanPedro_SlopeClassified.png){#fig-slopeClass}
 
-![San Pedro slope classification.]{#fig-slopeClass}
+![San Pedro lineament density classification.](images/SanPedro_LineClassified.png){#fig-lineClass}
 
-![San Pedro lineament density classification.]{#fig-lineClass}
+![San Pedro drainage density classification.](images/SanPedro_DrainClassified.png){#fig-drainClass}
 
-![San Pedro drainage density classification.]{#fig-drainClass}
+![San Pedro precipitation classification.](images/SanPedro_PrecipClassified.png){#fig-precipClass}
 
-![San Pedro precipitation classification.]{#fig-precipClass}
+![San Pedro lithology classification.](images/SanPedro_LithoClassified.png){#fig-lithoClass}
 
-![San Pedro lithology classification.]{#fig-lithoClass}
+![San Pedro soil classification.](images/SanPedro_SoilClassified.png){#fig-soilClass}
 
-![San Pedro soil classification.]{#fig-soilClass}
+![San Pedro NDVI classification.](images/SanPedro_NDVIClassified.png){#fig-ndviClass}
 
-![San Pedro NDVI classification.]{#fig-ndviClass}
-
-![San Pedro land use/cover classification.]{#fig-lulcClass}
+![San Pedro land use/cover classification.](images/SanPedro_LULCClassified.png){#fig-lulcClass}
 
 #### Flood Susceptibility
 
