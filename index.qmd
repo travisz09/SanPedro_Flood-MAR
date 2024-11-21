@@ -261,8 +261,6 @@ Export.image.toDrive({
 #### Land use/land cover
 Infiltration and runoff rates are highly influenced by land cover (**CITATION NEEDED**). ESRI 2020 Global Land Use Land Cover from Sentinel-2 (ESRI LULC) is a 10-m resolution global land cover dataset derived from proprietary machine-learning algorithm run on Sentinel-2 satellite imagery (**DATA CITATION**). ESRI LULC was accessed and clipped to the study area using Google Earth Engine. The pixel resolution was reduced to 30 m.
 
-![San Pedro land cover.](images/SanPedro_LULC.png)
-
 ```default
 // Land Use Land Cover
 // Travis Zalesky
@@ -289,6 +287,25 @@ Export.image.toDrive({
   maxPixels: 1e12
 })
 ```
+Following extraction from GEE. LULC was classified from 1-5 according to @tbl-lulc.
+
+| Category | Suitability |
+|:----------------|---------:|
+| Water | 1 |
+| Trees | 1 |
+| Grass | 3 |
+| Flooded Vegetation | 5 |
+| Crops | 2 |
+| Scrub/Shrub | 3 |
+| Built area | 5 |
+| Bare ground | 4 |
+| Snow Ice | 1 |
+| Clouds | 1 |
+
+: Land use/cover. {#tbl-lulc .striped}
+
+![San Pedro land cover.](images/SanPedro_LULC.png)
+
 
 #### Stormwater Drainage Density
 
@@ -304,7 +321,68 @@ Export.image.toDrive({
 
 ### Flood Suitability (Susceptibility)
 
-**All thematic layer weighting for initial map directly from @aloui2024 and subject to change in latter iterations.**
+**All thematic layer weighting for initial map directly from @aloui2024 and are subject to change in latter iterations.**
+
++-----------+-----------------------------+--------+
+| Layer     | Classification Schema       | Weight*|
++:==========+:============================+=======:+
+|Elevation  | *Quantiles* <br>            |   0.17 |
+|           | 578(min) — 1140 => 5 <br>   |        |
+|           | 1140 — 1307 => 4 <br>       |        |
+|           | 1307 — 1420 => 3 <br>       |        |
+|           | 1420 — 1536 => 2 <br>       |        |
+|           | 1536 — 2876(max) => 1 <br>  |        |
++-----------+-----------------------------+--------+
+|Slope      | *Manual [@aloui2024]* <br>  |   0.11 |
+|           | 0(min) — 2 => 5 <br>        |        |
+|           | 2 — 6 => 4 <br>             |        |
+|           | 6 — 12 => 3 <br>            |        |
+|           | 12 — 18 => 2 <br>           |        |
+|           | 18 — 72.7(max) => 1 <br>    |        |
++-----------+-----------------------------+--------+
+|Lineaments | *Equal Int [@aloui2024]*<br>|   0.04 |
+|           | 0(min) — 0.5 => 5 <br>      |        |
+|           | 0.5 — 1 => 4 <br>           |        |
+|           | 1 — 1.5 => 3 <br>           |        |
+|           | 1.5 — 2 => 2 <br>           |        |
+|           | 2 — 2.6(max) => 1 <br>      |        |
++-----------+-----------------------------+--------+
+|Drainage   | *Equal Int [@aloui2024]*<br>|   0.07 |
+|           | 0(min) — 0.5 => 5 <br>      |        |
+|           | 0.5 — 1 => 4 <br>           |        |
+|           | 1 — 1.5 => 3 <br>           |        |
+|           | 1.5 — 2 => 2 <br>           |        |
+|           | 2 — 7.6(max) => 1 <br>      |        |
++-----------+-----------------------------+--------+
+|Precip     | *Equal Int (br=121mm)* <br> |   0.06 |
+|           | 284.2(min) — 405.1 => 5 <br>|        |
+|           | 405.1 — 525.9 => 4 <br>     |        |
+|           | 525.9 — 647.7 => 3 <br>     |        |
+|           | 647.7 — 767.6 => 2 <br>     |        |
+|           | 767.6 — 888.4(max) => 1 <br>|        |
++-----------+-----------------------------+--------+
+|Lithology  | *Categorical (Neha)* <br>   |   0.09 |
+|           | See @tbl-lith               |        |
++-----------+-----------------------------+--------+
+|Soil       | *Categorical (Ryan)* <br>   |   0.03 |
+|           | See @tbl-soil               |        |
++-----------+-----------------------------+--------+
+|NDVI       | *Equal Int [@aloui2024]*<br>|   0.02 |
+|           | -0.1(min) — 0 => 5 <br>     |        |
+|           | 0 — 0.1 => 4 <br>           |        |
+|           | 0.1 — 0.2 => 3 <br>         |        |
+|           | 0.2 — 0.3 => 2 <br>         |        |
+|           | 0.3 — 0.4(max) => 1 <br>    |        |
++-----------+-----------------------------+--------+
+|LULC       | *Categorical (Travis)* <br> |   0.19 |
+|           | See @tbl-lulc               |        |
++-----------+-----------------------------+--------+
+
+: Flood Susceptibility classification and weighting. {#tbl-flood .striped}
+
+\* Weights total = 0.78 ≠ 1 due to missing "Stormwater Drainage Density" layer.
+
+#### Categorized Rasters
 
 
 
