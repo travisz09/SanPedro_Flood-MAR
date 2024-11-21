@@ -37,6 +37,10 @@ encoding: 'UTF-8'
 
 Please see [Identifying suitable zones for integrated aquifer recharge and flood control in arid Qatar using GIS-based multi-criteria decision-making](https://www.sciencedirect.com/science/article/pii/S2352801X24000602#bib49) [@aloui2024]
 
+::: callout-note
+*All images have been scaled-down to reduce file sized on git-hub. For original, presentation quality graphics, please contact Travis.*
+:::
+
 ### Study Area
 
 ![San Pedro watershed, study area.](images/SanPedro_Reference_Painted.png){#fig-studyArea}
