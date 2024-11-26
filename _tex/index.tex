@@ -277,7 +277,7 @@ suitable zones for integrated aquifer recharge and flood control in arid
 Qatar using GIS-based multi-criteria decision-making} (Aloui et al.,
 2024)
 
-\begin{tcolorbox}[enhanced jigsaw, arc=.35mm, coltitle=black, rightrule=.15mm, colback=white, left=2mm, colbacktitle=quarto-callout-note-color!10!white, opacityback=0, titlerule=0mm, colframe=quarto-callout-note-color-frame, opacitybacktitle=0.6, breakable, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomrule=.15mm, bottomtitle=1mm, toptitle=1mm, toprule=.15mm, leftrule=.75mm]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, arc=.35mm, coltitle=black, toprule=.15mm, toptitle=1mm, bottomtitle=1mm, left=2mm, colframe=quarto-callout-note-color-frame, opacityback=0, bottomrule=.15mm, titlerule=0mm, breakable, leftrule=.75mm, opacitybacktitle=0.6, colback=white]
 
 \emph{All images have been scaled-down to reduce file sized on git-hub.
 For original, presentation quality graphics, please contact Travis.}
@@ -427,7 +427,7 @@ unfortunately it does not cover the entire watershed. The extent of the
 uncovered portion of the watershed is approximately 1,200 Km²,
 representing roughly 12\% of the total area.
 
-\begin{tcolorbox}[enhanced jigsaw, arc=.35mm, coltitle=black, rightrule=.15mm, colback=white, left=2mm, colbacktitle=quarto-callout-note-color!10!white, opacityback=0, titlerule=0mm, colframe=quarto-callout-note-color-frame, opacitybacktitle=0.6, breakable, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomrule=.15mm, bottomtitle=1mm, toptitle=1mm, toprule=.15mm, leftrule=.75mm]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, arc=.35mm, coltitle=black, toprule=.15mm, toptitle=1mm, bottomtitle=1mm, left=2mm, colframe=quarto-callout-note-color-frame, opacityback=0, bottomrule=.15mm, titlerule=0mm, breakable, leftrule=.75mm, opacitybacktitle=0.6, colback=white]
 
 \emph{In the San Pedro watershed precipitation is highly correlated with
 elevation. Using a simple linear trend line across the entire watershed
@@ -466,7 +466,7 @@ and it is not clear if any relevant data within Mexico can be located.
 The extent of the uncovered portion of the watershed is approximately
 1,800 Km², representing roughly 16\% of the total area.
 
-\begin{tcolorbox}[enhanced jigsaw, arc=.35mm, coltitle=black, rightrule=.15mm, colback=white, left=2mm, colbacktitle=quarto-callout-warning-color!10!white, opacityback=0, titlerule=0mm, colframe=quarto-callout-warning-color-frame, opacitybacktitle=0.6, breakable, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Warning}, bottomrule=.15mm, bottomtitle=1mm, toptitle=1mm, toprule=.15mm, leftrule=.75mm]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Warning}, colbacktitle=quarto-callout-warning-color!10!white, rightrule=.15mm, arc=.35mm, coltitle=black, toprule=.15mm, toptitle=1mm, bottomtitle=1mm, left=2mm, colframe=quarto-callout-warning-color-frame, opacityback=0, bottomrule=.15mm, titlerule=0mm, breakable, leftrule=.75mm, opacitybacktitle=0.6, colback=white]
 
 \textbf{This method of classification, already arduous for San Pedro,
 with 25 unique categories, will not be scalable to the broader study
@@ -477,14 +477,17 @@ classification schema TBD.}
 \end{tcolorbox}
 
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.6761}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.3239}}@{}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.5106}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.2447}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.2447}}@{}}
 \caption{Lithology.}\label{tbl-lith}\tabularnewline
 \toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\raggedright
 Geologic Unit Name
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Suitability Classification (1-5)
+Flooding Susceptibility
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Recharge Suitability
 \end{minipage} \\
 \midrule\noalign{}
 \endfirsthead
@@ -492,39 +495,41 @@ Suitability Classification (1-5)
 \begin{minipage}[b]{\linewidth}\raggedright
 Geologic Unit Name
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Suitability Classification (1-5)
+Flooding Susceptibility
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Recharge Suitability
 \end{minipage} \\
 \midrule\noalign{}
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-Early Proterozoic granitic rocks & 1 \\
-Quaternary surficial deposits, undivided & 5 \\
-Early Proterozoic metasedimentary rocks & 2 \\
-Pliocene to middle Miocene deposits & 4 \\
-Early Tertiary to Late Cretaceous granitic rocks & 3 \\
-Middle Proterozoic diabase & 1 \\
+Early Proterozoic granitic rocks & 5 & 1 \\
+Quaternary surficial deposits, undivided & 1 & 5 \\
+Early Proterozoic metasedimentary rocks & 4 & 2 \\
+Pliocene to middle Miocene deposits & 2 & 4 \\
+Early Tertiary to Late Cretaceous granitic rocks & 3 & 3 \\
+Middle Proterozoic diabase & 5 & 1 \\
 Cretaceous to Late Jurassic sedimentary rocks with minor volcanic rocks
-& 3 \\
-Mississippian, Devonian, and Cambrian sedimentary rocks & 2 \\
-Paleozoic sedimentary rocks & 2 \\
-Early Tertiary to Late Cretaceous volcanic rocks & 3 \\
-Jurassic volcanic rocks & 2 \\
-Middle Miocene to Oligocene granitic rocks & 1 \\
-Middle Miocene to Oligocene volcanic rocks & 2 \\
-Jurassic granitic rocks & 1 \\
-Early Proterozoic metamorphic rocks & 1 \\
-Early Tertiary to Late Cretaceous muscovite-bearing granitic rocks &
+& 3 & 3 \\
+Mississippian, Devonian, and Cambrian sedimentary rocks & 4 & 2 \\
+Paleozoic sedimentary rocks & 4 & 2 \\
+Early Tertiary to Late Cretaceous volcanic rocks & 3 & 3 \\
+Jurassic volcanic rocks & 4 & 2 \\
+Middle Miocene to Oligocene granitic rocks & 5 & 1 \\
+Middle Miocene to Oligocene volcanic rocks & 4 & 2 \\
+Jurassic granitic rocks & 5 & 1 \\
+Early Proterozoic metamorphic rocks & 5 & 1 \\
+Early Tertiary to Late Cretaceous muscovite-bearing granitic rocks & 5 &
 1 \\
-Holocene surficial deposits & 5 \\
-Middle Miocene to Oligocene sedimentary rocks & 1 \\
-Early Pleistocene to latest Pliocene surficial deposits & 4 \\
-Middle Proterozoic sedimentary rocks & 2 \\
-Middle Proterozoic granitic rocks & 2 \\
-Permian to Pennsylvanian sedimentary rocks & 2 \\
-Jurassic sedimentary and volcanic rocks & 3 \\
-Tertiary to Early Proterozoic gneissic rocks & 1 \\
-Holocene river alluvium & 5 \\
+Holocene surficial deposits & 1 & 5 \\
+Middle Miocene to Oligocene sedimentary rocks & 5 & 1 \\
+Early Pleistocene to latest Pliocene surficial deposits & 2 & 4 \\
+Middle Proterozoic sedimentary rocks & 4 & 2 \\
+Middle Proterozoic granitic rocks & 4 & 2 \\
+Permian to Pennsylvanian sedimentary rocks & 4 & 2 \\
+Jurassic sedimentary and volcanic rocks & 3 & 3 \\
+Tertiary to Early Proterozoic gneissic rocks & 5 & 1 \\
+Holocene river alluvium & 1 & 5 \\
 \end{longtable}
 
 \begin{figure}
@@ -828,7 +833,7 @@ Density}\label{stormwater-drainage-density}
 \textbf{I am unaware of any data availability for this layer. PLEASE
 ADVISE!}
 
-\begin{tcolorbox}[enhanced jigsaw, arc=.35mm, coltitle=black, rightrule=.15mm, colback=white, left=2mm, colbacktitle=quarto-callout-note-color!10!white, opacityback=0, titlerule=0mm, colframe=quarto-callout-note-color-frame, opacitybacktitle=0.6, breakable, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomrule=.15mm, bottomtitle=1mm, toptitle=1mm, toprule=.15mm, leftrule=.75mm]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, arc=.35mm, coltitle=black, toprule=.15mm, toptitle=1mm, bottomtitle=1mm, left=2mm, colframe=quarto-callout-note-color-frame, opacityback=0, bottomrule=.15mm, titlerule=0mm, breakable, leftrule=.75mm, opacitybacktitle=0.6, colback=white]
 
 \emph{I was able to locate sewer data for
 \href{https://cosvazgis-sierravista.hub.arcgis.com/maps/bd8411bd3f1a485395f057636aa94b09/explore?location=31.560760\%2C-110.206043\%2C-1.00}{Sierra
@@ -857,27 +862,62 @@ for additional or alternative data sources.}
 et al. (2024) and are subject to change in latter iterations.}
 
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.1667}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.4167}}
-  >{\raggedleft\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.1250}}@{}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1277}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.3191}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.0957}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1277}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1915}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.0957}}@{}}
 \caption{Flood Susceptibility classification and
 weighting.}\label{tbl-flood}\tabularnewline
 \toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\end{minipage} &
+\multicolumn{2}{>{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.4149} + 2\tabcolsep}}{%
+\begin{minipage}[b]{\linewidth}\raggedright
+Flooding Susceptibility
+\end{minipage}} &
+\multicolumn{3}{>{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.4149} + 4\tabcolsep}@{}}{%
+\begin{minipage}[b]{\linewidth}\raggedright
+Recharge Suitability
+\end{minipage}} \\
 \begin{minipage}[b]{\linewidth}\raggedright
 Layer
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
 Classification Schema
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
 Weight*
+\end{minipage} &
+\multicolumn{2}{>{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.3191} + 2\tabcolsep}}{%
+\begin{minipage}[b]{\linewidth}\raggedright
+Classification Schema
+\end{minipage}} & \begin{minipage}[b]{\linewidth}\raggedright
+Weight*
 \end{minipage} \\
 \midrule\noalign{}
 \endfirsthead
 \toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\raggedright
+\end{minipage} &
+\multicolumn{2}{>{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.4149} + 2\tabcolsep}}{%
+\begin{minipage}[b]{\linewidth}\raggedright
+Flooding Susceptibility
+\end{minipage}} &
+\multicolumn{3}{>{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.4149} + 4\tabcolsep}@{}}{%
+\begin{minipage}[b]{\linewidth}\raggedright
+Recharge Suitability
+\end{minipage}} \\
+\begin{minipage}[b]{\linewidth}\raggedright
 Layer
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
 Classification Schema
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+Weight*
+\end{minipage} &
+\multicolumn{2}{>{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.3191} + 2\tabcolsep}}{%
+\begin{minipage}[b]{\linewidth}\raggedright
+Classification Schema
+\end{minipage}} & \begin{minipage}[b]{\linewidth}\raggedright
 Weight*
 \end{minipage} \\
 \midrule\noalign{}
@@ -886,27 +926,47 @@ Weight*
 \endlastfoot
 Elevation & \emph{Quantiles} 578(min) --- 1140 =\textgreater{} 5 1140
 --- 1307 =\textgreater{} 4 1307 --- 1420 =\textgreater{} 3 1420 --- 1536
-=\textgreater{} 2 1536 --- 2876(max) =\textgreater{} 1 & 0.17 \\
+=\textgreater{} 2 1536 --- 2876(max) =\textgreater{} 1 & 0.17 &
+\multicolumn{2}{>{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.3191} + 2\tabcolsep}}{%
+} & \\
 Slope & \emph{Manual (Aloui et al., 2024)} 0(min) --- 2 =\textgreater{}
 5 2 --- 6 =\textgreater{} 4 6 --- 12 =\textgreater{} 3 12 --- 18
-=\textgreater{} 2 18 --- 72.7(max) =\textgreater{} 1 & 0.11 \\
+=\textgreater{} 2 18 --- 72.7(max) =\textgreater{} 1 & 0.11 &
+\multicolumn{2}{>{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.3191} + 2\tabcolsep}}{%
+} & \\
 Lineaments & \emph{Equal Int (Aloui et al., 2024)} 0(min) --- 0.5
 =\textgreater{} 5 0.5 --- 1 =\textgreater{} 4 1 --- 1.5 =\textgreater{}
-3 1.5 --- 2 =\textgreater{} 2 2 --- 2.6(max) =\textgreater{} 1 & 0.04 \\
+3 1.5 --- 2 =\textgreater{} 2 2 --- 2.6(max) =\textgreater{} 1 & 0.04 &
+\multicolumn{2}{>{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.3191} + 2\tabcolsep}}{%
+} & \\
 Drainage & \emph{Equal Int (Aloui et al., 2024)} 0(min) --- 0.5
 =\textgreater{} 5 0.5 --- 1 =\textgreater{} 4 1 --- 1.5 =\textgreater{}
-3 1.5 --- 2 =\textgreater{} 2 2 --- 7.6(max) =\textgreater{} 1 & 0.07 \\
-Precip & \emph{Equal Int (br=121mm)} 284.2(min) --- 405.1
-=\textgreater{} 5 405.1 --- 525.9 =\textgreater{} 4 525.9 --- 647.7
-=\textgreater{} 3 647.7 --- 767.6 =\textgreater{} 2 767.6 --- 888.4(max)
-=\textgreater{} 1 & 0.06 \\
-Lithology & \emph{Categorical (Neha)} See Table~\ref{tbl-lith} & 0.09 \\
-Soil & \emph{Categorical (Ryan)} See Table~\ref{tbl-soil} & 0.03 \\
+3 1.5 --- 2 =\textgreater{} 2 2 --- 7.6(max) =\textgreater{} 1 & 0.07 &
+\multicolumn{2}{>{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.3191} + 2\tabcolsep}}{%
+} & \\
+Precip & \emph{Equal Int (br=121mm)} 767.6 --- 888.4(max)
+=\textgreater{} 5 647.7 --- 767.6 =\textgreater{} 4 525.9 --- 647.7
+=\textgreater{} 3 405.1 --- 525.9 =\textgreater{} 2 284.2(min) --- 405.1
+=\textgreater{} 1 & 0.06 &
+\multicolumn{2}{>{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.3191} + 2\tabcolsep}}{%
+\emph{Equal Int (br=121mm)} 284.2(min) --- 405.1 =\textgreater{} 5 405.1
+--- 525.9 =\textgreater{} 4 525.9 --- 647.7 =\textgreater{} 3 647.7 ---
+767.6 =\textgreater{} 2 767.6 --- 888.4(max) =\textgreater{} 1 } & \\
+Lithology & \emph{Categorical (Neha)} See Table~\ref{tbl-lith} & 0.09 &
+\multicolumn{2}{>{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.3191} + 2\tabcolsep}}{%
+} & \\
+Soil & \emph{Categorical (Ryan)} See Table~\ref{tbl-soil} & 0.03 &
+\multicolumn{2}{>{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.3191} + 2\tabcolsep}}{%
+} & \\
 NDVI & \emph{Equal Int (Aloui et al., 2024)} -0.1(min) --- 0
 =\textgreater{} 5 0 --- 0.1 =\textgreater{} 4 0.1 --- 0.2
 =\textgreater{} 3 0.2 --- 0.3 =\textgreater{} 2 0.3 --- 0.4(max)
-=\textgreater{} 1 & 0.02 \\
-LULC & \emph{Categorical (Travis)} See Table~\ref{tbl-lulc} & 0.19 \\
+=\textgreater{} 1 & 0.02 &
+\multicolumn{2}{>{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.3191} + 2\tabcolsep}}{%
+} & \\
+LULC & \emph{Categorical (Travis)} See Table~\ref{tbl-lulc} & 0.19 &
+\multicolumn{2}{>{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.3191} + 2\tabcolsep}}{%
+} & \\
 \end{longtable}
 
 * Weights total = 0.78 ≠ 1 due to missing ``Stormwater Drainage

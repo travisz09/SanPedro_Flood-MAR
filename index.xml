@@ -248,131 +248,158 @@ Methods and analysis closely following Aloui et al.
         <table-wrap>
           <table>
             <colgroup>
-              <col width="68%" />
-              <col width="32%" />
+              <col width="51%" />
+              <col width="24%" />
+              <col width="24%" />
             </colgroup>
             <thead>
               <tr>
                 <th align="left">Geologic Unit Name</th>
-                <th align="left">Suitability Classification (1-5)</th>
+                <th align="left">Flooding Susceptibility</th>
+                <th align="left">Recharge Suitability</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td align="left">Early Proterozoic granitic rocks</td>
+                <td align="left">5</td>
                 <td align="left">1</td>
               </tr>
               <tr>
                 <td align="left">Quaternary surficial deposits,
                 undivided</td>
+                <td align="left">1</td>
                 <td align="left">5</td>
               </tr>
               <tr>
                 <td align="left">Early Proterozoic metasedimentary
                 rocks</td>
+                <td align="left">4</td>
                 <td align="left">2</td>
               </tr>
               <tr>
                 <td align="left">Pliocene to middle Miocene
                 deposits</td>
+                <td align="left">2</td>
                 <td align="left">4</td>
               </tr>
               <tr>
                 <td align="left">Early Tertiary to Late Cretaceous
                 granitic rocks</td>
                 <td align="left">3</td>
+                <td align="left">3</td>
               </tr>
               <tr>
                 <td align="left">Middle Proterozoic diabase</td>
+                <td align="left">5</td>
                 <td align="left">1</td>
               </tr>
               <tr>
                 <td align="left">Cretaceous to Late Jurassic sedimentary
                 rocks with minor volcanic rocks</td>
                 <td align="left">3</td>
+                <td align="left">3</td>
               </tr>
               <tr>
                 <td align="left">Mississippian, Devonian, and Cambrian
                 sedimentary rocks</td>
+                <td align="left">4</td>
                 <td align="left">2</td>
               </tr>
               <tr>
                 <td align="left">Paleozoic sedimentary rocks</td>
+                <td align="left">4</td>
                 <td align="left">2</td>
               </tr>
               <tr>
                 <td align="left">Early Tertiary to Late Cretaceous
                 volcanic rocks</td>
                 <td align="left">3</td>
+                <td align="left">3</td>
               </tr>
               <tr>
                 <td align="left">Jurassic volcanic rocks</td>
+                <td align="left">4</td>
                 <td align="left">2</td>
               </tr>
               <tr>
                 <td align="left">Middle Miocene to Oligocene granitic
                 rocks</td>
+                <td align="left">5</td>
                 <td align="left">1</td>
               </tr>
               <tr>
                 <td align="left">Middle Miocene to Oligocene volcanic
                 rocks</td>
+                <td align="left">4</td>
                 <td align="left">2</td>
               </tr>
               <tr>
                 <td align="left">Jurassic granitic rocks</td>
+                <td align="left">5</td>
                 <td align="left">1</td>
               </tr>
               <tr>
                 <td align="left">Early Proterozoic metamorphic
                 rocks</td>
+                <td align="left">5</td>
                 <td align="left">1</td>
               </tr>
               <tr>
                 <td align="left">Early Tertiary to Late Cretaceous
                 muscovite-bearing granitic rocks</td>
+                <td align="left">5</td>
                 <td align="left">1</td>
               </tr>
               <tr>
                 <td align="left">Holocene surficial deposits</td>
+                <td align="left">1</td>
                 <td align="left">5</td>
               </tr>
               <tr>
                 <td align="left">Middle Miocene to Oligocene sedimentary
                 rocks</td>
+                <td align="left">5</td>
                 <td align="left">1</td>
               </tr>
               <tr>
                 <td align="left">Early Pleistocene to latest Pliocene
                 surficial deposits</td>
+                <td align="left">2</td>
                 <td align="left">4</td>
               </tr>
               <tr>
                 <td align="left">Middle Proterozoic sedimentary
                 rocks</td>
+                <td align="left">4</td>
                 <td align="left">2</td>
               </tr>
               <tr>
                 <td align="left">Middle Proterozoic granitic rocks</td>
+                <td align="left">4</td>
                 <td align="left">2</td>
               </tr>
               <tr>
                 <td align="left">Permian to Pennsylvanian sedimentary
                 rocks</td>
+                <td align="left">4</td>
                 <td align="left">2</td>
               </tr>
               <tr>
                 <td align="left">Jurassic sedimentary and volcanic
                 rocks</td>
                 <td align="left">3</td>
+                <td align="left">3</td>
               </tr>
               <tr>
                 <td align="left">Tertiary to Early Proterozoic gneissic
                 rocks</td>
+                <td align="left">5</td>
                 <td align="left">1</td>
               </tr>
               <tr>
                 <td align="left">Holocene river alluvium</td>
+                <td align="left">1</td>
                 <td align="left">5</td>
               </tr>
             </tbody>
@@ -734,15 +761,25 @@ Export.image.toDrive({
       <table-wrap>
         <table>
           <colgroup>
-            <col width="17%" />
-            <col width="42%" />
-            <col width="12%" />
+            <col width="13%" />
+            <col width="32%" />
+            <col width="10%" />
+            <col width="13%" />
+            <col width="19%" />
+            <col width="10%" />
           </colgroup>
           <thead>
+            <tr>
+              <th align="left"></th>
+              <th align="left" colspan="2">Flooding Susceptibility</th>
+              <th align="left" colspan="3">Recharge Suitability</th>
+            </tr>
             <tr>
               <th align="left">Layer</th>
               <th align="left">Classification Schema</th>
               <th align="right">Weight*</th>
+              <th align="left" colspan="2">Classification Schema</th>
+              <th>Weight*</th>
             </tr>
           </thead>
           <tbody>
@@ -752,6 +789,8 @@ Export.image.toDrive({
               1140 =&gt; 5 1140 — 1307 =&gt; 4 1307 — 1420 =&gt; 3 1420
               — 1536 =&gt; 2 1536 — 2876(max) =&gt; 1 </td>
               <td align="right">0.17</td>
+              <td align="left" colspan="2"></td>
+              <td></td>
             </tr>
             <tr>
               <td align="left">Slope</td>
@@ -761,6 +800,8 @@ Export.image.toDrive({
               =&gt; 4 6 — 12 =&gt; 3 12 — 18 =&gt; 2 18 — 72.7(max)
               =&gt; 1 </td>
               <td align="right">0.11</td>
+              <td align="left" colspan="2"></td>
+              <td></td>
             </tr>
             <tr>
               <td align="left">Lineaments</td>
@@ -770,6 +811,8 @@ Export.image.toDrive({
               =&gt; 4 1 — 1.5 =&gt; 3 1.5 — 2 =&gt; 2 2 — 2.6(max) =&gt;
               1 </td>
               <td align="right">0.04</td>
+              <td align="left" colspan="2"></td>
+              <td></td>
             </tr>
             <tr>
               <td align="left">Drainage</td>
@@ -779,26 +822,37 @@ Export.image.toDrive({
               =&gt; 4 1 — 1.5 =&gt; 3 1.5 — 2 =&gt; 2 2 — 7.6(max) =&gt;
               1 </td>
               <td align="right">0.07</td>
+              <td align="left" colspan="2"></td>
+              <td></td>
             </tr>
             <tr>
               <td align="left">Precip</td>
               <td align="left"><italic>Equal Int (br=121mm)</italic>
-              284.2(min) — 405.1 =&gt; 5 405.1 — 525.9 =&gt; 4 525.9 —
-              647.7 =&gt; 3 647.7 — 767.6 =&gt; 2 767.6 — 888.4(max)
+              767.6 — 888.4(max) =&gt; 5 647.7 — 767.6 =&gt; 4 525.9 —
+              647.7 =&gt; 3 405.1 — 525.9 =&gt; 2 284.2(min) — 405.1
               =&gt; 1 </td>
               <td align="right">0.06</td>
+              <td align="left" colspan="2"><italic>Equal Int
+              (br=121mm)</italic> 284.2(min) — 405.1 =&gt; 5 405.1 —
+              525.9 =&gt; 4 525.9 — 647.7 =&gt; 3 647.7 — 767.6 =&gt; 2
+              767.6 — 888.4(max) =&gt; 1 </td>
+              <td></td>
             </tr>
             <tr>
               <td align="left">Lithology</td>
               <td align="left"><italic>Categorical (Neha)</italic> See
               <xref alt="Table 1" rid="tbl-lith">Table 1</xref></td>
               <td align="right">0.09</td>
+              <td align="left" colspan="2"></td>
+              <td></td>
             </tr>
             <tr>
               <td align="left">Soil</td>
               <td align="left"><italic>Categorical (Ryan)</italic> See
               <xref alt="Table 2" rid="tbl-soil">Table 2</xref></td>
               <td align="right">0.03</td>
+              <td align="left" colspan="2"></td>
+              <td></td>
             </tr>
             <tr>
               <td align="left">NDVI</td>
@@ -808,12 +862,16 @@ Export.image.toDrive({
               0.1 =&gt; 4 0.1 — 0.2 =&gt; 3 0.2 — 0.3 =&gt; 2 0.3 —
               0.4(max) =&gt; 1 </td>
               <td align="right">0.02</td>
+              <td align="left" colspan="2"></td>
+              <td></td>
             </tr>
             <tr>
               <td align="left">LULC</td>
               <td align="left"><italic>Categorical (Travis)</italic> See
               <xref alt="Table 3" rid="tbl-lulc">Table 3</xref></td>
               <td align="right">0.19</td>
+              <td align="left" colspan="2"></td>
+              <td></td>
             </tr>
           </tbody>
         </table>
