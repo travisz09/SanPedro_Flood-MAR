@@ -109,33 +109,33 @@ Lithology data from the USGS State Geologic Map Compilation (**DATA CITATION**).
 **This method of classification, already arduous for San Pedro, with 25 unique categories, will not be scalable to the broader study area (245 unique categories). It would be advisable to alter this classification to "GENERALIZE" (19 unique categories), or some other classification schema TBD.**
 :::
 
-| Geologic Unit Name | Suitability Classification (1-5) |
-|:-----------------------------------------------|:----------------------|
-| Early Proterozoic granitic rocks | 1 |
-| Quaternary surficial deposits, undivided | 5 |
-| Early Proterozoic metasedimentary rocks | 2 |
-| Pliocene to middle Miocene deposits | 4 |
-| Early Tertiary to Late Cretaceous granitic rocks | 3 |
-| Middle Proterozoic diabase | 1 |
-| Cretaceous to Late Jurassic sedimentary rocks with minor volcanic rocks | 3 |
-| Mississippian, Devonian, and Cambrian sedimentary rocks | 2 |
-| Paleozoic sedimentary rocks | 2 |
-| Early Tertiary to Late Cretaceous volcanic rocks | 3 |
-| Jurassic volcanic rocks | 2 |
-| Middle Miocene to Oligocene granitic rocks | 1 |
-| Middle Miocene to Oligocene volcanic rocks | 2 |
-| Jurassic granitic rocks | 1 |
-| Early Proterozoic metamorphic rocks | 1 |
-| Early Tertiary to Late Cretaceous muscovite-bearing granitic rocks | 1 |
-| Holocene surficial deposits | 5 |
-| Middle Miocene to Oligocene sedimentary rocks | 1 |
-| Early Pleistocene to latest Pliocene surficial deposits | 4 |
-| Middle Proterozoic sedimentary rocks | 2 |
-| Middle Proterozoic granitic rocks | 2 |
-| Permian to Pennsylvanian sedimentary rocks | 2 |
-| Jurassic sedimentary and volcanic rocks | 3 |
-| Tertiary to Early Proterozoic gneissic rocks | 1 |
-| Holocene river alluvium | 5 |
+| Geologic Unit Name | Flooding Susceptibility | Recharge Suitability
+|:-----------------------------------------------|:----------------------|:----------------------|
+| Early Proterozoic granitic rocks | 5 | 1 |
+| Quaternary surficial deposits, undivided | 1 | 5 |
+| Early Proterozoic metasedimentary rocks | 4 | 2 |
+| Pliocene to middle Miocene deposits | 2 | 4 |
+| Early Tertiary to Late Cretaceous granitic rocks | 3 | 3 |
+| Middle Proterozoic diabase | 5 | 1 |
+| Cretaceous to Late Jurassic sedimentary rocks with minor volcanic rocks | 3 | 3 |
+| Mississippian, Devonian, and Cambrian sedimentary rocks | 4 | 2 |
+| Paleozoic sedimentary rocks | 4 | 2 |
+| Early Tertiary to Late Cretaceous volcanic rocks | 3 | 3 |
+| Jurassic volcanic rocks | 4 | 2 |
+| Middle Miocene to Oligocene granitic rocks | 5 | 1 |
+| Middle Miocene to Oligocene volcanic rocks | 4 | 2 |
+| Jurassic granitic rocks | 5 | 1 |
+| Early Proterozoic metamorphic rocks | 5 | 1 |
+| Early Tertiary to Late Cretaceous muscovite-bearing granitic rocks | 5 | 1 |
+| Holocene surficial deposits | 1 | 5 |
+| Middle Miocene to Oligocene sedimentary rocks | 5 | 1 |
+| Early Pleistocene to latest Pliocene surficial deposits | 2 | 4 |
+| Middle Proterozoic sedimentary rocks | 4 | 2 |
+| Middle Proterozoic granitic rocks | 4 | 2 |
+| Permian to Pennsylvanian sedimentary rocks | 4 | 2 |
+| Jurassic sedimentary and volcanic rocks | 3 | 3 |
+| Tertiary to Early Proterozoic gneissic rocks | 5 | 1 |
+| Holocene river alluvium | 1 | 5 |
 
 : Lithology. {#tbl-lith .striped}
 
@@ -327,60 +327,62 @@ Following extraction from GEE. LULC was classified from 1-5 according to @tbl-lu
 
 **All thematic layer weighting for initial map directly from @aloui2024 and are subject to change in latter iterations.**
 
-+-----------+-----------------------------+--------+
-| Layer     | Classification Schema       | Weight*|
-+:==========+:============================+=======:+
-|Elevation  | *Quantiles* <br>            |   0.17 |
-|           | 578(min) — 1140 => 5 <br>   |        |
-|           | 1140 — 1307 => 4 <br>       |        |
-|           | 1307 — 1420 => 3 <br>       |        |
-|           | 1420 — 1536 => 2 <br>       |        |
-|           | 1536 — 2876(max) => 1 <br>  |        |
-+-----------+-----------------------------+--------+
-|Slope      | *Manual [@aloui2024]* <br>  |   0.11 |
-|           | 0(min) — 2 => 5 <br>        |        |
-|           | 2 — 6 => 4 <br>             |        |
-|           | 6 — 12 => 3 <br>            |        |
-|           | 12 — 18 => 2 <br>           |        |
-|           | 18 — 72.7(max) => 1 <br>    |        |
-+-----------+-----------------------------+--------+
-|Lineaments | *Equal Int [@aloui2024]*<br>|   0.04 |
-|           | 0(min) — 0.5 => 5 <br>      |        |
-|           | 0.5 — 1 => 4 <br>           |        |
-|           | 1 — 1.5 => 3 <br>           |        |
-|           | 1.5 — 2 => 2 <br>           |        |
-|           | 2 — 2.6(max) => 1 <br>      |        |
-+-----------+-----------------------------+--------+
-|Drainage   | *Equal Int [@aloui2024]*<br>|   0.07 |
-|           | 0(min) — 0.5 => 5 <br>      |        |
-|           | 0.5 — 1 => 4 <br>           |        |
-|           | 1 — 1.5 => 3 <br>           |        |
-|           | 1.5 — 2 => 2 <br>           |        |
-|           | 2 — 7.6(max) => 1 <br>      |        |
-+-----------+-----------------------------+--------+
-|Precip     | *Equal Int (br=121mm)* <br> |   0.06 |
-|           | 284.2(min) — 405.1 => 5 <br>|        |
-|           | 405.1 — 525.9 => 4 <br>     |        |
-|           | 525.9 — 647.7 => 3 <br>     |        |
-|           | 647.7 — 767.6 => 2 <br>     |        |
-|           | 767.6 — 888.4(max) => 1 <br>|        |
-+-----------+-----------------------------+--------+
-|Lithology  | *Categorical (Neha)* <br>   |   0.09 |
-|           | See @tbl-lith               |        |
-+-----------+-----------------------------+--------+
-|Soil       | *Categorical (Ryan)* <br>   |   0.03 |
-|           | See @tbl-soil               |        |
-+-----------+-----------------------------+--------+
-|NDVI       | *Equal Int [@aloui2024]*<br>|   0.02 |
-|           | -0.1(min) — 0 => 5 <br>     |        |
-|           | 0 — 0.1 => 4 <br>           |        |
-|           | 0.1 — 0.2 => 3 <br>         |        |
-|           | 0.2 — 0.3 => 2 <br>         |        |
-|           | 0.3 — 0.4(max) => 1 <br>    |        |
-+-----------+-----------------------------+--------+
-|LULC       | *Categorical (Travis)* <br> |   0.19 |
-|           | See @tbl-lulc               |        |
-+-----------+-----------------------------+--------+
++-----------+--------------------------------------+-----------+--------------------------+
+|           |Flooding Susceptibility               |Recharge Suitability                  |
++-----------+-----------------------------+--------+-----------------------------+--------+
+| Layer     | Classification Schema       | Weight*| Classification Schema       | Weight*|
++:==========+:============================+=======:+:============================+=======:+
+|Elevation  | *Quantiles* <br>            |   0.17 |                             |        |
+|           | 578(min) — 1140 => 5 <br>   |        |                             |        |
+|           | 1140 — 1307 => 4 <br>       |        |                             |        |
+|           | 1307 — 1420 => 3 <br>       |        |                             |        |
+|           | 1420 — 1536 => 2 <br>       |        |                             |        |
+|           | 1536 — 2876(max) => 1 <br>  |        |                             |        |
++-----------+-----------------------------+--------+-----------------------------+--------+
+|Slope      | *Manual [@aloui2024]* <br>  |   0.11 |                             |        |
+|           | 0(min) — 2 => 5 <br>        |        |                             |        |
+|           | 2 — 6 => 4 <br>             |        |                             |        |
+|           | 6 — 12 => 3 <br>            |        |                             |        |
+|           | 12 — 18 => 2 <br>           |        |                             |        |
+|           | 18 — 72.7(max) => 1 <br>    |        |                             |        |
++-----------+-----------------------------+--------+-----------------------------+--------+
+|Lineaments | *Equal Int [@aloui2024]*<br>|   0.04 |                             |        |
+|           | 0(min) — 0.5 => 5 <br>      |        |                             |        |
+|           | 0.5 — 1 => 4 <br>           |        |                             |        |
+|           | 1 — 1.5 => 3 <br>           |        |                             |        |
+|           | 1.5 — 2 => 2 <br>           |        |                             |        |
+|           | 2 — 2.6(max) => 1 <br>      |        |                             |        |
++-----------+-----------------------------+--------+-----------------------------+--------+
+|Drainage   | *Equal Int [@aloui2024]*<br>|   0.07 |                             |        |
+|           | 0(min) — 0.5 => 5 <br>      |        |                             |        |
+|           | 0.5 — 1 => 4 <br>           |        |                             |        |
+|           | 1 — 1.5 => 3 <br>           |        |                             |        |
+|           | 1.5 — 2 => 2 <br>           |        |                             |        |
+|           | 2 — 7.6(max) => 1 <br>      |        |                             |        |
++-----------+-----------------------------+--------+-----------------------------+--------+
+|Precip     | *Equal Int (br=121mm)* <br> |   0.06 | *Equal Int (br=121mm)* <br> |        |
+|           | 767.6 — 888.4(max) => 5 <br>|        | 284.2(min) — 405.1 => 5 <br>|        |
+|           | 647.7 — 767.6 => 4 <br>     |        | 405.1 — 525.9 => 4 <br>     |        |
+|           | 525.9 — 647.7 => 3 <br>     |        | 525.9 — 647.7 => 3 <br>     |        |
+|           | 405.1 — 525.9 => 2 <br>     |        | 647.7 — 767.6 => 2 <br>     |        |
+|           | 284.2(min) — 405.1 => 1 <br>|        | 767.6 — 888.4(max) => 1 <br>|        |
++-----------+-----------------------------+--------+-----------------------------+--------+
+|Lithology  | *Categorical (Neha)* <br>   |   0.09 |                             |        |
+|           | See @tbl-lith               |        |                             |        |
++-----------+-----------------------------+--------+-----------------------------+--------+
+|Soil       | *Categorical (Ryan)* <br>   |   0.03 |                             |        |
+|           | See @tbl-soil               |        |                             |        |
++-----------+-----------------------------+--------+-----------------------------+--------+
+|NDVI       | *Equal Int [@aloui2024]*<br>|   0.02 |                             |        |
+|           | -0.1(min) — 0 => 5 <br>     |        |                             |        |
+|           | 0 — 0.1 => 4 <br>           |        |                             |        |
+|           | 0.1 — 0.2 => 3 <br>         |        |                             |        |
+|           | 0.2 — 0.3 => 2 <br>         |        |                             |        |
+|           | 0.3 — 0.4(max) => 1 <br>    |        |                             |        |
++-----------+-----------------------------+--------+-----------------------------+--------+
+|LULC       | *Categorical (Travis)* <br> |   0.19 |                             |        |
+|           | See @tbl-lulc               |        |                             |        |
++-----------+-----------------------------+--------+-----------------------------+--------+
 
 : Flood Susceptibility classification and weighting. {#tbl-flood .striped}
 
