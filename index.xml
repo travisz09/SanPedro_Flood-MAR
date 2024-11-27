@@ -630,7 +630,8 @@ Export.image.toDrive({
   crs: 'EPSG:32612'
 })</code>
       <fig id="fig-ndvi">
-        <caption><p>Figure 8: San Pedro 10-year mean NDVI.</p></caption>
+        <caption><p>Figure 8: San Pedro 10-year mean NDVI
+        (2013—2023).</p></caption>
         <graphic mimetype="image" mime-subtype="png" xlink:href="images/SanPedro_NDVI.png" />
       </fig>
     </sec>
@@ -792,8 +793,8 @@ Export.image.toDrive({
     (<xref alt="2024" rid="ref-aloui2024" ref-type="bibr">2024</xref>)
     and are subject to change in latter iterations.</bold></p>
     <fig id="tbl-classified">
-      <caption><p>Table 4: Flood Susceptibility classification and
-      weighting.</p></caption>
+      <caption><p>Table 4: Flood susceptibility and recharge suitability
+      classification with weighting.</p></caption>
       <table-wrap>
         <table>
           <colgroup>
@@ -833,10 +834,9 @@ Export.image.toDrive({
             </tr>
             <tr>
               <td align="left">Slope (%)</td>
-              <td align="left"><italic>Manual
-              (<xref alt="Aloui et al., 2024" rid="ref-aloui2024" ref-type="bibr">Aloui
-              et al., 2024</xref>)</italic> 0(min) — 2 =&gt; 2 — 6 =&gt;
-              6 — 12 =&gt; 12 — 18 =&gt; 18 — 72.7(max) =&gt; </td>
+              <td align="left"><italic>Manual</italic><sup>†</sup>
+              0(min) — 2 =&gt; 2 — 6 =&gt; 6 — 12 =&gt; 12 — 18 =&gt; 18
+              — 72.7(max) =&gt; </td>
               <td align="right"> 5 4 3 2 1 </td>
               <td align="right">0.11</td>
               <td align="right"> 5 4 3 2 1 </td>
@@ -844,10 +844,9 @@ Export.image.toDrive({
             </tr>
             <tr>
               <td align="left">Lineaments (Km/Km²)</td>
-              <td align="left"><italic>Equal Int
-              (<xref alt="Aloui et al., 2024" rid="ref-aloui2024" ref-type="bibr">Aloui
-              et al., 2024</xref>)</italic> 0(min) — 0.5 =&gt; 0.5 — 1
-              =&gt; 1 — 1.5 =&gt; 1.5 — 2 =&gt; 2 — 2.6(max) =&gt; </td>
+              <td align="left"><italic>Equal Int</italic><sup>†</sup>
+              0(min) — 0.5 =&gt; 0.5 — 1 =&gt; 1 — 1.5 =&gt; 1.5 — 2
+              =&gt; 2 — 2.6(max) =&gt; </td>
               <td align="right"> 5 4 3 2 1 </td>
               <td align="right">0.04</td>
               <td align="right"> 1 2 3 4 5 </td>
@@ -855,11 +854,9 @@ Export.image.toDrive({
             </tr>
             <tr>
               <td align="left">Drainage (Km/Km²)</td>
-              <td align="left"><italic>Equal Int
-              (<xref alt="Aloui et al., 2024" rid="ref-aloui2024" ref-type="bibr">Aloui
-              et al., 2024</xref>)</italic> 0(min) — 0.5 =&gt; 5 0.5 — 1
-              =&gt; 4 1 — 1.5 =&gt; 3 1.5 — 2 =&gt; 2 2 — 7.6(max) =&gt;
-              1 </td>
+              <td align="left"><italic>Equal Int</italic><sup>†</sup>
+              0(min) — 0.5 =&gt; 0.5 — 1 =&gt; 1 — 1.5 =&gt; 1.5 — 2
+              =&gt; 2 — 7.6(max) =&gt; </td>
               <td align="right"> 1 2 3 4 5 </td>
               <td align="right">0.07</td>
               <td align="right"> 5 4 3 2 1 </td>
@@ -868,9 +865,8 @@ Export.image.toDrive({
             <tr>
               <td align="left">Precipitation (mm/year)</td>
               <td align="left"><italic>Equal Int (br=121mm)</italic>
-              284.2(min) — 405.1 =&gt; 1 405.1 — 525.9 =&gt; 2 525.9 —
-              647.7 =&gt; 3 647.7 — 767.6 =&gt; 4 767.6 — 888.4(max)
-              =&gt; 5 </td>
+              284.2(min) — 405.1 =&gt; 405.1 — 525.9 =&gt; 525.9 — 647.7
+              =&gt; 647.7 — 767.6 =&gt; 767.6 — 888.4(max) =&gt; </td>
               <td align="right"> 1 2 3 4 5 </td>
               <td align="right">0.06</td>
               <td align="right"> 1 2 3 4 5 </td>
@@ -878,11 +874,9 @@ Export.image.toDrive({
             </tr>
             <tr>
               <td align="left">NDVI</td>
-              <td align="left"><italic>Equal Int
-              (<xref alt="Aloui et al., 2024" rid="ref-aloui2024" ref-type="bibr">Aloui
-              et al., 2024</xref>)</italic> -0.1(min) — 0 =&gt; 5 0 —
-              0.1 =&gt; 4 0.1 — 0.2 =&gt; 3 0.2 — 0.3 =&gt; 2 0.3 —
-              0.4(max) =&gt; 1 </td>
+              <td align="left"><italic>Equal Int</italic><sup>†</sup>
+              -0.1(min) — 0 =&gt; 0 — 0.1 =&gt; 0.1 — 0.2 =&gt; 0.2 —
+              0.3 =&gt; 0.3 — 0.4(max) =&gt; </td>
               <td align="right"> 5 4 3 2 1 </td>
               <td align="right">0.02</td>
               <td align="right"> 1 2 3 4 5 </td>
@@ -924,70 +918,169 @@ Export.image.toDrive({
     </fig>
     <p>* Weights total = 0.78 and 0.99 respectively, ≠ 1 due to missing
     “Stormwater Drainage Density” layer.</p>
-    <sec id="categorized-rasters">
-      <title>2.2.1 Categorized Rasters</title>
-      <fig id="fig-elevClass">
-        <caption><p>Figure 9: San Pedro elevation
-        classification.</p></caption>
-        <graphic mimetype="image" mime-subtype="png" xlink:href="images/SanPedro_ElevClassified.png" />
-      </fig>
-      <fig id="fig-slopeClass">
-        <caption><p>Figure 10: San Pedro slope
-        classification.</p></caption>
-        <graphic mimetype="image" mime-subtype="png" xlink:href="images/SanPedro_SlopeClassified.png" />
-      </fig>
-      <fig id="fig-lineClass">
-        <caption><p>Figure 11: San Pedro lineament density
-        classification.</p></caption>
-        <graphic mimetype="image" mime-subtype="png" xlink:href="images/SanPedro_LineClassified.png" />
-      </fig>
-      <fig id="fig-drainClass">
-        <caption><p>Figure 12: San Pedro drainage density
-        classification.</p></caption>
-        <graphic mimetype="image" mime-subtype="png" xlink:href="images/SanPedro_DrainClassified.png" />
-      </fig>
-      <fig id="fig-precipClass">
-        <caption><p>Figure 13: San Pedro precipitation
-        classification.</p></caption>
-        <graphic mimetype="image" mime-subtype="png" xlink:href="images/SanPedro_PrecipClassified.png" />
-      </fig>
-      <fig id="fig-lithoClass">
-        <caption><p>Figure 14: San Pedro lithology
-        classification.</p></caption>
-        <graphic mimetype="image" mime-subtype="png" xlink:href="images/SanPedro_LithoClassified.png" />
-      </fig>
-      <fig id="fig-soilClass">
-        <caption><p>Figure 15: San Pedro soil
-        classification.</p></caption>
-        <graphic mimetype="image" mime-subtype="png" xlink:href="images/SanPedro_SoilClassified.png" />
-      </fig>
-      <fig id="fig-ndviClass">
-        <caption><p>Figure 16: San Pedro NDVI
-        classification.</p></caption>
-        <graphic mimetype="image" mime-subtype="png" xlink:href="images/SanPedro_NDVIClassified.png" />
-      </fig>
-      <fig id="fig-lulcClass">
-        <caption><p>Figure 17: San Pedro land use/cover
-        classification.</p></caption>
-        <graphic mimetype="image" mime-subtype="png" xlink:href="images/SanPedro_LULCClassified.png" />
-      </fig>
+    <p><sup>†</sup> Reclassification schema from Aloui et al.
+    (<xref alt="2024" rid="ref-aloui2024" ref-type="bibr">2024</xref>).</p>
+    <sec id="flood-susceptibility-categorized-rasters">
+      <title>2.2.1 Flood Susceptibility Categorized Rasters</title>
+      <sec id="elevation">
+        <title>2.2.1.1 Elevation</title>
+        <fig id="fig-floodElevClass">
+          <caption><p>Figure 9: San Pedro flood susceptibility elevation
+          classification.</p></caption>
+          <graphic mimetype="image" mime-subtype="png" xlink:href="images/FloodSusceptibility/SanPedro_ElevClassified.png" />
+        </fig>
+      </sec>
+      <sec id="slope-1">
+        <title>2.2.1.2 Slope</title>
+        <fig id="fig-floodSlopeClass">
+          <caption><p>Figure 10: San Pedro flood susceptibility slope
+          classification.</p></caption>
+          <graphic mimetype="image" mime-subtype="png" xlink:href="images/FloodSusceptibility/SanPedro_SlopeClassified.png" />
+        </fig>
+      </sec>
+      <sec id="lineament-density-1">
+        <title>2.2.1.3 Lineament Density</title>
+        <fig id="fig-floodLineClass">
+          <caption><p>Figure 11: San Pedro flood susceptibility
+          lineament density classification.</p></caption>
+          <graphic mimetype="image" mime-subtype="png" xlink:href="images/FloodSusceptibility/SanPedro_LineClassified.png" />
+        </fig>
+      </sec>
+      <sec id="drainage-density-1">
+        <title>2.2.1.4 Drainage Density</title>
+        <fig id="fig-floodDrainClass">
+          <caption><p>Figure 12: San Pedro flood susceptibility drainage
+          density classification.</p></caption>
+          <graphic mimetype="image" mime-subtype="png" xlink:href="images/FloodSusceptibility/SanPedro_DrainClassified.png" />
+        </fig>
+      </sec>
+      <sec id="annual-mean-precipitation">
+        <title>2.2.1.5 Annual Mean Precipitation</title>
+        <fig id="fig-floodPrecipClass">
+          <caption><p>Figure 13: San Pedro flood susceptibility
+          precipitation classification.</p></caption>
+          <graphic mimetype="image" mime-subtype="png" xlink:href="images/FloodSusceptibility/SanPedro_PrecipClassified.png" />
+        </fig>
+      </sec>
+      <sec id="lithology-1">
+        <title>2.2.1.6 Lithology</title>
+        <fig id="fig-floodLithoClass">
+          <caption><p>Figure 14: San Pedro flood susceptibility
+          lithology classification.</p></caption>
+          <graphic mimetype="image" mime-subtype="png" xlink:href="images/FloodSusceptibility/SanPedro_LithoClassified.png" />
+        </fig>
+      </sec>
+      <sec id="soil-type-1">
+        <title>2.2.1.7 Soil Type</title>
+        <fig id="fig-floodSoilClass">
+          <caption><p>Figure 15: San Pedro flood susceptibility soil
+          hydrologic group classification.</p></caption>
+          <graphic mimetype="image" mime-subtype="png" xlink:href="images/FloodSusceptibility/SanPedro_SoilClassified.png" />
+        </fig>
+      </sec>
+      <sec id="year-mean-ndvi">
+        <title>2.2.1.8 10-year Mean NDVI</title>
+        <fig id="fig-floodNdviClass">
+          <caption><p>Figure 16: San Pedro flood susceptibility 10-year
+          mean NDVI (2013—2023) classification.</p></caption>
+          <graphic mimetype="image" mime-subtype="png" xlink:href="images/FloodSusceptibility/SanPedro_NDVIClassified.png" />
+        </fig>
+      </sec>
+      <sec id="land-use-land-cover">
+        <title>2.2.1.9 Land Use Land Cover</title>
+        <fig id="fig-floodLulcClass">
+          <caption><p>Figure 17: San Pedro flood susceptibility land
+          use/cover classification.</p></caption>
+          <graphic mimetype="image" mime-subtype="png" xlink:href="images/FloodSusceptibility/SanPedro_LULCClassified.png" />
+        </fig>
+      </sec>
     </sec>
     <sec id="flood-susceptibility">
       <title>2.2.2 Flood Susceptibility</title>
       <fig id="fig-flood">
         <caption><p>Figure 18: San Pedro flood susceptibility
         analysis.</p></caption>
-        <graphic mimetype="image" mime-subtype="png" xlink:href="images/SanPedro_FloodSusceptibility.png" />
+        <graphic mimetype="image" mime-subtype="png" xlink:href="images/FloodSusceptibility/SanPedro_FloodSusceptibility.png" />
       </fig>
     </sec>
   </sec>
   <sec id="recharge-suitability">
     <title>2.3 Recharge Suitability</title>
-    <sec id="categorized-rasters-1">
-      <title>2.3.1 Categorized Rasters</title>
+    <p>See <xref alt="Table 4" rid="tbl-classified">Table 4</xref> for
+    recharge suitability classification schema.</p>
+    <sec id="recharge-suitability-categorized-rasters">
+      <title>2.3.1 Recharge Suitability Categorized Rasters</title>
+      <sec id="elevation-1">
+        <title>2.3.1.1 Elevation</title>
+        <p>Same as
+        <xref alt="Figure 9" rid="fig-floodElevClass">Figure 9</xref>.</p>
+      </sec>
+      <sec id="slope-2">
+        <title>2.3.1.2 Slope</title>
+        <p>Same as
+        <xref alt="Figure 10" rid="fig-floodSlopeClass">Figure 10</xref>.</p>
+      </sec>
+      <sec id="lineament-density-2">
+        <title>2.3.1.3 Lineament Density</title>
+        <fig id="fig-rechLineClass">
+          <caption><p>Figure 19: San Pedro recharge suitability
+          lineament density classification.</p></caption>
+          <graphic mimetype="image" mime-subtype="png" xlink:href="images/RechargeSuitability/SanPedro_LineDClassified.png" />
+        </fig>
+      </sec>
+      <sec id="drainage-density-2">
+        <title>2.3.1.4 Drainage Density</title>
+        <fig id="fig-rechDrainClass">
+          <caption><p>Figure 20: San Pedro recharge suitability drainage
+          density classification.</p></caption>
+          <graphic mimetype="image" mime-subtype="png" xlink:href="images/RechargeSuitability/SanPedro_DrainageDClassified.png" />
+        </fig>
+      </sec>
+      <sec id="annual-mean-precipitation-1">
+        <title>2.3.1.5 Annual Mean Precipitation</title>
+        <p>Same as
+        <xref alt="Figure 13" rid="fig-floodPrecipClass">Figure 13</xref>.</p>
+      </sec>
+      <sec id="lithology-2">
+        <title>2.3.1.6 Lithology</title>
+        <fig id="fig-rechLithoClass">
+          <caption><p>Figure 21: San Pedro recharge suitability
+          lithology classification.</p></caption>
+          <graphic mimetype="image" mime-subtype="png" xlink:href="images/RechargeSuitability/SanPedro_LithoClassified.png" />
+        </fig>
+      </sec>
+      <sec id="soil-type-2">
+        <title>2.3.1.7 Soil Type</title>
+        <fig id="fig-rechSoilClass">
+          <caption><p>Figure 22: San Pedro recharge suitability soil
+          hydrologic group classification.</p></caption>
+          <graphic mimetype="image" mime-subtype="png" xlink:href="images/RechargeSuitability/SanPedro_SoilClassified.png" />
+        </fig>
+      </sec>
+      <sec id="year-mean-ndvi-1">
+        <title>2.3.1.8 10-year Mean NDVI</title>
+        <fig id="fig-rechNdviClass">
+          <caption><p>Figure 23: San Pedro recharge suitability 10-year
+          mean NDVI (2013—2023) classification.</p></caption>
+          <graphic mimetype="image" mime-subtype="png" xlink:href="images/RechargeSuitability/SanPedro_NDVIClassified.png" />
+        </fig>
+      </sec>
+      <sec id="land-use-land-cover-1">
+        <title>2.3.1.9 Land Use Land Cover</title>
+        <fig id="fig-rechLulcClass">
+          <caption><p>Figure 24: San Pedro recharge suitability land
+          use/cover classification.</p></caption>
+          <graphic mimetype="image" mime-subtype="png" xlink:href="images/RechargeSuitability/SanPedro_LULCClassified.png" />
+        </fig>
+      </sec>
     </sec>
     <sec id="recharge-suitability-1">
       <title>2.3.2 Recharge Suitability</title>
+      <fig id="fig-recharge">
+        <caption><p>Figure 25: San Pedro recharge suitability
+        analysis.</p></caption>
+        <graphic mimetype="image" mime-subtype="png" xlink:href="images/RechargeSuitability/SanPedro_RechargeSuitability.png" />
+      </fig>
     </sec>
   </sec>
 </sec>
