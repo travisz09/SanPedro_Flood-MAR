@@ -277,7 +277,7 @@ suitable zones for integrated aquifer recharge and flood control in arid
 Qatar using GIS-based multi-criteria decision-making} (Aloui et al.,
 2024)
 
-\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, opacityback=0, toptitle=1mm, breakable, colbacktitle=quarto-callout-note-color!10!white, left=2mm, rightrule=.15mm, colback=white, coltitle=black, bottomrule=.15mm, arc=.35mm, leftrule=.75mm, opacitybacktitle=0.6, bottomtitle=1mm, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, colframe=quarto-callout-note-color-frame]
+\begin{tcolorbox}[enhanced jigsaw, toptitle=1mm, rightrule=.15mm, colframe=quarto-callout-note-color-frame, opacityback=0, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, breakable, colback=white, toprule=.15mm, titlerule=0mm, bottomrule=.15mm, coltitle=black, arc=.35mm, bottomtitle=1mm, leftrule=.75mm, left=2mm]
 
 \emph{All images have been scaled-down to reduce file sized on git-hub.
 For original, presentation quality graphics, please contact Travis.}
@@ -427,7 +427,7 @@ unfortunately it does not cover the entire watershed. The extent of the
 uncovered portion of the watershed is approximately 1,200 Km²,
 representing roughly 12\% of the total area.
 
-\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, opacityback=0, toptitle=1mm, breakable, colbacktitle=quarto-callout-note-color!10!white, left=2mm, rightrule=.15mm, colback=white, coltitle=black, bottomrule=.15mm, arc=.35mm, leftrule=.75mm, opacitybacktitle=0.6, bottomtitle=1mm, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, colframe=quarto-callout-note-color-frame]
+\begin{tcolorbox}[enhanced jigsaw, toptitle=1mm, rightrule=.15mm, colframe=quarto-callout-note-color-frame, opacityback=0, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, breakable, colback=white, toprule=.15mm, titlerule=0mm, bottomrule=.15mm, coltitle=black, arc=.35mm, bottomtitle=1mm, leftrule=.75mm, left=2mm]
 
 \emph{In the San Pedro watershed precipitation is highly correlated with
 elevation. Using a simple linear trend line across the entire watershed
@@ -466,7 +466,7 @@ and it is not clear if any relevant data within Mexico can be located.
 The extent of the uncovered portion of the watershed is approximately
 1,800 Km², representing roughly 16\% of the total area.
 
-\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, opacityback=0, toptitle=1mm, breakable, colbacktitle=quarto-callout-warning-color!10!white, left=2mm, rightrule=.15mm, colback=white, coltitle=black, bottomrule=.15mm, arc=.35mm, leftrule=.75mm, opacitybacktitle=0.6, bottomtitle=1mm, toprule=.15mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Warning}, colframe=quarto-callout-warning-color-frame]
+\begin{tcolorbox}[enhanced jigsaw, toptitle=1mm, rightrule=.15mm, colframe=quarto-callout-warning-color-frame, opacityback=0, opacitybacktitle=0.6, colbacktitle=quarto-callout-warning-color!10!white, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Warning}, breakable, colback=white, toprule=.15mm, titlerule=0mm, bottomrule=.15mm, coltitle=black, arc=.35mm, bottomtitle=1mm, leftrule=.75mm, left=2mm]
 
 \textbf{This method of classification, already arduous for San Pedro,
 with 25 unique categories, will not be scalable to the broader study
@@ -798,28 +798,48 @@ resolution was reduced to 30 m.
 Following extraction from GEE. LULC was classified from 1-5 according to
 Table~\ref{tbl-lulc}.
 
-\begin{longtable}[]{@{}lrr@{}}
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2683}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2439}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2439}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2439}}@{}}
 \caption{Land use/cover.}\label{tbl-lulc}\tabularnewline
 \toprule\noalign{}
-Category & Flooding Susceptibility & Recharge Suitability \\
+\begin{minipage}[b]{\linewidth}\raggedright
+Category
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+Raster Value
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+Flooding Susceptibility
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+Recharge Suitability
+\end{minipage} \\
 \midrule\noalign{}
 \endfirsthead
 \toprule\noalign{}
-Category & Flooding Susceptibility & Recharge Suitability \\
+\begin{minipage}[b]{\linewidth}\raggedright
+Category
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+Raster Value
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+Flooding Susceptibility
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+Recharge Suitability
+\end{minipage} \\
 \midrule\noalign{}
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-Water & 1 & 5 \\
-Trees & 1 & 4 \\
-Grass & 3 & 3 \\
-Flooded Vegetation & 5 & 5 \\
-Crops & 2 & 3 \\
-Scrub/Shrub & 3 & 3 \\
-Built area & 5 & 1 \\
-Bare ground & 4 & 2 \\
-Snow Ice & 1 & 1 \\
-Clouds & 1 & 1 \\
+Water & 1 & 1 & 5 \\
+Trees & 2 & 1 & 4 \\
+Grass & 3 & 3 & 3 \\
+Flooded Vegetation & 4 & 5 & 5 \\
+Crops & 5 & 2 & 3 \\
+Scrub/Shrub & 6 & 3 & 3 \\
+Built area & 7 & 5 & 1 \\
+Bare ground & 8 & 4 & 2 \\
+Snow Ice & 9 & 1 & 1 \\
+Clouds & 10 & \emph{NULL} & \emph{NULL} \\
 \end{longtable}
 
 \begin{figure}[H]
@@ -838,7 +858,7 @@ Density}\label{stormwater-drainage-density}
 \textbf{I am unaware of any data availability for this layer. PLEASE
 ADVISE!}
 
-\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, opacityback=0, toptitle=1mm, breakable, colbacktitle=quarto-callout-note-color!10!white, left=2mm, rightrule=.15mm, colback=white, coltitle=black, bottomrule=.15mm, arc=.35mm, leftrule=.75mm, opacitybacktitle=0.6, bottomtitle=1mm, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, colframe=quarto-callout-note-color-frame]
+\begin{tcolorbox}[enhanced jigsaw, toptitle=1mm, rightrule=.15mm, colframe=quarto-callout-note-color-frame, opacityback=0, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, breakable, colback=white, toprule=.15mm, titlerule=0mm, bottomrule=.15mm, coltitle=black, arc=.35mm, bottomtitle=1mm, leftrule=.75mm, left=2mm]
 
 \emph{I was able to locate sewer data for
 \href{https://cosvazgis-sierravista.hub.arcgis.com/maps/bd8411bd3f1a485395f057636aa94b09/explore?location=31.560760\%2C-110.206043\%2C-1.00}{Sierra
@@ -874,7 +894,7 @@ et al. (2024) and are subject to change in latter iterations.}
   >{\raggedleft\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.0920}}
   >{\raggedleft\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1149}}@{}}
 \caption{Flood Susceptibility classification and
-weighting.}\label{tbl-flood}\tabularnewline
+weighting.}\label{tbl-classified}\tabularnewline
 \toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\raggedright
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
@@ -1091,6 +1111,12 @@ classification.}
 \caption{\label{fig-flood}San Pedro flood susceptibility analysis.}
 
 \end{figure}%
+
+\subsection{Recharge Suitability}\label{recharge-suitability}
+
+\subsubsection{Categorized Rasters}\label{categorized-rasters-1}
+
+\subsubsection{Recharge Suitability}\label{recharge-suitability-1}
 
 \section{Conclusion}\label{conclusion}
 

@@ -675,9 +675,16 @@ Export.image.toDrive({
         <caption><p>Table 3: Land use/cover.</p></caption>
         <table-wrap>
           <table>
+            <colgroup>
+              <col width="27%" />
+              <col width="24%" />
+              <col width="24%" />
+              <col width="24%" />
+            </colgroup>
             <thead>
               <tr>
                 <th align="left">Category</th>
+                <th align="right">Raster Value</th>
                 <th align="right">Flooding Susceptibility</th>
                 <th align="right">Recharge Suitability</th>
               </tr>
@@ -686,10 +693,12 @@ Export.image.toDrive({
               <tr>
                 <td align="left">Water</td>
                 <td align="right">1</td>
+                <td align="right">1</td>
                 <td align="right">5</td>
               </tr>
               <tr>
                 <td align="left">Trees</td>
+                <td align="right">2</td>
                 <td align="right">1</td>
                 <td align="right">4</td>
               </tr>
@@ -697,41 +706,49 @@ Export.image.toDrive({
                 <td align="left">Grass</td>
                 <td align="right">3</td>
                 <td align="right">3</td>
+                <td align="right">3</td>
               </tr>
               <tr>
                 <td align="left">Flooded Vegetation</td>
+                <td align="right">4</td>
                 <td align="right">5</td>
                 <td align="right">5</td>
               </tr>
               <tr>
                 <td align="left">Crops</td>
+                <td align="right">5</td>
                 <td align="right">2</td>
                 <td align="right">3</td>
               </tr>
               <tr>
                 <td align="left">Scrub/Shrub</td>
+                <td align="right">6</td>
                 <td align="right">3</td>
                 <td align="right">3</td>
               </tr>
               <tr>
                 <td align="left">Built area</td>
+                <td align="right">7</td>
                 <td align="right">5</td>
                 <td align="right">1</td>
               </tr>
               <tr>
                 <td align="left">Bare ground</td>
+                <td align="right">8</td>
                 <td align="right">4</td>
                 <td align="right">2</td>
               </tr>
               <tr>
                 <td align="left">Snow Ice</td>
+                <td align="right">9</td>
                 <td align="right">1</td>
                 <td align="right">1</td>
               </tr>
               <tr>
                 <td align="left">Clouds</td>
-                <td align="right">1</td>
-                <td align="right">1</td>
+                <td align="right">10</td>
+                <td align="right"><italic>NULL</italic></td>
+                <td align="right"><italic>NULL</italic></td>
               </tr>
             </tbody>
           </table>
@@ -774,7 +791,7 @@ Export.image.toDrive({
     Aloui et al.
     (<xref alt="2024" rid="ref-aloui2024" ref-type="bibr">2024</xref>)
     and are subject to change in latter iterations.</bold></p>
-    <fig id="tbl-flood">
+    <fig id="tbl-classified">
       <caption><p>Table 4: Flood Susceptibility classification and
       weighting.</p></caption>
       <table-wrap>
@@ -962,6 +979,15 @@ Export.image.toDrive({
         analysis.</p></caption>
         <graphic mimetype="image" mime-subtype="png" xlink:href="images/SanPedro_FloodSusceptibility.png" />
       </fig>
+    </sec>
+  </sec>
+  <sec id="recharge-suitability">
+    <title>2.3 Recharge Suitability</title>
+    <sec id="categorized-rasters-1">
+      <title>2.3.1 Categorized Rasters</title>
+    </sec>
+    <sec id="recharge-suitability-1">
+      <title>2.3.2 Recharge Suitability</title>
     </sec>
   </sec>
 </sec>

@@ -187,6 +187,7 @@ div.csl-indent {
   <ul class="collapse">
   <li><a href="#thematic-layers" id="toc-thematic-layers" class="nav-link" data-scroll-target="#thematic-layers"><span class="header-section-number">2.1</span> Thematic Layers</a></li>
   <li><a href="#flood-suitability-susceptibility" id="toc-flood-suitability-susceptibility" class="nav-link" data-scroll-target="#flood-suitability-susceptibility"><span class="header-section-number">2.2</span> Flood Suitability (Susceptibility)</a></li>
+  <li><a href="#recharge-suitability" id="toc-recharge-suitability" class="nav-link" data-scroll-target="#recharge-suitability"><span class="header-section-number">2.3</span> Recharge Suitability</a></li>
   </ul></li>
   <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion"><span class="header-section-number">3</span> Conclusion</a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
@@ -731,9 +732,16 @@ Table&nbsp;3: Land use/cover.
 </figcaption>
 <div aria-describedby="tbl-lulc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="table-striped caption-top table">
+<colgroup>
+<col style="width: 26%">
+<col style="width: 24%">
+<col style="width: 24%">
+<col style="width: 24%">
+</colgroup>
 <thead>
 <tr class="header">
 <th style="text-align: left;">Category</th>
+<th style="text-align: right;">Raster Value</th>
 <th style="text-align: right;">Flooding Susceptibility</th>
 <th style="text-align: right;">Recharge Suitability</th>
 </tr>
@@ -742,10 +750,12 @@ Table&nbsp;3: Land use/cover.
 <tr class="odd">
 <td style="text-align: left;">Water</td>
 <td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
 <td style="text-align: right;">5</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Trees</td>
+<td style="text-align: right;">2</td>
 <td style="text-align: right;">1</td>
 <td style="text-align: right;">4</td>
 </tr>
@@ -753,41 +763,49 @@ Table&nbsp;3: Land use/cover.
 <td style="text-align: left;">Grass</td>
 <td style="text-align: right;">3</td>
 <td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Flooded Vegetation</td>
+<td style="text-align: right;">4</td>
 <td style="text-align: right;">5</td>
 <td style="text-align: right;">5</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Crops</td>
+<td style="text-align: right;">5</td>
 <td style="text-align: right;">2</td>
 <td style="text-align: right;">3</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Scrub/Shrub</td>
+<td style="text-align: right;">6</td>
 <td style="text-align: right;">3</td>
 <td style="text-align: right;">3</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Built area</td>
+<td style="text-align: right;">7</td>
 <td style="text-align: right;">5</td>
 <td style="text-align: right;">1</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Bare ground</td>
+<td style="text-align: right;">8</td>
 <td style="text-align: right;">4</td>
 <td style="text-align: right;">2</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Snow Ice</td>
+<td style="text-align: right;">9</td>
 <td style="text-align: right;">1</td>
 <td style="text-align: right;">1</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Clouds</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">1</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;"><em>NULL</em></td>
+<td style="text-align: right;"><em>NULL</em></td>
 </tr>
 </tbody>
 </table>
@@ -824,12 +842,12 @@ Note
 <section id="flood-suitability-susceptibility" class="level3" data-number="2.2">
 <h3 data-number="2.2" class="anchored" data-anchor-id="flood-suitability-susceptibility"><span class="header-section-number">2.2</span> Flood Suitability (Susceptibility)</h3>
 <p><strong>All thematic layer weighting for initial map directly from <span class="citation" data-cites="aloui2024">Aloui et al. (<a href="#ref-aloui2024" role="doc-biblioref">2024</a>)</span> and are subject to change in latter iterations.</strong></p>
-<div id="tbl-flood" class="striped quarto-float quarto-figure quarto-figure-center anchored">
+<div id="tbl-classified" class="striped quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-flood-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-classified-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Table&nbsp;4: Flood Susceptibility classification and weighting.
 </figcaption>
-<div aria-describedby="tbl-flood-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div aria-describedby="tbl-classified-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="table-striped caption-top table">
 <colgroup>
 <col style="width: 16%">
@@ -1039,6 +1057,15 @@ Figure&nbsp;18: San Pedro flood susceptibility analysis.
 </figcaption>
 </figure>
 </div>
+</section>
+</section>
+<section id="recharge-suitability" class="level3" data-number="2.3">
+<h3 data-number="2.3" class="anchored" data-anchor-id="recharge-suitability"><span class="header-section-number">2.3</span> Recharge Suitability</h3>
+<section id="categorized-rasters-1" class="level4" data-number="2.3.1">
+<h4 data-number="2.3.1" class="anchored" data-anchor-id="categorized-rasters-1"><span class="header-section-number">2.3.1</span> Categorized Rasters</h4>
+</section>
+<section id="recharge-suitability-1" class="level4" data-number="2.3.2">
+<h4 data-number="2.3.2" class="anchored" data-anchor-id="recharge-suitability-1"><span class="header-section-number">2.3.2</span> Recharge Suitability</h4>
 </section>
 </section>
 </section>
