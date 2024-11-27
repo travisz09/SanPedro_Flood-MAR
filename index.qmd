@@ -293,18 +293,18 @@ Export.image.toDrive({
 ```
 Following extraction from GEE. LULC was classified from 1-5 according to @tbl-lulc.
 
-| Category | Flooding Susceptibility | Recharge Suitability |
-|:----------------|---------:|---------:
-| Water | 1 | 5 |
-| Trees | 1 | 4 |
-| Grass | 3 | 3 |
-| Flooded Vegetation | 5 | 5 |
-| Crops | 2 | 3 |
-| Scrub/Shrub | 3 | 3 |
-| Built area | 5 | 1 |
-| Bare ground | 4 | 2 |
-| Snow Ice | 1 | 1 |
-| Clouds | 1 | 1 |
+| Category |Raster Value | Flooding Susceptibility | Recharge Suitability |
+|:----------|---------:|---------:|---------:
+| Water | 1 | 1 | 5 |
+| Trees | 2 | 1 | 4 |
+| Grass | 3 | 3 | 3 |
+| Flooded Vegetation | 4 | 5 | 5 |
+| Crops | 5 | 2 | 3 |
+| Scrub/Shrub  | 6 | 3 | 3 |
+| Built area | 7 | 5 | 1 |
+| Bare ground | 8 | 4 | 2 |
+| Snow Ice | 9 | 1 | 1 |
+| Clouds | 10 | *NULL* | *NULL* |
 
 : Land use/cover. {#tbl-lulc .striped}
 
@@ -388,7 +388,7 @@ Following extraction from GEE. LULC was classified from 1-5 according to @tbl-lu
 |             | See @tbl-lulc                  |       |         |       |         |
 +-------------+--------------------------------+-------+---------+-------+---------+
 
-: Flood Susceptibility classification and weighting. {#tbl-flood .striped}
+: Flood Susceptibility classification and weighting. {#tbl-classified .striped}
 
 \* Weights total = 0.78 and 0.99 respectively, ≠ 1 due to missing "Stormwater Drainage Density" layer.
 
@@ -415,6 +415,12 @@ Following extraction from GEE. LULC was classified from 1-5 according to @tbl-lu
 #### Flood Susceptibility
 
 ![San Pedro flood susceptibility analysis.](images/SanPedro_FloodSusceptibility.png){#fig-flood}
+
+### Recharge Suitability
+#### Categorized Rasters
+
+
+#### Recharge Suitability
 
 ## Conclusion
 
