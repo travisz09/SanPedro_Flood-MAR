@@ -109,7 +109,7 @@ Lithology data from the USGS State Geologic Map Compilation (**DATA CITATION**).
 **This method of classification, already arduous for San Pedro, with 25 unique categories, will not be scalable to the broader study area (245 unique categories). It would be advisable to alter this classification to "GENERALIZE" (19 unique categories), or some other classification schema TBD.**
 :::
 
-| Geologic Unit Name | Flooding Susceptibility | Recharge Suitability
+| Geologic Unit Name | Flooding Susceptibility | Recharge Suitability |
 |:-----------------------------------------------|:----------------------|:----------------------|
 | Early Proterozoic granitic rocks | 5 | 1 |
 | Quaternary surficial deposits, undivided | 1 | 5 |
@@ -153,15 +153,15 @@ As with the USGS lithology data, the soils data ends abruptly at the US-Mexico b
 
 These USGS(?) classifications were assigned an additional suitability classification ranking from 1-5 according to @tbl-soil
 
-| Class | Count (pixels)\* | Text | Value |
-|:------------:|:------------:|:------------------------------:|:------------:|
-| A | 62559472 | Group A soils consist of deep, well drained sands or gravelly sands with high infiltration and low runoff rates. | 10 |
-| B | 76665198 | Group B soils consist of deep well drained soils with a moderately fine to moderately coarse texture and a moderate rate of infiltration and runoff. | 8 |
-| C | 88491710 | Group C consists of soils with a layer that impedes the downward movement of water or fine textured soils and a slow rate of infiltration. | 5 |
-| D | 155095790 | Group D consists of soils with a very slow infiltration rate and high runoff potential. This group is composed of clays that have a high shrink-swell potential, soils with a high water table, soils that have a clay pan or clay layer at or near the surface, and soils that are shallow over nearly impervious material. | 2 |
-| A/D | 43192 | Group A/D soils naturally have a very slow infiltration rate due to a high water table but will have high infiltration and low runoff rates if drained. | 7 |
-| B/D | 18456 | Group B/D soils naturally have a very slow infiltration rate due to a high water table but will have a moderate rate of infiltration and runoff if drained. | 6 |
-| C/D | 217771 | Group C/D soils naturally have a very slow infiltration rate due to a high water table but will have a slow rate of infiltration if drained. | 3 |
+| Class | Count (pixels)\* | Text | Flooding Susceptibility | Recharge Suitability |
+|:------------|:------------|:------------------------------|------------:|------------:|
+| A | 62559472 | Group A soils consist of deep, well drained sands or gravelly sands with high infiltration and low runoff rates. | 1 | 5 |
+| B | 76665198 | Group B soils consist of deep well drained soils with a moderately fine to moderately coarse texture and a moderate rate of infiltration and runoff. | 3 | 4 |
+| C | 88491710 | Group C consists of soils with a layer that impedes the downward movement of water or fine textured soils and a slow rate of infiltration. | 4 | 2 |
+| D | 155095790 | Group D consists of soils with a very slow infiltration rate and high runoff potential. This group is composed of clays that have a high shrink-swell potential, soils with a high water table, soils that have a clay pan or clay layer at or near the surface, and soils that are shallow over nearly impervious material. | 5 | 1 |
+| A/D | 43192 | Group A/D soils naturally have a very slow infiltration rate due to a high water table but will have high infiltration and low runoff rates if drained. | 3 | 4 |
+| B/D | 18456 | Group B/D soils naturally have a very slow infiltration rate due to a high water table but will have a moderate rate of infiltration and runoff if drained. | 3 | 3 |
+| C/D | 217771 | Group C/D soils naturally have a very slow infiltration rate due to a high water table but will have a slow rate of infiltration if drained. | 5 | 1 |
 
 : Soil hydrologic group. {#tbl-soil .striped}
 
@@ -293,18 +293,18 @@ Export.image.toDrive({
 ```
 Following extraction from GEE. LULC was classified from 1-5 according to @tbl-lulc.
 
-| Category | Suitability |
-|:----------------|---------:|
-| Water | 1 |
-| Trees | 1 |
-| Grass | 3 |
-| Flooded Vegetation | 5 |
-| Crops | 2 |
-| Scrub/Shrub | 3 |
-| Built area | 5 |
-| Bare ground | 4 |
-| Snow Ice | 1 |
-| Clouds | 1 |
+| Category | Flooding Susceptibility | Recharge Suitability |
+|:----------------|---------:|---------:
+| Water | 1 | 5 |
+| Trees | 1 | 4 |
+| Grass | 3 | 3 |
+| Flooded Vegetation | 5 | 5 |
+| Crops | 2 | 3 |
+| Scrub/Shrub | 3 | 3 |
+| Built area | 5 | 1 |
+| Bare ground | 4 | 2 |
+| Snow Ice | 1 | 1 |
+| Clouds | 1 | 1 |
 
 : Land use/cover. {#tbl-lulc .striped}
 
@@ -327,66 +327,70 @@ Following extraction from GEE. LULC was classified from 1-5 according to @tbl-lu
 
 **All thematic layer weighting for initial map directly from @aloui2024 and are subject to change in latter iterations.**
 
-+-----------+--------------------------------------+-----------+--------------------------+
-|           |Flooding Susceptibility               |Recharge Suitability                  |
-+-----------+-----------------------------+--------+-----------------------------+--------+
-| Layer     | Classification Schema       | Weight*| Classification Schema       | Weight*|
-+:==========+:============================+=======:+:============================+=======:+
-|Elevation  | *Quantiles* <br>            |   0.17 |                             |        |
-|           | 578(min) — 1140 => 5 <br>   |        |                             |        |
-|           | 1140 — 1307 => 4 <br>       |        |                             |        |
-|           | 1307 — 1420 => 3 <br>       |        |                             |        |
-|           | 1420 — 1536 => 2 <br>       |        |                             |        |
-|           | 1536 — 2876(max) => 1 <br>  |        |                             |        |
-+-----------+-----------------------------+--------+-----------------------------+--------+
-|Slope      | *Manual [@aloui2024]* <br>  |   0.11 |                             |        |
-|           | 0(min) — 2 => 5 <br>        |        |                             |        |
-|           | 2 — 6 => 4 <br>             |        |                             |        |
-|           | 6 — 12 => 3 <br>            |        |                             |        |
-|           | 12 — 18 => 2 <br>           |        |                             |        |
-|           | 18 — 72.7(max) => 1 <br>    |        |                             |        |
-+-----------+-----------------------------+--------+-----------------------------+--------+
-|Lineaments | *Equal Int [@aloui2024]*<br>|   0.04 |                             |        |
-|           | 0(min) — 0.5 => 5 <br>      |        |                             |        |
-|           | 0.5 — 1 => 4 <br>           |        |                             |        |
-|           | 1 — 1.5 => 3 <br>           |        |                             |        |
-|           | 1.5 — 2 => 2 <br>           |        |                             |        |
-|           | 2 — 2.6(max) => 1 <br>      |        |                             |        |
-+-----------+-----------------------------+--------+-----------------------------+--------+
-|Drainage   | *Equal Int [@aloui2024]*<br>|   0.07 |                             |        |
-|           | 0(min) — 0.5 => 5 <br>      |        |                             |        |
-|           | 0.5 — 1 => 4 <br>           |        |                             |        |
-|           | 1 — 1.5 => 3 <br>           |        |                             |        |
-|           | 1.5 — 2 => 2 <br>           |        |                             |        |
-|           | 2 — 7.6(max) => 1 <br>      |        |                             |        |
-+-----------+-----------------------------+--------+-----------------------------+--------+
-|Precip     | *Equal Int (br=121mm)* <br> |   0.06 | *Equal Int (br=121mm)* <br> |        |
-|           | 767.6 — 888.4(max) => 5 <br>|        | 284.2(min) — 405.1 => 5 <br>|        |
-|           | 647.7 — 767.6 => 4 <br>     |        | 405.1 — 525.9 => 4 <br>     |        |
-|           | 525.9 — 647.7 => 3 <br>     |        | 525.9 — 647.7 => 3 <br>     |        |
-|           | 405.1 — 525.9 => 2 <br>     |        | 647.7 — 767.6 => 2 <br>     |        |
-|           | 284.2(min) — 405.1 => 1 <br>|        | 767.6 — 888.4(max) => 1 <br>|        |
-+-----------+-----------------------------+--------+-----------------------------+--------+
-|Lithology  | *Categorical (Neha)* <br>   |   0.09 |                             |        |
-|           | See @tbl-lith               |        |                             |        |
-+-----------+-----------------------------+--------+-----------------------------+--------+
-|Soil       | *Categorical (Ryan)* <br>   |   0.03 |                             |        |
-|           | See @tbl-soil               |        |                             |        |
-+-----------+-----------------------------+--------+-----------------------------+--------+
-|NDVI       | *Equal Int [@aloui2024]*<br>|   0.02 |                             |        |
-|           | -0.1(min) — 0 => 5 <br>     |        |                             |        |
-|           | 0 — 0.1 => 4 <br>           |        |                             |        |
-|           | 0.1 — 0.2 => 3 <br>         |        |                             |        |
-|           | 0.2 — 0.3 => 2 <br>         |        |                             |        |
-|           | 0.3 — 0.4(max) => 1 <br>    |        |                             |        |
-+-----------+-----------------------------+--------+-----------------------------+--------+
-|LULC       | *Categorical (Travis)* <br> |   0.19 |                             |        |
-|           | See @tbl-lulc               |        |                             |        |
-+-----------+-----------------------------+--------+-----------------------------+--------+
++-------------+--------------------------------+-------+---------+-------+---------+
+|             |                                |Flooding         | Recharge        |
+|             |                                |Susceptibility   | Suitability     |
++-------------+--------------------------------+-------+---------+-------+---------+
+| Layer       | Classification Schema          | Value | Weight* | Value | Weight* |
++:============+:===============================+======:+========:+======:+========:+
+|Elevation    | *Quantiles* <br>               | <br>  | 0.17    | <br>  | 0.12    |
+| (m)         | 578(min) — 1140 => <br>        | 5 <br>|         | 5 <br>|         |
+|             | 1140 — 1307 => <br>            | 4 <br>|         | 4 <br>|         |
+|             | 1307 — 1420 => <br>            | 3 <br>|         | 3 <br>|         |
+|             | 1420 — 1536 => <br>            | 2 <br>|         | 2 <br>|         |
+|             | 1536 — 2876(max) => <br>       | 1 <br>|         | 1 <br>|         |
++-------------+--------------------------------+-------+---------+-------+---------+
+|Slope        | *Manual [@aloui2024]* <br>     | <br>  | 0.11    | <br>  | 0.15    |
+| (%)         | 0(min) — 2 => <br>             | 5 <br>|         | 5 <br>|         |
+|             | 2 — 6 => <br>                  | 4 <br>|         | 4 <br>|         |
+|             | 6 — 12 => <br>                 | 3 <br>|         | 3 <br>|         |
+|             | 12 — 18 => <br>                | 2 <br>|         | 2 <br>|         |
+|             | 18 — 72.7(max) => <br>         | 1 <br>|         | 1 <br>|         |
++-------------+--------------------------------+-------+---------+-------+---------+
+|Lineaments   | *Equal Int [@aloui2024]*<br>   | <br>  | 0.04    | <br>  | 0.08    |
+| (Km/Km²)    | 0(min) — 0.5 => <br>           | 5 <br>|         | 1 <br>|         |
+|             | 0.5 — 1 => <br>                | 4 <br>|         | 2 <br>|         |
+|             | 1 — 1.5 => <br>                | 3 <br>|         | 3 <br>|         |
+|             | 1.5 — 2 => <br>                | 2 <br>|         | 4 <br>|         |
+|             | 2 — 2.6(max) => <br>           | 1 <br>|         | 5 <br>|         |
++-------------+--------------------------------+-------+---------+-------+---------+
+|Drainage     | *Equal Int [@aloui2024]*<br>   | <br>  | 0.07    | <br>  | 0.03    |
+| (Km/Km²)    | 0(min) — 0.5 => 5 <br>         | 1 <br>|         | 5 <br>|         |
+|             | 0.5 — 1 => 4 <br>              | 2 <br>|         | 4 <br>|         |
+|             | 1 — 1.5 => 3 <br>              | 3 <br>|         | 3 <br>|         |
+|             | 1.5 — 2 => 2 <br>              | 4 <br>|         | 2 <br>|         |
+|             | 2 — 7.6(max) => 1 <br>         | 5 <br>|         | 1 <br>|         |
++-------------+--------------------------------+-------+---------+-------+---------+
+|Precipitation| *Equal Int (br=121mm)* <br>    | <br>  | 0.06    | <br>  | 0.05    |
+| (mm/year)   | 284.2(min) — 405.1 => 1 <br>   | 1 <br>|         | 1 <br>|         |
+|             | 405.1 — 525.9 => 2 <br>        | 2 <br>|         | 2 <br>|         |
+|             | 525.9 — 647.7 => 3 <br>        | 3 <br>|         | 3 <br>|         |
+|             | 647.7 — 767.6 => 4 <br>        | 4 <br>|         | 4 <br>|         |
+|             | 767.6 — 888.4(max) => 5 <br>   | 5 <br>|         | 5 <br>|         |
++-------------+--------------------------------+-------+---------+-------+---------+
+|NDVI         | *Equal Int [@aloui2024]*<br>   | <br>  | 0.02    | <br>  | 0.02    |
+|             | -0.1(min) — 0 => 5 <br>        | 5 <br>|         | 1 <br>|         |
+|             | 0 — 0.1 => 4 <br>              | 4 <br>|         | 2 <br>|         |
+|             | 0.1 — 0.2 => 3 <br>            | 3 <br>|         | 3 <br>|         |
+|             | 0.2 — 0.3 => 2 <br>            | 2 <br>|         | 4 <br>|         |
+|             | 0.3 — 0.4(max) => 1 <br>       | 1 <br>|         | 5 <br>|         |
++-------------+--------------------------------+-------+---------+-------+---------+
+|Lithology    | *Categorical* <br>             |       | 0.09    |       | 0.30    |
+|             | Assigned expert - Neha G.<br>  |       |         |       |         |
+|             | See @tbl-lith                  |       |         |       |         |
++-------------+--------------------------------+-------+---------+-------+---------+
+|Soil         | *Categorical* <br>             |       | 0.03    |       | 0.02    |
+|             | Assigned expert - Ryan L.<br>  |       |         |       |         |
+|             | See @tbl-soil                  |       |         |       |         |
++-------------+--------------------------------+-------+---------+-------+---------+
+|LULC         | *Categorical* <br>             |       | 0.19    |       | 0.22    |
+|             | Assigned expert - Travis Z.<br>|       |         |       |         |
+|             | See @tbl-lulc                  |       |         |       |         |
++-------------+--------------------------------+-------+---------+-------+---------+
 
 : Flood Susceptibility classification and weighting. {#tbl-flood .striped}
 
-\* Weights total = 0.78 ≠ 1 due to missing "Stormwater Drainage Density" layer.
+\* Weights total = 0.78 and 0.99 respectively, ≠ 1 due to missing "Stormwater Drainage Density" layer.
 
 #### Categorized Rasters
 
