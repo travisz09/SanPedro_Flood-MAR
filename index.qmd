@@ -260,7 +260,7 @@ Export.image.toDrive({
 })
 ```
 
-![San Pedro 10-year mean NDVI.](images/SanPedro_NDVI.png){#fig-ndvi}
+![San Pedro 10-year mean NDVI (2013—2023).](images/SanPedro_NDVI.png){#fig-ndvi}
 
 #### Land use/land cover
 Infiltration and runoff rates are highly influenced by land cover (**CITATION NEEDED**). ESRI 2020 Global Land Use Land Cover from Sentinel-2 (ESRI LULC) is a 10-m resolution global land cover dataset derived from proprietary machine-learning algorithm run on Sentinel-2 satellite imagery (**DATA CITATION**). ESRI LULC was accessed and clipped to the study area using Google Earth Engine. The pixel resolution was reduced to 30 m.
@@ -340,40 +340,40 @@ Following extraction from GEE. LULC was classified from 1-5 according to @tbl-lu
 |             | 1420 — 1536 => <br>            | 2 <br>|         | 2 <br>|         |
 |             | 1536 — 2876(max) => <br>       | 1 <br>|         | 1 <br>|         |
 +-------------+--------------------------------+-------+---------+-------+---------+
-|Slope        | *Manual [@aloui2024]* <br>     | <br>  | 0.11    | <br>  | 0.15    |
+|Slope        | *Manual*^†^ <br>               | <br>  | 0.11    | <br>  | 0.15    |
 | (%)         | 0(min) — 2 => <br>             | 5 <br>|         | 5 <br>|         |
 |             | 2 — 6 => <br>                  | 4 <br>|         | 4 <br>|         |
 |             | 6 — 12 => <br>                 | 3 <br>|         | 3 <br>|         |
 |             | 12 — 18 => <br>                | 2 <br>|         | 2 <br>|         |
 |             | 18 — 72.7(max) => <br>         | 1 <br>|         | 1 <br>|         |
 +-------------+--------------------------------+-------+---------+-------+---------+
-|Lineaments   | *Equal Int [@aloui2024]*<br>   | <br>  | 0.04    | <br>  | 0.08    |
+|Lineaments   | *Equal Int*^†^ <br>            | <br>  | 0.04    | <br>  | 0.08    |
 | (Km/Km²)    | 0(min) — 0.5 => <br>           | 5 <br>|         | 1 <br>|         |
 |             | 0.5 — 1 => <br>                | 4 <br>|         | 2 <br>|         |
 |             | 1 — 1.5 => <br>                | 3 <br>|         | 3 <br>|         |
 |             | 1.5 — 2 => <br>                | 2 <br>|         | 4 <br>|         |
 |             | 2 — 2.6(max) => <br>           | 1 <br>|         | 5 <br>|         |
 +-------------+--------------------------------+-------+---------+-------+---------+
-|Drainage     | *Equal Int [@aloui2024]*<br>   | <br>  | 0.07    | <br>  | 0.03    |
-| (Km/Km²)    | 0(min) — 0.5 => 5 <br>         | 1 <br>|         | 5 <br>|         |
-|             | 0.5 — 1 => 4 <br>              | 2 <br>|         | 4 <br>|         |
-|             | 1 — 1.5 => 3 <br>              | 3 <br>|         | 3 <br>|         |
-|             | 1.5 — 2 => 2 <br>              | 4 <br>|         | 2 <br>|         |
-|             | 2 — 7.6(max) => 1 <br>         | 5 <br>|         | 1 <br>|         |
+|Drainage     | *Equal Int*^†^ <br>            | <br>  | 0.07    | <br>  | 0.03    |
+| (Km/Km²)    | 0(min) — 0.5 => <br>           | 1 <br>|         | 5 <br>|         |
+|             | 0.5 — 1 => <br>                | 2 <br>|         | 4 <br>|         |
+|             | 1 — 1.5 => <br>                | 3 <br>|         | 3 <br>|         |
+|             | 1.5 — 2 => <br>                | 4 <br>|         | 2 <br>|         |
+|             | 2 — 7.6(max) => <br>           | 5 <br>|         | 1 <br>|         |
 +-------------+--------------------------------+-------+---------+-------+---------+
 |Precipitation| *Equal Int (br=121mm)* <br>    | <br>  | 0.06    | <br>  | 0.05    |
-| (mm/year)   | 284.2(min) — 405.1 => 1 <br>   | 1 <br>|         | 1 <br>|         |
-|             | 405.1 — 525.9 => 2 <br>        | 2 <br>|         | 2 <br>|         |
-|             | 525.9 — 647.7 => 3 <br>        | 3 <br>|         | 3 <br>|         |
-|             | 647.7 — 767.6 => 4 <br>        | 4 <br>|         | 4 <br>|         |
-|             | 767.6 — 888.4(max) => 5 <br>   | 5 <br>|         | 5 <br>|         |
+| (mm/year)   | 284.2(min) — 405.1 => <br>     | 1 <br>|         | 1 <br>|         |
+|             | 405.1 — 525.9 => <br>          | 2 <br>|         | 2 <br>|         |
+|             | 525.9 — 647.7 => <br>          | 3 <br>|         | 3 <br>|         |
+|             | 647.7 — 767.6 => <br>          | 4 <br>|         | 4 <br>|         |
+|             | 767.6 — 888.4(max) => <br>     | 5 <br>|         | 5 <br>|         |
 +-------------+--------------------------------+-------+---------+-------+---------+
-|NDVI         | *Equal Int [@aloui2024]*<br>   | <br>  | 0.02    | <br>  | 0.02    |
-|             | -0.1(min) — 0 => 5 <br>        | 5 <br>|         | 1 <br>|         |
-|             | 0 — 0.1 => 4 <br>              | 4 <br>|         | 2 <br>|         |
-|             | 0.1 — 0.2 => 3 <br>            | 3 <br>|         | 3 <br>|         |
-|             | 0.2 — 0.3 => 2 <br>            | 2 <br>|         | 4 <br>|         |
-|             | 0.3 — 0.4(max) => 1 <br>       | 1 <br>|         | 5 <br>|         |
+|NDVI         | *Equal Int*^†^ <br>            | <br>  | 0.02    | <br>  | 0.02    |
+|             | -0.1(min) — 0 => <br>          | 5 <br>|         | 1 <br>|         |
+|             | 0 — 0.1 => <br>                | 4 <br>|         | 2 <br>|         |
+|             | 0.1 — 0.2 => <br>              | 3 <br>|         | 3 <br>|         |
+|             | 0.2 — 0.3 => <br>              | 2 <br>|         | 4 <br>|         |
+|             | 0.3 — 0.4(max) => <br>         | 1 <br>|         | 5 <br>|         |
 +-------------+--------------------------------+-------+---------+-------+---------+
 |Lithology    | *Categorical* <br>             |       | 0.09    |       | 0.30    |
 |             | Assigned expert - Neha G.<br>  |       |         |       |         |
@@ -388,39 +388,98 @@ Following extraction from GEE. LULC was classified from 1-5 according to @tbl-lu
 |             | See @tbl-lulc                  |       |         |       |         |
 +-------------+--------------------------------+-------+---------+-------+---------+
 
-: Flood Susceptibility classification and weighting. {#tbl-classified .striped}
+: Flood susceptibility and recharge suitability classification with weighting. {#tbl-classified .striped}
 
 \* Weights total = 0.78 and 0.99 respectively, ≠ 1 due to missing "Stormwater Drainage Density" layer.
 
-#### Categorized Rasters
+^†^ Reclassification schema from @aloui2024.
 
-![San Pedro elevation classification.](images/SanPedro_ElevClassified.png){#fig-elevClass}
+#### Flood Susceptibility Categorized Rasters
 
-![San Pedro slope classification.](images/SanPedro_SlopeClassified.png){#fig-slopeClass}
+##### Elevation
 
-![San Pedro lineament density classification.](images/SanPedro_LineClassified.png){#fig-lineClass}
+![San Pedro flood susceptibility elevation classification.](images/FloodSusceptibility/SanPedro_ElevClassified.png){#fig-floodElevClass}
 
-![San Pedro drainage density classification.](images/SanPedro_DrainClassified.png){#fig-drainClass}
+##### Slope
 
-![San Pedro precipitation classification.](images/SanPedro_PrecipClassified.png){#fig-precipClass}
+![San Pedro flood susceptibility slope classification.](images/FloodSusceptibility/SanPedro_SlopeClassified.png){#fig-floodSlopeClass}
 
-![San Pedro lithology classification.](images/SanPedro_LithoClassified.png){#fig-lithoClass}
+##### Lineament Density
 
-![San Pedro soil classification.](images/SanPedro_SoilClassified.png){#fig-soilClass}
+![San Pedro flood susceptibility lineament density classification.](images/FloodSusceptibility/SanPedro_LineClassified.png){#fig-floodLineClass}
 
-![San Pedro NDVI classification.](images/SanPedro_NDVIClassified.png){#fig-ndviClass}
+##### Drainage Density 
 
-![San Pedro land use/cover classification.](images/SanPedro_LULCClassified.png){#fig-lulcClass}
+![San Pedro flood susceptibility drainage density classification.](images/FloodSusceptibility/SanPedro_DrainClassified.png){#fig-floodDrainClass}
+
+##### Annual Mean Precipitation
+
+![San Pedro flood susceptibility precipitation classification.](images/FloodSusceptibility/SanPedro_PrecipClassified.png){#fig-floodPrecipClass}
+
+##### Lithology 
+
+![San Pedro flood susceptibility lithology classification.](images/FloodSusceptibility/SanPedro_LithoClassified.png){#fig-floodLithoClass}
+
+##### Soil Type
+
+![San Pedro flood susceptibility soil hydrologic group classification.](images/FloodSusceptibility/SanPedro_SoilClassified.png){#fig-floodSoilClass}
+
+##### 10-year Mean NDVI
+
+![San Pedro flood susceptibility 10-year mean NDVI (2013—2023) classification.](images/FloodSusceptibility/SanPedro_NDVIClassified.png){#fig-floodNdviClass}
+
+##### Land Use Land Cover
+
+![San Pedro flood susceptibility land use/cover classification.](images/FloodSusceptibility/SanPedro_LULCClassified.png){#fig-floodLulcClass}
 
 #### Flood Susceptibility
 
-![San Pedro flood susceptibility analysis.](images/SanPedro_FloodSusceptibility.png){#fig-flood}
+![San Pedro flood susceptibility analysis.](images/FloodSusceptibility/SanPedro_FloodSusceptibility.png){#fig-flood}
 
 ### Recharge Suitability
-#### Categorized Rasters
 
+See @tbl-classified for recharge suitability classification schema.
+
+#### Recharge Suitability Categorized Rasters
+
+##### Elevation
+
+Same as @fig-floodElevClass.
+
+##### Slope
+
+Same as @fig-floodSlopeClass.
+
+##### Lineament Density
+
+![San Pedro recharge suitability lineament density classification.](images/RechargeSuitability/SanPedro_LineDClassified.png){#fig-rechLineClass}
+
+##### Drainage Density
+![San Pedro recharge suitability drainage density classification.](images/RechargeSuitability/SanPedro_DrainageDClassified.png){#fig-rechDrainClass}
+
+##### Annual Mean Precipitation
+
+Same as @fig-floodPrecipClass.
+
+##### Lithology
+
+![San Pedro recharge suitability lithology classification.](images/RechargeSuitability/SanPedro_LithoClassified.png){#fig-rechLithoClass}
+
+##### Soil Type
+
+![San Pedro recharge suitability soil hydrologic group classification.](images/RechargeSuitability/SanPedro_SoilClassified.png){#fig-rechSoilClass}
+
+##### 10-year Mean NDVI
+
+![San Pedro recharge suitability 10-year mean NDVI (2013—2023) classification.](images/RechargeSuitability/SanPedro_NDVIClassified.png){#fig-rechNdviClass}
+
+##### Land Use Land Cover
+
+![San Pedro recharge suitability land use/cover classification.](images/RechargeSuitability/SanPedro_LULCClassified.png){#fig-rechLulcClass}
 
 #### Recharge Suitability
+
+![San Pedro recharge suitability analysis.](images/RechargeSuitability/SanPedro_RechargeSuitability.png){#fig-recharge}
 
 ## Conclusion
 
