@@ -435,83 +435,91 @@ Methods and analysis closely following Aloui et al.
         <table-wrap>
           <table>
             <colgroup>
-              <col width="19%" />
-              <col width="19%" />
-              <col width="43%" />
-              <col width="19%" />
+              <col width="16%" />
+              <col width="16%" />
+              <col width="37%" />
+              <col width="16%" />
+              <col width="16%" />
             </colgroup>
             <thead>
               <tr>
-                <th align="center">Class</th>
-                <th align="center">Count (pixels)*</th>
-                <th align="center">Text</th>
-                <th align="center">Value</th>
+                <th align="left">Class</th>
+                <th align="left">Count (pixels)*</th>
+                <th align="left">Text</th>
+                <th align="right">Flooding Susceptibility</th>
+                <th align="right">Recharge Suitability</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td align="center">A</td>
-                <td align="center">62559472</td>
-                <td align="center">Group A soils consist of deep, well
+                <td align="left">A</td>
+                <td align="left">62559472</td>
+                <td align="left">Group A soils consist of deep, well
                 drained sands or gravelly sands with high infiltration
                 and low runoff rates.</td>
-                <td align="center">10</td>
+                <td align="right">1</td>
+                <td align="right">5</td>
               </tr>
               <tr>
-                <td align="center">B</td>
-                <td align="center">76665198</td>
-                <td align="center">Group B soils consist of deep well
+                <td align="left">B</td>
+                <td align="left">76665198</td>
+                <td align="left">Group B soils consist of deep well
                 drained soils with a moderately fine to moderately
                 coarse texture and a moderate rate of infiltration and
                 runoff.</td>
-                <td align="center">8</td>
+                <td align="right">3</td>
+                <td align="right">4</td>
               </tr>
               <tr>
-                <td align="center">C</td>
-                <td align="center">88491710</td>
-                <td align="center">Group C consists of soils with a
-                layer that impedes the downward movement of water or
-                fine textured soils and a slow rate of
-                infiltration.</td>
-                <td align="center">5</td>
+                <td align="left">C</td>
+                <td align="left">88491710</td>
+                <td align="left">Group C consists of soils with a layer
+                that impedes the downward movement of water or fine
+                textured soils and a slow rate of infiltration.</td>
+                <td align="right">4</td>
+                <td align="right">2</td>
               </tr>
               <tr>
-                <td align="center">D</td>
-                <td align="center">155095790</td>
-                <td align="center">Group D consists of soils with a very
+                <td align="left">D</td>
+                <td align="left">155095790</td>
+                <td align="left">Group D consists of soils with a very
                 slow infiltration rate and high runoff potential. This
                 group is composed of clays that have a high shrink-swell
                 potential, soils with a high water table, soils that
                 have a clay pan or clay layer at or near the surface,
                 and soils that are shallow over nearly impervious
                 material.</td>
-                <td align="center">2</td>
+                <td align="right">5</td>
+                <td align="right">1</td>
               </tr>
               <tr>
-                <td align="center">A/D</td>
-                <td align="center">43192</td>
-                <td align="center">Group A/D soils naturally have a very
+                <td align="left">A/D</td>
+                <td align="left">43192</td>
+                <td align="left">Group A/D soils naturally have a very
                 slow infiltration rate due to a high water table but
                 will have high infiltration and low runoff rates if
                 drained.</td>
-                <td align="center">7</td>
+                <td align="right">3</td>
+                <td align="right">4</td>
               </tr>
               <tr>
-                <td align="center">B/D</td>
-                <td align="center">18456</td>
-                <td align="center">Group B/D soils naturally have a very
+                <td align="left">B/D</td>
+                <td align="left">18456</td>
+                <td align="left">Group B/D soils naturally have a very
                 slow infiltration rate due to a high water table but
                 will have a moderate rate of infiltration and runoff if
                 drained.</td>
-                <td align="center">6</td>
+                <td align="right">3</td>
+                <td align="right">3</td>
               </tr>
               <tr>
-                <td align="center">C/D</td>
-                <td align="center">217771</td>
-                <td align="center">Group C/D soils naturally have a very
+                <td align="left">C/D</td>
+                <td align="left">217771</td>
+                <td align="left">Group C/D soils naturally have a very
                 slow infiltration rate due to a high water table but
                 will have a slow rate of infiltration if drained.</td>
-                <td align="center">3</td>
+                <td align="right">5</td>
+                <td align="right">1</td>
               </tr>
             </tbody>
           </table>
@@ -670,48 +678,59 @@ Export.image.toDrive({
             <thead>
               <tr>
                 <th align="left">Category</th>
-                <th align="right">Suitability</th>
+                <th align="right">Flooding Susceptibility</th>
+                <th align="right">Recharge Suitability</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td align="left">Water</td>
                 <td align="right">1</td>
+                <td align="right">5</td>
               </tr>
               <tr>
                 <td align="left">Trees</td>
                 <td align="right">1</td>
+                <td align="right">4</td>
               </tr>
               <tr>
                 <td align="left">Grass</td>
+                <td align="right">3</td>
                 <td align="right">3</td>
               </tr>
               <tr>
                 <td align="left">Flooded Vegetation</td>
                 <td align="right">5</td>
+                <td align="right">5</td>
               </tr>
               <tr>
                 <td align="left">Crops</td>
                 <td align="right">2</td>
+                <td align="right">3</td>
               </tr>
               <tr>
                 <td align="left">Scrub/Shrub</td>
+                <td align="right">3</td>
                 <td align="right">3</td>
               </tr>
               <tr>
                 <td align="left">Built area</td>
                 <td align="right">5</td>
+                <td align="right">1</td>
               </tr>
               <tr>
                 <td align="left">Bare ground</td>
                 <td align="right">4</td>
+                <td align="right">2</td>
               </tr>
               <tr>
                 <td align="left">Snow Ice</td>
                 <td align="right">1</td>
+                <td align="right">1</td>
               </tr>
               <tr>
                 <td align="left">Clouds</td>
+                <td align="right">1</td>
                 <td align="right">1</td>
               </tr>
             </tbody>
@@ -761,98 +780,84 @@ Export.image.toDrive({
       <table-wrap>
         <table>
           <colgroup>
-            <col width="13%" />
-            <col width="32%" />
-            <col width="10%" />
-            <col width="13%" />
-            <col width="19%" />
-            <col width="10%" />
+            <col width="16%" />
+            <col width="38%" />
+            <col width="9%" />
+            <col width="11%" />
+            <col width="9%" />
+            <col width="11%" />
           </colgroup>
           <thead>
             <tr>
               <th align="left"></th>
-              <th align="left" colspan="2">Flooding Susceptibility</th>
-              <th align="left" colspan="3">Recharge Suitability</th>
+              <th align="left"></th>
+              <th align="right" colspan="2">Flooding Susceptibility</th>
+              <th align="right" colspan="2">Recharge Suitability</th>
             </tr>
             <tr>
               <th align="left">Layer</th>
               <th align="left">Classification Schema</th>
+              <th align="right">Value</th>
               <th align="right">Weight*</th>
-              <th align="left" colspan="2">Classification Schema</th>
-              <th>Weight*</th>
+              <th align="right">Value</th>
+              <th align="right">Weight*</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td align="left">Elevation</td>
+              <td align="left">Elevation (m)</td>
               <td align="left"><italic>Quantiles</italic> 578(min) —
-              1140 =&gt; 5 1140 — 1307 =&gt; 4 1307 — 1420 =&gt; 3 1420
-              — 1536 =&gt; 2 1536 — 2876(max) =&gt; 1 </td>
+              1140 =&gt; 1140 — 1307 =&gt; 1307 — 1420 =&gt; 1420 — 1536
+              =&gt; 1536 — 2876(max) =&gt; </td>
+              <td align="right"> 5 4 3 2 1 </td>
               <td align="right">0.17</td>
-              <td align="left" colspan="2"></td>
-              <td></td>
+              <td align="right"> 5 4 3 2 1 </td>
+              <td align="right">0.12</td>
             </tr>
             <tr>
-              <td align="left">Slope</td>
+              <td align="left">Slope (%)</td>
               <td align="left"><italic>Manual
               (<xref alt="Aloui et al., 2024" rid="ref-aloui2024" ref-type="bibr">Aloui
-              et al., 2024</xref>)</italic> 0(min) — 2 =&gt; 5 2 — 6
-              =&gt; 4 6 — 12 =&gt; 3 12 — 18 =&gt; 2 18 — 72.7(max)
-              =&gt; 1 </td>
+              et al., 2024</xref>)</italic> 0(min) — 2 =&gt; 2 — 6 =&gt;
+              6 — 12 =&gt; 12 — 18 =&gt; 18 — 72.7(max) =&gt; </td>
+              <td align="right"> 5 4 3 2 1 </td>
               <td align="right">0.11</td>
-              <td align="left" colspan="2"></td>
-              <td></td>
+              <td align="right"> 5 4 3 2 1 </td>
+              <td align="right">0.15</td>
             </tr>
             <tr>
-              <td align="left">Lineaments</td>
+              <td align="left">Lineaments (Km/Km²)</td>
               <td align="left"><italic>Equal Int
               (<xref alt="Aloui et al., 2024" rid="ref-aloui2024" ref-type="bibr">Aloui
-              et al., 2024</xref>)</italic> 0(min) — 0.5 =&gt; 5 0.5 — 1
-              =&gt; 4 1 — 1.5 =&gt; 3 1.5 — 2 =&gt; 2 2 — 2.6(max) =&gt;
-              1 </td>
+              et al., 2024</xref>)</italic> 0(min) — 0.5 =&gt; 0.5 — 1
+              =&gt; 1 — 1.5 =&gt; 1.5 — 2 =&gt; 2 — 2.6(max) =&gt; </td>
+              <td align="right"> 5 4 3 2 1 </td>
               <td align="right">0.04</td>
-              <td align="left" colspan="2"></td>
-              <td></td>
+              <td align="right"> 1 2 3 4 5 </td>
+              <td align="right">0.08</td>
             </tr>
             <tr>
-              <td align="left">Drainage</td>
+              <td align="left">Drainage (Km/Km²)</td>
               <td align="left"><italic>Equal Int
               (<xref alt="Aloui et al., 2024" rid="ref-aloui2024" ref-type="bibr">Aloui
               et al., 2024</xref>)</italic> 0(min) — 0.5 =&gt; 5 0.5 — 1
               =&gt; 4 1 — 1.5 =&gt; 3 1.5 — 2 =&gt; 2 2 — 7.6(max) =&gt;
               1 </td>
+              <td align="right"> 1 2 3 4 5 </td>
               <td align="right">0.07</td>
-              <td align="left" colspan="2"></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td align="left">Precip</td>
-              <td align="left"><italic>Equal Int (br=121mm)</italic>
-              767.6 — 888.4(max) =&gt; 5 647.7 — 767.6 =&gt; 4 525.9 —
-              647.7 =&gt; 3 405.1 — 525.9 =&gt; 2 284.2(min) — 405.1
-              =&gt; 1 </td>
-              <td align="right">0.06</td>
-              <td align="left" colspan="2"><italic>Equal Int
-              (br=121mm)</italic> 284.2(min) — 405.1 =&gt; 5 405.1 —
-              525.9 =&gt; 4 525.9 — 647.7 =&gt; 3 647.7 — 767.6 =&gt; 2
-              767.6 — 888.4(max) =&gt; 1 </td>
-              <td></td>
-            </tr>
-            <tr>
-              <td align="left">Lithology</td>
-              <td align="left"><italic>Categorical (Neha)</italic> See
-              <xref alt="Table 1" rid="tbl-lith">Table 1</xref></td>
-              <td align="right">0.09</td>
-              <td align="left" colspan="2"></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td align="left">Soil</td>
-              <td align="left"><italic>Categorical (Ryan)</italic> See
-              <xref alt="Table 2" rid="tbl-soil">Table 2</xref></td>
+              <td align="right"> 5 4 3 2 1 </td>
               <td align="right">0.03</td>
-              <td align="left" colspan="2"></td>
-              <td></td>
+            </tr>
+            <tr>
+              <td align="left">Precipitation (mm/year)</td>
+              <td align="left"><italic>Equal Int (br=121mm)</italic>
+              284.2(min) — 405.1 =&gt; 1 405.1 — 525.9 =&gt; 2 525.9 —
+              647.7 =&gt; 3 647.7 — 767.6 =&gt; 4 767.6 — 888.4(max)
+              =&gt; 5 </td>
+              <td align="right"> 1 2 3 4 5 </td>
+              <td align="right">0.06</td>
+              <td align="right"> 1 2 3 4 5 </td>
+              <td align="right">0.05</td>
             </tr>
             <tr>
               <td align="left">NDVI</td>
@@ -861,24 +866,47 @@ Export.image.toDrive({
               et al., 2024</xref>)</italic> -0.1(min) — 0 =&gt; 5 0 —
               0.1 =&gt; 4 0.1 — 0.2 =&gt; 3 0.2 — 0.3 =&gt; 2 0.3 —
               0.4(max) =&gt; 1 </td>
+              <td align="right"> 5 4 3 2 1 </td>
               <td align="right">0.02</td>
-              <td align="left" colspan="2"></td>
-              <td></td>
+              <td align="right"> 1 2 3 4 5 </td>
+              <td align="right">0.02</td>
+            </tr>
+            <tr>
+              <td align="left">Lithology</td>
+              <td align="left"><italic>Categorical</italic> Assigned
+              expert - Neha G. See
+              <xref alt="Table 1" rid="tbl-lith">Table 1</xref></td>
+              <td align="right"></td>
+              <td align="right">0.09</td>
+              <td align="right"></td>
+              <td align="right">0.30</td>
+            </tr>
+            <tr>
+              <td align="left">Soil</td>
+              <td align="left"><italic>Categorical</italic> Assigned
+              expert - Ryan L. See
+              <xref alt="Table 2" rid="tbl-soil">Table 2</xref></td>
+              <td align="right"></td>
+              <td align="right">0.03</td>
+              <td align="right"></td>
+              <td align="right">0.02</td>
             </tr>
             <tr>
               <td align="left">LULC</td>
-              <td align="left"><italic>Categorical (Travis)</italic> See
+              <td align="left"><italic>Categorical</italic> Assigned
+              expert - Travis Z. See
               <xref alt="Table 3" rid="tbl-lulc">Table 3</xref></td>
+              <td align="right"></td>
               <td align="right">0.19</td>
-              <td align="left" colspan="2"></td>
-              <td></td>
+              <td align="right"></td>
+              <td align="right">0.22</td>
             </tr>
           </tbody>
         </table>
       </table-wrap>
     </fig>
-    <p>* Weights total = 0.78 ≠ 1 due to missing “Stormwater Drainage
-    Density” layer.</p>
+    <p>* Weights total = 0.78 and 0.99 respectively, ≠ 1 due to missing
+    “Stormwater Drainage Density” layer.</p>
     <sec id="categorized-rasters">
       <title>2.2.1 Categorized Rasters</title>
       <fig id="fig-elevClass">
