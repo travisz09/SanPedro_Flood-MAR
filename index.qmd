@@ -311,7 +311,7 @@ Following extraction from GEE. LULC was classified from 1-5 according to @tbl-lu
 ![San Pedro land cover.](images/SanPedro_LULC.png)
 
 
-#### Stormwater Drainage Density
+#### Stormwater Drainage Density {#sec-stormwater}
 
 **I am unaware of any data availability for this layer. PLEASE ADVISE!**
 
@@ -481,7 +481,51 @@ Same as @fig-floodPrecipClass.
 
 ![San Pedro recharge suitability analysis.](images/RechargeSuitability/SanPedro_RechargeSuitability.png){#fig-recharge}
 
+### Flood Susceptibility — Recharge Suitability Overlay (a.k.a FloodMAR)
+
+Both the Flood Susceptibility and Recharge Suitability maps (@fig-flood & @fig-recharge respectively) were normalized to a 0 — 1 scale according to @eq-normal, where min and max are equal to the minimum and maximum values of the initial raster, respectively. The resultant normalized rasters were then multiplied together as in @eq-floodMAR resulting in a Flooding and Recharge suitability overlaid map with a theoretical minimum of 0 and maximum of 1, as seen in @fig-floodMAR. 
+
+$$
+Normalized Raster = (Initial Raster - min)/(max - min)
+$$ {#eq-normal}
+
+$$
+Flooding Recharge = Flooding_{\_normal} * Recharge_{\_normal}
+$$ {#eq-floodMAR}
+
+::: callout-note
+*Alternatively, @fig-floodMAR could be modified to the **sum** of Flooding **+** Recharge. The resulting map is similar, but the theoretical maximum is increased to 2. The increased range of values in the summation map is, visually, a little smoother and brighter overall, however I prefer the high contrast seen in @fig-floodMAR. Alternate map available by request.*
+:::
+
+![San Pedro Flooding — Recharge overlay map.](images/SanPedro_FloodMAR_alt1.png){#fig-floodMAR}
+
 ## Conclusion
+
+### First Impressions
+
+As expected, Flooding — Recharge suitability is highest in the valley bottom, near the San Pedro river. This is both where excess water is available (flooding) and where the lithology and other factors are suitable for recharge. Much of the banding seen in the upper watershed is highly influenced by the elevation classification, which is somewhat arbitrarily classified into discreet class breaks. This layer would perhaps be improved, and the subsequent banding would be smoothed, if modified to a linear classification schema (see @tbl-classified). 
+
+Lithography is also highly influential in the overlaid map, particularly in the stream channel, and near the upper-lower watershed divide, as well as near San Manuel. Compare @fig-rechLithoClass to @fig-floodMAR.
+
+Major gaps in analysis (aside from Mexico), largely correspond to gaps in the soils input layer. Additionally, blocky "pixelated" artifacts around the watershed boarder are the result of the PRISM rainfall data. While this data layer was downscaled to match the 30-m elevation raster, it was not interpolated to the edges of the boundary. This may be addressed in subsequent analysis simply by downscaling the PRISM data prior to clipping, or by adding a small buffer to the watershed boundary (for purposes of clipping).
+
+Highly suitable locations exist in the upper watershed, near St. David and Benson, and in the lower watershed near San Manuel. The San Manuel area may be of particular interest, as there is (evidently) existing large-scale environmental engineering projects in the area (of which I know very little, a quarry perhaps?), as evidenced by the flat, uniform slope, with sharp, square angles, clearly visible in @fig-floodSlopeClass. Although soils data is lacking over that particular formation, it is reasonable to infer from the immediately surrounding area, that it would be moderately to highly suitable for both flooding and recharge.
+
+Perhaps most surprising is the highly suitable region near Klondike in the Aravaipa Canyon. At the valley bottom, this relatively small sub-basin has highly favorable soils and lithology for recharge. While the flooding susceptibility of this area is somewhat lower, in part due to its relatively low precipitation rates, and in part as a direct consequence of the soils and lithology favoring recharge, it is the location of Aravaipa Creek, which could be a source of seasonal nuisance water (a.k.a. flash flooding). Additionally, the nearby steep slopes and adjacent unsuitable soils (for recharge), funnel much of the available water from this sub-basin into a narrow valley bottom. This narrow, region of concentrated suitability may be a challenge for engineered aquifer recharge, however it is likely a strong indicator of natural occurring recharge.
+
+### Next Steps
+
+This analysis, while good, is in need of several improvements. Firstly, while the work of @aloui2024 is laudable, this analysis (as it currently is) relies too heavily on their body of work. Classification schemas, layer weighting, and inclusion/exclusion of additional layers must be evaluated independently.
+
+Perhaps most importantly is the layer weighting schema. Due to the lack of the stormwater drainage density thematic layer the layer weights for both flood susceptibility and recharge suitability do not sum to 1, and are therefor not statistically defensible (see @sec-stormwater and @tbl-classified). While I currently have the ability (read code) to recalculate the eigenvectors and adjust the weighting schema to fit our available dataset, I have refrained from doing so at this time, and would prefer to receive group input on the layers pair-wise comparison (PWC) relative importance, prior to recalculating the eigenvectors, as this will have a profound impact on the resulting (final) weighting schema.  
+
+Additionally, now is an excellent time to consider if there are any thematic layers that should be replace by improved or alternate data sources, particularly if there are any "in-house" modeling layers which can replace or supplement existing layers. The addition or removal of layers will become increasingly difficult in the months to come, particularly after the layer weighting eigenvectors are recalculated. (The addition or removal of a single layer results in a large change in the PWC variable matrix, which subsequently alters the statistical basis of the weighing schema, and may result in having to re-solicit survey responses from the research team!)
+
+Lastly, the classification schemas may be updated as needed. Continuous thematic layers such as slope and elevation, may benefit from a formulaic (i.e. linear, etc.) classification (as opposed to discreet classification). And qualitative layers such as soil type, lithology, and land use/cover should be carefully evaluated, and adjusted as needed. Unlike layer weighing, layer classification can be performed "on the fly", and comparative classifications can be generated with relatively ease.
+
+### Scaling Up!
+
+Ultimately, the goal of this project is to scale up to a state-wide analysis. While there will be computational challenges associated with scaling up, the method itself, including the underlying data layers are highly scalable.
 
 ## References {.unnumbered}
 
