@@ -277,7 +277,7 @@ suitable zones for integrated aquifer recharge and flood control in arid
 Qatar using GIS-based multi-criteria decision-making} (Aloui et al.,
 2024)
 
-\begin{tcolorbox}[enhanced jigsaw, opacitybacktitle=0.6, opacityback=0, coltitle=black, colframe=quarto-callout-note-color-frame, bottomtitle=1mm, rightrule=.15mm, bottomrule=.15mm, colback=white, leftrule=.75mm, left=2mm, colbacktitle=quarto-callout-note-color!10!white, arc=.35mm, toptitle=1mm, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, toprule=.15mm, breakable]
+\begin{tcolorbox}[enhanced jigsaw, colback=white, bottomtitle=1mm, breakable, arc=.35mm, coltitle=black, toptitle=1mm, left=2mm, titlerule=0mm, toprule=.15mm, colframe=quarto-callout-note-color-frame, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, rightrule=.15mm, opacityback=0, bottomrule=.15mm, leftrule=.75mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white]
 
 \emph{All images have been scaled-down to reduce file sized on git-hub.
 For original, presentation quality graphics, please contact Travis.}
@@ -367,9 +367,6 @@ subsequently erased from the lineaments, leaving natural faults and
 other geographic features. Additional details on lineament generation
 (\textbf{Ryan}).
 
-As with the Lithology layer (see below), the lineaments data layer ends
-abruptly at the US-Mexico border.
-
 Lineament density was calculated as line density in Km of fault per Km²,
 using a 1Km search kernel.
 
@@ -394,11 +391,12 @@ residence time of surface water, limiting recharge potential
 been frequently associated with less permeable soils (\textbf{CITATION
 NEEDED}).
 
-Drainage density was calculated using the USGS National Hydrography
-Dataset (NHD) flowline features (\textbf{Data Citation}). This dataset
-consisted of both natural and engineered flowlines, including such
-things as underground pipes. Line density was calculated in Km of
-flowline per Km², using a search kernel of 1 Km.
+Drainage density was derived from the elevation layer. Using a
+hydrolocic modeling workflow, the stream flow lines were calculated as
+the pixels with a minimum flow accumulation value of 1000 px. The
+streams raster layer was then converted to a smoothed feature layer and
+line density was calculated in Km of flowline per Km², using a search
+kernel of 1 Km.
 
 \begin{figure}
 
@@ -427,7 +425,7 @@ unfortunately it does not cover the entire watershed. The extent of the
 uncovered portion of the watershed is approximately 1,200 Km²,
 representing roughly 12\% of the total area.
 
-\begin{tcolorbox}[enhanced jigsaw, opacitybacktitle=0.6, opacityback=0, coltitle=black, colframe=quarto-callout-note-color-frame, bottomtitle=1mm, rightrule=.15mm, bottomrule=.15mm, colback=white, leftrule=.75mm, left=2mm, colbacktitle=quarto-callout-note-color!10!white, arc=.35mm, toptitle=1mm, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, toprule=.15mm, breakable]
+\begin{tcolorbox}[enhanced jigsaw, colback=white, bottomtitle=1mm, breakable, arc=.35mm, coltitle=black, toptitle=1mm, left=2mm, titlerule=0mm, toprule=.15mm, colframe=quarto-callout-note-color-frame, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, rightrule=.15mm, opacityback=0, bottomrule=.15mm, leftrule=.75mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white]
 
 \emph{In the San Pedro watershed precipitation is highly correlated with
 elevation. Using a simple linear trend line across the entire watershed
@@ -466,7 +464,7 @@ and it is not clear if any relevant data within Mexico can be located.
 The extent of the uncovered portion of the watershed is approximately
 1,800 Km², representing roughly 16\% of the total area.
 
-\begin{tcolorbox}[enhanced jigsaw, opacitybacktitle=0.6, opacityback=0, coltitle=black, colframe=quarto-callout-warning-color-frame, bottomtitle=1mm, rightrule=.15mm, bottomrule=.15mm, colback=white, leftrule=.75mm, left=2mm, colbacktitle=quarto-callout-warning-color!10!white, arc=.35mm, toptitle=1mm, titlerule=0mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Warning}, toprule=.15mm, breakable]
+\begin{tcolorbox}[enhanced jigsaw, colback=white, bottomtitle=1mm, breakable, arc=.35mm, coltitle=black, toptitle=1mm, left=2mm, titlerule=0mm, toprule=.15mm, colframe=quarto-callout-warning-color-frame, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Warning}, rightrule=.15mm, opacityback=0, bottomrule=.15mm, leftrule=.75mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-warning-color!10!white]
 
 \textbf{This method of classification, already arduous for San Pedro,
 with 25 unique categories, will not be scalable to the broader study
@@ -857,7 +855,7 @@ Clouds & 10 & \emph{NULL} & \emph{NULL} \\
 \textbf{I am unaware of any data availability for this layer. PLEASE
 ADVISE!}
 
-\begin{tcolorbox}[enhanced jigsaw, opacitybacktitle=0.6, opacityback=0, coltitle=black, colframe=quarto-callout-note-color-frame, bottomtitle=1mm, rightrule=.15mm, bottomrule=.15mm, colback=white, leftrule=.75mm, left=2mm, colbacktitle=quarto-callout-note-color!10!white, arc=.35mm, toptitle=1mm, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, toprule=.15mm, breakable]
+\begin{tcolorbox}[enhanced jigsaw, colback=white, bottomtitle=1mm, breakable, arc=.35mm, coltitle=black, toptitle=1mm, left=2mm, titlerule=0mm, toprule=.15mm, colframe=quarto-callout-note-color-frame, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, rightrule=.15mm, opacityback=0, bottomrule=.15mm, leftrule=.75mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white]
 
 \emph{I was able to locate sewer data for
 \href{https://cosvazgis-sierravista.hub.arcgis.com/maps/bd8411bd3f1a485395f057636aa94b09/explore?location=31.560760\%2C-110.206043\%2C-1.00}{Sierra
@@ -1283,7 +1281,7 @@ Normalized Raster = (Initial Raster - min)/(max - min)
 Flooding Recharge = Flooding_{\_normal} * Recharge_{\_normal}
 }\end{equation}
 
-\begin{tcolorbox}[enhanced jigsaw, opacitybacktitle=0.6, opacityback=0, coltitle=black, colframe=quarto-callout-note-color-frame, bottomtitle=1mm, rightrule=.15mm, bottomrule=.15mm, colback=white, leftrule=.75mm, left=2mm, colbacktitle=quarto-callout-note-color!10!white, arc=.35mm, toptitle=1mm, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, toprule=.15mm, breakable]
+\begin{tcolorbox}[enhanced jigsaw, colback=white, bottomtitle=1mm, breakable, arc=.35mm, coltitle=black, toptitle=1mm, left=2mm, titlerule=0mm, toprule=.15mm, colframe=quarto-callout-note-color-frame, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, rightrule=.15mm, opacityback=0, bottomrule=.15mm, leftrule=.75mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white]
 
 \emph{Alternatively, Figure~\ref{fig-floodMAR} could be modified to the
 \textbf{sum} of Flooding \textbf{+} Recharge. The resulting map is
@@ -1353,7 +1351,7 @@ the flooding susceptibility of this area is somewhat lower, in part due
 to its relatively low precipitation rates, and in part as a direct
 consequence of the soils and lithology favoring recharge, it is the
 location of Aravaipa Creek, which could be a source of seasonal nuisance
-water (a.k.a. flash flooding). Additionally, the nearby steep slopes and
+water (e.g.~flash flooding). Additionally, the nearby steep slopes and
 adjacent unsuitable soils (for recharge), funnel much of the available
 water from this sub-basin into a narrow valley bottom. This narrow,
 region of concentrated suitability may be a challenge for engineered
@@ -1376,9 +1374,9 @@ Section~\ref{sec-stormwater} and Table~\ref{tbl-classified}). While I
 currently have the ability (read code) to recalculate the eigenvectors
 and adjust the weighting schema to fit our available dataset, I have
 refrained from doing so at this time, and would prefer to receive group
-input on the layers pair-wise comparison (PWC) relative importance,
-prior to recalculating the eigenvectors, as this will have a profound
-impact on the resulting (final) weighting schema.
+input on the layers pair-wise comparison (PWC) relative importance prior
+to recalculating the eigenvectors, as this will have a profound impact
+on the resulting (final) weighting schema.
 
 Additionally, now is an excellent time to consider if there are any
 thematic layers that should be replace by improved or alternate data
@@ -1389,16 +1387,18 @@ particularly after the layer weighting eigenvectors are recalculated.
 (The addition or removal of a single layer results in a large change in
 the PWC variable matrix, which subsequently alters the statistical basis
 of the weighing schema, and may result in having to re-solicit survey
-responses from the research team!)
+responses from the research team!). This would also be a good time to
+consider if additional sub or child suitability analysis such as Road
+MAR or Forest Thinning should be added to the model.
 
 Lastly, the classification schemas may be updated as needed. Continuous
 thematic layers such as slope and elevation, may benefit from a
-formulaic (i.e.~linear, etc.) classification (as opposed to discreet
-classification). And qualitative layers such as soil type, lithology,
-and land use/cover should be carefully evaluated, and adjusted as
-needed. Unlike layer weighing, layer classification can be performed
-``on the fly'', and comparative classifications can be generated with
-relatively ease.
+formulaic (i.e.~linear, etc.) classification, as opposed to the current
+discreet classifications. Qualitative layers such as soil type,
+lithology, and land use/cover should be carefully evaluated, and
+adjusted as needed. Unlike layer weighing, layer classification can be
+performed ``on the fly'', and comparative classifications can be
+generated with relatively ease.
 
 \subsection{Scaling Up!}\label{scaling-up}
 

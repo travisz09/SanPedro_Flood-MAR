@@ -159,8 +159,6 @@ Methods and analysis closely following Aloui et al.
       lineaments, leaving natural faults and other geographic features.
       Additional details on lineament generation
       (<bold>Ryan</bold>).</p>
-      <p>As with the Lithology layer (see below), the lineaments data
-      layer ends abruptly at the US-Mexico border.</p>
       <p>Lineament density was calculated as line density in Km of fault
       per Km², using a 1Km search kernel.</p>
       <fig>
@@ -179,12 +177,12 @@ Methods and analysis closely following Aloui et al.
       and regions of high drainage density have been frequently
       associated with less permeable soils (<bold>CITATION
       NEEDED</bold>).</p>
-      <p>Drainage density was calculated using the USGS National
-      Hydrography Dataset (NHD) flowline features (<bold>Data
-      Citation</bold>). This dataset consisted of both natural and
-      engineered flowlines, including such things as underground pipes.
-      Line density was calculated in Km of flowline per Km², using a
-      search kernel of 1 Km.</p>
+      <p>Drainage density was derived from the elevation layer. Using a
+      hydrolocic modeling workflow, the stream flow lines were
+      calculated as the pixels with a minimum flow accumulation value of
+      1000 px. The streams raster layer was then converted to a smoothed
+      feature layer and line density was calculated in Km of flowline
+      per Km², using a search kernel of 1 Km.</p>
       <fig id="fig-drain">
         <caption><p>Figure 4: San Pedro drainage density. Line density
         calculated using a 1 Km search kernel.</p></caption>
@@ -1173,7 +1171,7 @@ Export.image.toDrive({
     somewhat lower, in part due to its relatively low precipitation
     rates, and in part as a direct consequence of the soils and
     lithology favoring recharge, it is the location of Aravaipa Creek,
-    which could be a source of seasonal nuisance water (a.k.a. flash
+    which could be a source of seasonal nuisance water (e.g. flash
     flooding). Additionally, the nearby steep slopes and adjacent
     unsuitable soils (for recharge), funnel much of the available water
     from this sub-basin into a narrow valley bottom. This narrow, region
@@ -1200,7 +1198,7 @@ Export.image.toDrive({
     eigenvectors and adjust the weighting schema to fit our available
     dataset, I have refrained from doing so at this time, and would
     prefer to receive group input on the layers pair-wise comparison
-    (PWC) relative importance, prior to recalculating the eigenvectors,
+    (PWC) relative importance prior to recalculating the eigenvectors,
     as this will have a profound impact on the resulting (final)
     weighting schema.</p>
     <p>Additionally, now is an excellent time to consider if there are
@@ -1212,16 +1210,18 @@ Export.image.toDrive({
     are recalculated. (The addition or removal of a single layer results
     in a large change in the PWC variable matrix, which subsequently
     alters the statistical basis of the weighing schema, and may result
-    in having to re-solicit survey responses from the research
-    team!)</p>
+    in having to re-solicit survey responses from the research team!).
+    This would also be a good time to consider if additional sub or
+    child suitability analysis such as Road MAR or Forest Thinning
+    should be added to the model.</p>
     <p>Lastly, the classification schemas may be updated as needed.
     Continuous thematic layers such as slope and elevation, may benefit
-    from a formulaic (i.e. linear, etc.) classification (as opposed to
-    discreet classification). And qualitative layers such as soil type,
-    lithology, and land use/cover should be carefully evaluated, and
-    adjusted as needed. Unlike layer weighing, layer classification can
-    be performed “on the fly”, and comparative classifications can be
-    generated with relatively ease.</p>
+    from a formulaic (i.e. linear, etc.) classification, as opposed to
+    the current discreet classifications. Qualitative layers such as
+    soil type, lithology, and land use/cover should be carefully
+    evaluated, and adjusted as needed. Unlike layer weighing, layer
+    classification can be performed “on the fly”, and comparative
+    classifications can be generated with relatively ease.</p>
   </sec>
   <sec id="scaling-up">
     <title>3.3 Scaling Up!</title>
