@@ -760,7 +760,7 @@ Export.image.toDrive({
         <graphic mimetype="image" mime-subtype="png" xlink:href="images/SanPedro_LULC.png" />
       </fig>
     </sec>
-    <sec id="stormwater-drainage-density">
+    <sec id="sec-stormwater">
       <title>2.1.10 Stormwater Drainage Density</title>
       <p><bold>I am unaware of any data availability for this layer.
       PLEASE ADVISE!</bold></p>
@@ -1083,9 +1083,153 @@ Export.image.toDrive({
       </fig>
     </sec>
   </sec>
+  <sec id="flood-susceptibility-recharge-suitability-overlay-a.k.a-floodmar">
+    <title>2.4 Flood Susceptibility — Recharge Suitability Overlay
+    (a.k.a FloodMAR)</title>
+    <p>Both the Flood Susceptibility and Recharge Suitability maps
+    (<xref alt="Figure 18" rid="fig-flood">Figure 18</xref> &amp;
+    <xref alt="Figure 25" rid="fig-recharge">Figure 25</xref>
+    respectively) were normalized to a 0 — 1 scale according to
+    <xref alt="Equation 1" rid="eq-normal">Equation 1</xref>, where min
+    and max are equal to the minimum and maximum values of the initial
+    raster, respectively. The resultant normalized rasters were then
+    multiplied together as in
+    <xref alt="Equation 2" rid="eq-floodMAR">Equation 2</xref> resulting
+    in a Flooding and Recharge suitability overlaid map with a
+    theoretical minimum of 0 and maximum of 1, as seen in
+    <xref alt="Figure 26" rid="fig-floodMAR">Figure 26</xref>.</p>
+    <p><styled-content id="eq-normal"><disp-formula><alternatives>
+    <tex-math><![CDATA[
+    Normalized Raster = (Initial Raster - min)/(max - min)
+     \qquad(1)]]></tex-math>
+    <mml:math display="block" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>N</mml:mi><mml:mi>o</mml:mi><mml:mi>r</mml:mi><mml:mi>m</mml:mi><mml:mi>a</mml:mi><mml:mi>l</mml:mi><mml:mi>i</mml:mi><mml:mi>z</mml:mi><mml:mi>e</mml:mi><mml:mi>d</mml:mi><mml:mi>R</mml:mi><mml:mi>a</mml:mi><mml:mi>s</mml:mi><mml:mi>t</mml:mi><mml:mi>e</mml:mi><mml:mi>r</mml:mi><mml:mo>=</mml:mo><mml:mrow><mml:mo stretchy="true" form="prefix">(</mml:mo><mml:mi>I</mml:mi><mml:mi>n</mml:mi><mml:mi>i</mml:mi><mml:mi>t</mml:mi><mml:mi>i</mml:mi><mml:mi>a</mml:mi><mml:mi>l</mml:mi><mml:mi>R</mml:mi><mml:mi>a</mml:mi><mml:mi>s</mml:mi><mml:mi>t</mml:mi><mml:mi>e</mml:mi><mml:mi>r</mml:mi><mml:mo>−</mml:mo><mml:mi>m</mml:mi><mml:mi>i</mml:mi><mml:mi>n</mml:mi><mml:mo stretchy="true" form="postfix">)</mml:mo></mml:mrow><mml:mi>/</mml:mi><mml:mrow><mml:mo stretchy="true" form="prefix">(</mml:mo><mml:mi>m</mml:mi><mml:mi>a</mml:mi><mml:mi>x</mml:mi><mml:mo>−</mml:mo><mml:mi>m</mml:mi><mml:mi>i</mml:mi><mml:mi>n</mml:mi><mml:mo stretchy="true" form="postfix">)</mml:mo></mml:mrow><mml:mspace width="2.0em"></mml:mspace><mml:mrow><mml:mo stretchy="true" form="prefix">(</mml:mo><mml:mn>1</mml:mn><mml:mo stretchy="true" form="postfix">)</mml:mo></mml:mrow></mml:mrow></mml:math></alternatives></disp-formula></styled-content></p>
+    <p><styled-content id="eq-floodMAR"><disp-formula><alternatives>
+    <tex-math><![CDATA[
+    Flooding Recharge = Flooding_{\_normal} * Recharge_{\_normal}
+     \qquad(2)]]></tex-math>
+    <mml:math display="block" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>F</mml:mi><mml:mi>l</mml:mi><mml:mi>o</mml:mi><mml:mi>o</mml:mi><mml:mi>d</mml:mi><mml:mi>i</mml:mi><mml:mi>n</mml:mi><mml:mi>g</mml:mi><mml:mi>R</mml:mi><mml:mi>e</mml:mi><mml:mi>c</mml:mi><mml:mi>h</mml:mi><mml:mi>a</mml:mi><mml:mi>r</mml:mi><mml:mi>g</mml:mi><mml:mi>e</mml:mi><mml:mo>=</mml:mo><mml:mi>F</mml:mi><mml:mi>l</mml:mi><mml:mi>o</mml:mi><mml:mi>o</mml:mi><mml:mi>d</mml:mi><mml:mi>i</mml:mi><mml:mi>n</mml:mi><mml:msub><mml:mi>g</mml:mi><mml:mrow><mml:mi>_</mml:mi><mml:mi>n</mml:mi><mml:mi>o</mml:mi><mml:mi>r</mml:mi><mml:mi>m</mml:mi><mml:mi>a</mml:mi><mml:mi>l</mml:mi></mml:mrow></mml:msub><mml:mo>*</mml:mo><mml:mi>R</mml:mi><mml:mi>e</mml:mi><mml:mi>c</mml:mi><mml:mi>h</mml:mi><mml:mi>a</mml:mi><mml:mi>r</mml:mi><mml:mi>g</mml:mi><mml:msub><mml:mi>e</mml:mi><mml:mrow><mml:mi>_</mml:mi><mml:mi>n</mml:mi><mml:mi>o</mml:mi><mml:mi>r</mml:mi><mml:mi>m</mml:mi><mml:mi>a</mml:mi><mml:mi>l</mml:mi></mml:mrow></mml:msub><mml:mspace width="2.0em"></mml:mspace><mml:mrow><mml:mo stretchy="true" form="prefix">(</mml:mo><mml:mn>2</mml:mn><mml:mo stretchy="true" form="postfix">)</mml:mo></mml:mrow></mml:mrow></mml:math></alternatives></disp-formula></styled-content></p>
+    <boxed-text>
+    <p><bold>Note</bold></p>
+    <p><italic>Alternatively,
+    <xref alt="Figure 26" rid="fig-floodMAR">Figure 26</xref> could be
+    modified to the <bold>sum</bold> of Flooding <bold>+</bold>
+    Recharge. The resulting map is similar, but the theoretical maximum
+    is increased to 2. The increased range of values in the summation
+    map is, visually, a little smoother and brighter overall, however I
+    prefer the high contrast seen in
+    <xref alt="Figure 26" rid="fig-floodMAR">Figure 26</xref>. Alternate
+    map available by request.</italic></p>
+    </boxed-text>
+    <fig id="fig-floodMAR">
+      <caption><p>Figure 26: San Pedro Flooding — Recharge overlay
+      map.</p></caption>
+      <graphic mimetype="image" mime-subtype="png" xlink:href="images/SanPedro_FloodMAR_alt1.png" />
+    </fig>
+  </sec>
 </sec>
 <sec id="conclusion">
   <title>3 Conclusion</title>
+  <sec id="first-impressions">
+    <title>3.1 First Impressions</title>
+    <p>As expected, Flooding — Recharge suitability is highest in the
+    valley bottom, near the San Pedro river. This is both where excess
+    water is available (flooding) and where the lithology and other
+    factors are suitable for recharge. Much of the banding seen in the
+    upper watershed is highly influenced by the elevation
+    classification, which is somewhat arbitrarily classified into
+    discreet class breaks. This layer would perhaps be improved, and the
+    subsequent banding would be smoothed, if modified to a linear
+    classification schema (see
+    <xref alt="Table 4" rid="tbl-classified">Table 4</xref>).</p>
+    <p>Lithography is also highly influential in the overlaid map,
+    particularly in the stream channel, and near the upper-lower
+    watershed divide, as well as near San Manuel. Compare
+    <xref alt="Figure 21" rid="fig-rechLithoClass">Figure 21</xref> to
+    <xref alt="Figure 26" rid="fig-floodMAR">Figure 26</xref>.</p>
+    <p>Major gaps in analysis (aside from Mexico), largely correspond to
+    gaps in the soils input layer. Additionally, blocky “pixelated”
+    artifacts around the watershed boarder are the result of the PRISM
+    rainfall data. While this data layer was downscaled to match the
+    30-m elevation raster, it was not interpolated to the edges of the
+    boundary. This may be addressed in subsequent analysis simply by
+    downscaling the PRISM data prior to clipping, or by adding a small
+    buffer to the watershed boundary (for purposes of clipping).</p>
+    <p>Highly suitable locations exist in the upper watershed, near
+    St. David and Benson, and in the lower watershed near San Manuel.
+    The San Manuel area may be of particular interest, as there is
+    (evidently) existing large-scale environmental engineering projects
+    in the area (of which I know very little, a quarry perhaps?), as
+    evidenced by the flat, uniform slope, with sharp, square angles,
+    clearly visible in
+    <xref alt="Figure 10" rid="fig-floodSlopeClass">Figure 10</xref>.
+    Although soils data is lacking over that particular formation, it is
+    reasonable to infer from the immediately surrounding area, that it
+    would be moderately to highly suitable for both flooding and
+    recharge.</p>
+    <p>Perhaps most surprising is the highly suitable region near
+    Klondike in the Aravaipa Canyon. At the valley bottom, this
+    relatively small sub-basin has highly favorable soils and lithology
+    for recharge. While the flooding susceptibility of this area is
+    somewhat lower, in part due to its relatively low precipitation
+    rates, and in part as a direct consequence of the soils and
+    lithology favoring recharge, it is the location of Aravaipa Creek,
+    which could be a source of seasonal nuisance water (a.k.a. flash
+    flooding). Additionally, the nearby steep slopes and adjacent
+    unsuitable soils (for recharge), funnel much of the available water
+    from this sub-basin into a narrow valley bottom. This narrow, region
+    of concentrated suitability may be a challenge for engineered
+    aquifer recharge, however it is likely a strong indicator of natural
+    occurring recharge.</p>
+  </sec>
+  <sec id="next-steps">
+    <title>3.2 Next Steps</title>
+    <p>This analysis, while good, is in need of several improvements.
+    Firstly, while the work of Aloui et al.
+    (<xref alt="2024" rid="ref-aloui2024" ref-type="bibr">2024</xref>)
+    is laudable, this analysis (as it currently is) relies too heavily
+    on their body of work. Classification schemas, layer weighting, and
+    inclusion/exclusion of additional layers must be evaluated
+    independently.</p>
+    <p>Perhaps most importantly is the layer weighting schema. Due to
+    the lack of the stormwater drainage density thematic layer the layer
+    weights for both flood susceptibility and recharge suitability do
+    not sum to 1, and are therefor not statistically defensible (see
+    <xref alt="Section 2.1.10" rid="sec-stormwater">Section 2.1.10</xref>
+    and <xref alt="Table 4" rid="tbl-classified">Table 4</xref>). While
+    I currently have the ability (read code) to recalculate the
+    eigenvectors and adjust the weighting schema to fit our available
+    dataset, I have refrained from doing so at this time, and would
+    prefer to receive group input on the layers pair-wise comparison
+    (PWC) relative importance, prior to recalculating the eigenvectors,
+    as this will have a profound impact on the resulting (final)
+    weighting schema.</p>
+    <p>Additionally, now is an excellent time to consider if there are
+    any thematic layers that should be replace by improved or alternate
+    data sources, particularly if there are any “in-house” modeling
+    layers which can replace or supplement existing layers. The addition
+    or removal of layers will become increasingly difficult in the
+    months to come, particularly after the layer weighting eigenvectors
+    are recalculated. (The addition or removal of a single layer results
+    in a large change in the PWC variable matrix, which subsequently
+    alters the statistical basis of the weighing schema, and may result
+    in having to re-solicit survey responses from the research
+    team!)</p>
+    <p>Lastly, the classification schemas may be updated as needed.
+    Continuous thematic layers such as slope and elevation, may benefit
+    from a formulaic (i.e. linear, etc.) classification (as opposed to
+    discreet classification). And qualitative layers such as soil type,
+    lithology, and land use/cover should be carefully evaluated, and
+    adjusted as needed. Unlike layer weighing, layer classification can
+    be performed “on the fly”, and comparative classifications can be
+    generated with relatively ease.</p>
+  </sec>
+  <sec id="scaling-up">
+    <title>3.3 Scaling Up!</title>
+    <p>Ultimately, the goal of this project is to scale up to a
+    state-wide analysis. While there will be computational challenges
+    associated with scaling up, the method itself, including the
+    underlying data layers are highly scalable.</p>
+  </sec>
 </sec>
 </body>
 

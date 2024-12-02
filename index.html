@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Travis Zalesky">
-<meta name="dcterms.date" content="2024-11-27">
+<meta name="dcterms.date" content="2024-12-02">
 <meta name="keywords" content="Arizona Tri University Recharge (ATUR), San Pedro Watershed, Managed Aquifer Recharge, Suitability Analysis">
 
 <title>San Pedro Flood-MAR</title>
@@ -100,16 +100,45 @@ div.csl-indent {
   });
 </script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <meta name="citation_title" content="San Pedro Flood-MAR">
 <meta name="citation_abstract" content="Continuation of ATUR [Broad Suitability Analysis](https://travisz09.github.io/ATUR-Broad-Suitability-Analysis/) with emphasis on San Pedro watershed. By narrowing the focus of this analysis I hope to achieve additional progress that will help to inform the broader analysis downstream. Methods and analysis closely following @aloui2024
 ">
 <meta name="citation_keywords" content="Arizona Tri University Recharge (ATUR),San Pedro Watershed,Managed Aquifer Recharge,Suitability Analysis">
 <meta name="citation_author" content="Travis Zalesky">
-<meta name="citation_publication_date" content="2024-11-27">
-<meta name="citation_cover_date" content="2024-11-27">
+<meta name="citation_publication_date" content="2024-12-02">
+<meta name="citation_cover_date" content="2024-12-02">
 <meta name="citation_year" content="2024">
-<meta name="citation_online_date" content="2024-11-27">
+<meta name="citation_online_date" content="2024-12-02">
 <meta name="citation_language" content="en">
 <meta name="citation_reference" content="citation_title=Strategies for the development of volcanic hazard maps in monogenetic volcanic fields: The example of La Palma (Canary Islands);,citation_author=José Marrero;,citation_author=Alicia García;,citation_author=Manuel Berrocoso;,citation_author=Ángeles Llinares;,citation_author=Antonio Rodríguez-Losada;,citation_author=R. Ortiz;,citation_publication_date=2019-07;,citation_cover_date=2019-07;,citation_year=2019;,citation_doi=10.1186/s13617-019-0085-5;,citation_volume=8;,citation_journal_title=Journal of Applied Volcanology;">
 <meta name="citation_reference" content="citation_title=Identifying suitable zones for integrated aquifer recharge and flood control in arid qatar using GIS-based multi-criteria decision-making;,citation_author=Sarra Aloui;,citation_author=Adel Zghibi;,citation_author=Annamaria Mazzoni;,citation_author=Adel Elomri;,citation_author=Tareq Al-Ansari;,citation_publication_date=2024-05;,citation_cover_date=2024-05;,citation_year=2024;,citation_doi=10.1016/j.gsd.2024.101137;,citation_issn=2352-801X;,citation_volume=25;,citation_journal_title=Groundwater for Sustainable Development;">
@@ -146,7 +175,7 @@ div.csl-indent {
                 <div>
             <div class="quarto-title-meta-heading">Published</div>
             <div class="quarto-title-meta-contents">
-              <p class="date">November 27, 2024</p>
+              <p class="date">December 2, 2024</p>
             </div>
           </div>
           
@@ -188,8 +217,14 @@ div.csl-indent {
   <li><a href="#thematic-layers" id="toc-thematic-layers" class="nav-link" data-scroll-target="#thematic-layers"><span class="header-section-number">2.1</span> Thematic Layers</a></li>
   <li><a href="#flood-suitability-susceptibility" id="toc-flood-suitability-susceptibility" class="nav-link" data-scroll-target="#flood-suitability-susceptibility"><span class="header-section-number">2.2</span> Flood Suitability (Susceptibility)</a></li>
   <li><a href="#recharge-suitability" id="toc-recharge-suitability" class="nav-link" data-scroll-target="#recharge-suitability"><span class="header-section-number">2.3</span> Recharge Suitability</a></li>
+  <li><a href="#flood-susceptibility-recharge-suitability-overlay-a.k.a-floodmar" id="toc-flood-susceptibility-recharge-suitability-overlay-a.k.a-floodmar" class="nav-link" data-scroll-target="#flood-susceptibility-recharge-suitability-overlay-a.k.a-floodmar"><span class="header-section-number">2.4</span> Flood Susceptibility — Recharge Suitability Overlay (a.k.a FloodMAR)</a></li>
   </ul></li>
-  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion"><span class="header-section-number">3</span> Conclusion</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion"><span class="header-section-number">3</span> Conclusion</a>
+  <ul class="collapse">
+  <li><a href="#first-impressions" id="toc-first-impressions" class="nav-link" data-scroll-target="#first-impressions"><span class="header-section-number">3.1</span> First Impressions</a></li>
+  <li><a href="#next-steps" id="toc-next-steps" class="nav-link" data-scroll-target="#next-steps"><span class="header-section-number">3.2</span> Next Steps</a></li>
+  <li><a href="#scaling-up" id="toc-scaling-up" class="nav-link" data-scroll-target="#scaling-up"><span class="header-section-number">3.3</span> Scaling Up!</a></li>
+  </ul></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
 </nav>
@@ -819,8 +854,8 @@ Table&nbsp;3: Land use/cover.
 </figure>
 </div>
 </section>
-<section id="stormwater-drainage-density" class="level4" data-number="2.1.10">
-<h4 data-number="2.1.10" class="anchored" data-anchor-id="stormwater-drainage-density"><span class="header-section-number">2.1.10</span> Stormwater Drainage Density</h4>
+<section id="sec-stormwater" class="level4" data-number="2.1.10">
+<h4 data-number="2.1.10" class="anchored" data-anchor-id="sec-stormwater"><span class="header-section-number">2.1.10</span> Stormwater Drainage Density</h4>
 <p><strong>I am unaware of any data availability for this layer. PLEASE ADVISE!</strong></p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -1197,9 +1232,61 @@ Figure&nbsp;25: San Pedro recharge suitability analysis.
 </div>
 </section>
 </section>
+<section id="flood-susceptibility-recharge-suitability-overlay-a.k.a-floodmar" class="level3" data-number="2.4">
+<h3 data-number="2.4" class="anchored" data-anchor-id="flood-susceptibility-recharge-suitability-overlay-a.k.a-floodmar"><span class="header-section-number">2.4</span> Flood Susceptibility — Recharge Suitability Overlay (a.k.a FloodMAR)</h3>
+<p>Both the Flood Susceptibility and Recharge Suitability maps (<a href="#fig-flood" class="quarto-xref">Figure&nbsp;18</a> &amp; <a href="#fig-recharge" class="quarto-xref">Figure&nbsp;25</a> respectively) were normalized to a 0 — 1 scale according to <a href="#eq-normal" class="quarto-xref">Equation&nbsp;1</a>, where min and max are equal to the minimum and maximum values of the initial raster, respectively. The resultant normalized rasters were then multiplied together as in <a href="#eq-floodMAR" class="quarto-xref">Equation&nbsp;2</a> resulting in a Flooding and Recharge suitability overlaid map with a theoretical minimum of 0 and maximum of 1, as seen in <a href="#fig-floodMAR" class="quarto-xref">Figure&nbsp;26</a>.</p>
+<p><span id="eq-normal"><span class="math display">\[
+Normalized Raster = (Initial Raster - min)/(max - min)
+\tag{1}\]</span></span></p>
+<p><span id="eq-floodMAR"><span class="math display">\[
+Flooding Recharge = Flooding_{\_normal} * Recharge_{\_normal}
+\tag{2}\]</span></span></p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><em>Alternatively, <a href="#fig-floodMAR" class="quarto-xref">Figure&nbsp;26</a> could be modified to the <strong>sum</strong> of Flooding <strong>+</strong> Recharge. The resulting map is similar, but the theoretical maximum is increased to 2. The increased range of values in the summation map is, visually, a little smoother and brighter overall, however I prefer the high contrast seen in <a href="#fig-floodMAR" class="quarto-xref">Figure&nbsp;26</a>. Alternate map available by request.</em></p>
+</div>
+</div>
+<div id="fig-floodMAR" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-floodMAR-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/SanPedro_FloodMAR_alt1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-28" title="Figure&nbsp;26: San Pedro Flooding — Recharge overlay map."><img src="images/SanPedro_FloodMAR_alt1.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-floodMAR-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;26: San Pedro Flooding — Recharge overlay map.
+</figcaption>
+</figure>
+</div>
+</section>
 </section>
 <section id="conclusion" class="level2" data-number="3">
 <h2 data-number="3" class="anchored" data-anchor-id="conclusion"><span class="header-section-number">3</span> Conclusion</h2>
+<section id="first-impressions" class="level3" data-number="3.1">
+<h3 data-number="3.1" class="anchored" data-anchor-id="first-impressions"><span class="header-section-number">3.1</span> First Impressions</h3>
+<p>As expected, Flooding — Recharge suitability is highest in the valley bottom, near the San Pedro river. This is both where excess water is available (flooding) and where the lithology and other factors are suitable for recharge. Much of the banding seen in the upper watershed is highly influenced by the elevation classification, which is somewhat arbitrarily classified into discreet class breaks. This layer would perhaps be improved, and the subsequent banding would be smoothed, if modified to a linear classification schema (see <a href="#tbl-classified" class="quarto-xref">Table&nbsp;4</a>).</p>
+<p>Lithography is also highly influential in the overlaid map, particularly in the stream channel, and near the upper-lower watershed divide, as well as near San Manuel. Compare <a href="#fig-rechLithoClass" class="quarto-xref">Figure&nbsp;21</a> to <a href="#fig-floodMAR" class="quarto-xref">Figure&nbsp;26</a>.</p>
+<p>Major gaps in analysis (aside from Mexico), largely correspond to gaps in the soils input layer. Additionally, blocky “pixelated” artifacts around the watershed boarder are the result of the PRISM rainfall data. While this data layer was downscaled to match the 30-m elevation raster, it was not interpolated to the edges of the boundary. This may be addressed in subsequent analysis simply by downscaling the PRISM data prior to clipping, or by adding a small buffer to the watershed boundary (for purposes of clipping).</p>
+<p>Highly suitable locations exist in the upper watershed, near St.&nbsp;David and Benson, and in the lower watershed near San Manuel. The San Manuel area may be of particular interest, as there is (evidently) existing large-scale environmental engineering projects in the area (of which I know very little, a quarry perhaps?), as evidenced by the flat, uniform slope, with sharp, square angles, clearly visible in <a href="#fig-floodSlopeClass" class="quarto-xref">Figure&nbsp;10</a>. Although soils data is lacking over that particular formation, it is reasonable to infer from the immediately surrounding area, that it would be moderately to highly suitable for both flooding and recharge.</p>
+<p>Perhaps most surprising is the highly suitable region near Klondike in the Aravaipa Canyon. At the valley bottom, this relatively small sub-basin has highly favorable soils and lithology for recharge. While the flooding susceptibility of this area is somewhat lower, in part due to its relatively low precipitation rates, and in part as a direct consequence of the soils and lithology favoring recharge, it is the location of Aravaipa Creek, which could be a source of seasonal nuisance water (a.k.a. flash flooding). Additionally, the nearby steep slopes and adjacent unsuitable soils (for recharge), funnel much of the available water from this sub-basin into a narrow valley bottom. This narrow, region of concentrated suitability may be a challenge for engineered aquifer recharge, however it is likely a strong indicator of natural occurring recharge.</p>
+</section>
+<section id="next-steps" class="level3" data-number="3.2">
+<h3 data-number="3.2" class="anchored" data-anchor-id="next-steps"><span class="header-section-number">3.2</span> Next Steps</h3>
+<p>This analysis, while good, is in need of several improvements. Firstly, while the work of <span class="citation" data-cites="aloui2024">Aloui et al. (<a href="#ref-aloui2024" role="doc-biblioref">2024</a>)</span> is laudable, this analysis (as it currently is) relies too heavily on their body of work. Classification schemas, layer weighting, and inclusion/exclusion of additional layers must be evaluated independently.</p>
+<p>Perhaps most importantly is the layer weighting schema. Due to the lack of the stormwater drainage density thematic layer the layer weights for both flood susceptibility and recharge suitability do not sum to 1, and are therefor not statistically defensible (see <a href="#sec-stormwater" class="quarto-xref">Section&nbsp;2.1.10</a> and <a href="#tbl-classified" class="quarto-xref">Table&nbsp;4</a>). While I currently have the ability (read code) to recalculate the eigenvectors and adjust the weighting schema to fit our available dataset, I have refrained from doing so at this time, and would prefer to receive group input on the layers pair-wise comparison (PWC) relative importance, prior to recalculating the eigenvectors, as this will have a profound impact on the resulting (final) weighting schema.</p>
+<p>Additionally, now is an excellent time to consider if there are any thematic layers that should be replace by improved or alternate data sources, particularly if there are any “in-house” modeling layers which can replace or supplement existing layers. The addition or removal of layers will become increasingly difficult in the months to come, particularly after the layer weighting eigenvectors are recalculated. (The addition or removal of a single layer results in a large change in the PWC variable matrix, which subsequently alters the statistical basis of the weighing schema, and may result in having to re-solicit survey responses from the research team!)</p>
+<p>Lastly, the classification schemas may be updated as needed. Continuous thematic layers such as slope and elevation, may benefit from a formulaic (i.e.&nbsp;linear, etc.) classification (as opposed to discreet classification). And qualitative layers such as soil type, lithology, and land use/cover should be carefully evaluated, and adjusted as needed. Unlike layer weighing, layer classification can be performed “on the fly”, and comparative classifications can be generated with relatively ease.</p>
+</section>
+<section id="scaling-up" class="level3" data-number="3.3">
+<h3 data-number="3.3" class="anchored" data-anchor-id="scaling-up"><span class="header-section-number">3.3</span> Scaling Up!</h3>
+<p>Ultimately, the goal of this project is to scale up to a state-wide analysis. While there will be computational challenges associated with scaling up, the method itself, including the underlying data layers are highly scalable.</p>
+</section>
 </section>
 <section id="references" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="references">References</h2>
