@@ -81,7 +81,7 @@ Lineament density was calculated as line density in Km of fault per Km², using 
 
 High drainage density increases flood susceptibility via rapid water accumulation through channels (**CITATION NEEDED**). Additionally, the increased flow rate in areas with high drainage density reduces the residence time of surface water, limiting recharge potential (**CITATION NEEDED**) and regions of high drainage density have been frequently associated with less permeable soils (**CITATION NEEDED**).
 
-Drainage density was derived from the elevation layer. Using a hydrolocic modeling workflow, the stream flow lines were calculated as the pixels with a minimum flow accumulation value of 1000 px. The streams raster layer was then converted to a smoothed feature layer and line density was calculated in Km of flowline per Km², using a search kernel of 1 Km.
+Drainage density was derived from the elevation layer. Using a hydrologic modeling workflow, the stream flow lines were calculated as the pixels with a minimum flow accumulation value of 1000 px. The streams raster layer was then converted to a smoothed feature layer and line density was calculated in Km of flowline per Km², using a search kernel of 1 Km.
 
 ![San Pedro drainage density. Line density calculated using a 1 Km search kernel.](images/SanPedro_DrainDense.png){#fig-drain}
 
