@@ -21,9 +21,6 @@ def CalcSlope(DEM, Slope):  # Slope
     # To allow overwriting outputs change overwriteOutput option to True.
     arcpy.env.overwriteOutput = True
 
-    # Check out any necessary licenses.
-    arcpy.CheckOutExtension("spatial")
-
     # Process: Slope (Slope) (sa)
     outSlope = arcpy.sa.Slope(DEM, 'DEGREE', method='PLANAR')
     print(f'\t{arcpy.GetMessages().replace(nl, nl+tb)}')

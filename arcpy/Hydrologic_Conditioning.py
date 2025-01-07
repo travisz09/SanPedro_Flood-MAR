@@ -22,9 +22,6 @@ def HydrologicConditioning(Filled_DEM, FlowDir, FlowAcc, StreamsRast, StreamsFea
     # To allow overwriting outputs change overwriteOutput option to True.
     arcpy.env.overwriteOutput = True
 
-    # Check out any necessary licenses.
-    arcpy.CheckOutExtension("spatial")
-
     # Process: Flow Direction (Flow Direction) (sa)
     print('\tFlow Direction...')
     outFlowDir = arcpy.sa.FlowDirection(Filled_DEM, force_flow='FORCE', flow_direction_type='D8')

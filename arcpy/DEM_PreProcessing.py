@@ -21,9 +21,6 @@ def DEMPreProcessing(DEM, Filled_DEM, Z_limit=None):  # DEM_PreProcessing
     # To allow overwriting outputs change overwriteOutput option to True.
     arcpy.env.overwriteOutput = True
 
-    # Check out any necessary licenses.
-    arcpy.CheckOutExtension("spatial")
-
     # Process: Fill (Fill) (sa)
     print('\tFilling DEM...')
     if Z_limit in locals():  # If Z_limit param is given...

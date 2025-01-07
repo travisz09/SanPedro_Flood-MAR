@@ -16,19 +16,16 @@ nl = '\n'  # var can be used in f-strings to represent newline character
 tb = '\t'  # var can be used in f-strings to represent tab character
 
 #For inline variable substitution, parameters passed as a String are evaluated using locals(), globals() and isinstance(). To override, substitute values directly.
-def FeatToRast(Feat, Value_Field, Output, Snap_Raster):  # Slope
+def FeatToRast(Feat, Value_Field, Output, Snap_Raster):  # Feature to Raster
 
     # To allow overwriting outputs change overwriteOutput option to True.
     arcpy.env.overwriteOutput = True
     arcpy.env.snapRaster = Snap_Raster
     resolution = str(arcpy.management.GetRasterProperties(Snap_Raster, 'CELLSIZEX')) + ' Meters'
 
-    # Check out any necessary licenses.
-    arcpy.CheckOutExtension("spatial")
-
     # Process: Feature to Raster (ConvertFeatureToRaster) (ra)
     print('\tConverting Features to Raster...')
-    outRaster = arcpy.ra.ConvertFeatureToRaster(Feat, Value_Field, Output, resolution)
+    outRaster = arcpy.conversion.FeatureToRaster(Feat, Value_Field, Output, Snap_Raster)
     print(f'\t\t{arcpy.GetMessages().replace(nl, nl+tb+tb)}')
 
     return outRaster

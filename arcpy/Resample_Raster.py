@@ -23,9 +23,6 @@ def ResampleRaster(Raster, Output, Snap_Raster):  # Slope
     arcpy.env.snapRaster = Snap_Raster
     resolution = arcpy.management.GetRasterProperties(Snap_Raster, 'CELLSIZEX')
 
-    # Check out any necessary licenses.
-    arcpy.CheckOutExtension("spatial")
-
     # Process: Resample (Resample) (management)
     print('\tResampling Raster...')
     outRaster = arcpy.management.Resample(Raster, Output, resolution, 'BILINEAR')

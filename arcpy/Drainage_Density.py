@@ -24,9 +24,6 @@ def DrainageDensity(Streams, Drain_Density, Snap_Raster, Mask_Geom):  # Drainage
     arcpy.env.mask = Mask_Geom
     arcpy.env.snapRaster = Snap_Raster
 
-    # Check out any necessary licenses.
-    arcpy.CheckOutExtension("spatial")
-
     # Process: Line Density (Line Density) (sa)
     outLDense = arcpy.sa.LineDensity(Streams, population_field="NONE", cell_size=Snap_Raster, search_radius=1000, area_unit_scale_factor='SQUARE_KILOMETERS')
     print(f'\t{arcpy.GetMessages().replace(nl, nl+tb)}')
