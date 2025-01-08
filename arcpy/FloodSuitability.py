@@ -24,7 +24,7 @@ gdb = f'{ws}/{gdb_name}'
 # Input data absolute filepaths
 # San Pedro watershed data may be minimally pre-processed from raw data files
 # TODO: Change all datasets to full ATUR extent and include clipping step
-extentFeat = r"C:\GIS_Projects\ATUR\Data\Arizona_Boundary\WBDHU8_OuterBoundary_Project.shp"  # i.e. mask
+extentFeat = r"C:\GIS_Projects\ATUR\Data\Arizona_Boundary\SanPedroWatershed.shp"  # i.e. mask
 DEM_filePath = r"C:\GIS_Projects\ATUR\Data\DEM\Study_area_SRTM.tif"
 Precip_filePath = r"C:\GIS_Projects\ATUR\Data\Climate\PRISM_ppt_30yrnormal_800m.tif"
 Litho_filePath = r"C:\GIS_Projects\ATUR\Data\Geology\GeologicUnits\Geology of Arizona - Units - SGMC.shp"
