@@ -24,7 +24,7 @@ gdb = f'{ws}/{gdb_name}'
 # Input data absolute filepaths
 # San Pedro watershed data may be minimally pre-processed from raw data files
 # TODO: Change all datasets to full ATUR extent and include clipping step
-extentFeat = r'C:\GIS_Projects\ATUR\ArcPro\DataExploration_Sandbox\ATUR_DataExploration.gdb\SanPedroWatershed'  # i.e. mask
+extentFeat = r"C:\GIS_Projects\ATUR\Data\Arizona_Boundary\WBDHU8_OuterBoundary_Project.shp"  # i.e. mask
 DEM_filePath = r"C:\GIS_Projects\ATUR\Data\DEM\Study_area_SRTM.tif"
 Precip_filePath = r"C:\GIS_Projects\ATUR\Data\Climate\PRISM_ppt_30yrnormal_800m.tif"
 Litho_filePath = r"C:\GIS_Projects\ATUR\Data\Geology\GeologicUnits\Geology of Arizona - Units - SGMC.shp"
@@ -32,13 +32,11 @@ Soils_filePath = r"C:\GIS_Projects\ATUR\Data\Soils\AZ_Soil_Hydric_Group.lpkx"
 # TODO: Ask Ryan for state-wide lineaments density layer
 # Linaments not currently available for full ATUR extent
 Lineaments_filePath = r'C:\Users\travisz09\Documents\ArcGIS\Packages\LineamentDensity_550d0d\p30\LineamentDensity.lyrx'
-# TODO: Generate 10-year mean NDVI data for full ATUR extent
-# GEE processing underway
-NDVI_filePath = r'C:\GIS_Projects\ATUR\ArcPro\General_Suitability_Analysis\General_Suitability_Analysis.gdb\SanPedroNDVI_10yrMean_Clip'
+NDVI_filePath = r"C:\GIS_Projects\ATUR\Data\Climate\NDVI_10yrMean.tif"
 LULC_filePath = r"C:\GIS_Projects\ATUR\Data\LULC\ESRI_LULC_30m_clip.tif"
 # Classification Schema Tables
-contClassifications_filePath = r"D:\Saved_GIS_Projects\ATUR_Temp\Temp_Workspace\Flooding_ContinuousClassificationSchemas.csv"
-catClassifications_filePath = r"D:\Saved_GIS_Projects\ATUR_Temp\Temp_Workspace\Flooding_CategoricalClassificationSchemas.csv"
+contClassifications_filePath = r"C:\GIS_Projects\ATUR\Documents\Quarto\SanPedro_Flood-MAR\SanPedro_Flood-MAR\arcpy\Classification_Tables\Flooding_ContinuousClassificationSchemas.csv"
+catClassifications_filePath = r"C:\GIS_Projects\ATUR\Documents\Quarto\SanPedro_Flood-MAR\SanPedro_Flood-MAR\arcpy\Classification_Tables\Flooding_CategoricalClassificationSchemas.csv"
 
 # Arc Environment Settings
 ap.env.overwriteOutput = True  # Enable file overwriting
