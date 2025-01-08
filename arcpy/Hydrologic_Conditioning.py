@@ -16,7 +16,6 @@ from sys import argv
 nl = '\n'  # var can be used in f-strings to represent newline character
 tb = '\t'  # var can be used in f-strings to represent tab character
 
-#For inline variable substitution, parameters passed as a String are evaluated using locals(), globals() and isinstance(). To override, substitute values directly.
 def HydrologicConditioning(Filled_DEM, FlowDir, FlowAcc, StreamsRast, StreamsFeat):  # Hydrologic_Conditioning
 
     # To allow overwriting outputs change overwriteOutput option to True.

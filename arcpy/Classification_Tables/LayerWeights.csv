@@ -1,0 +1,10 @@
+﻿layer,floodingWeight,rechargeWeight
+DEM,0.17,0.12
+Slope,0.11,0.15
+Lineaments,0.04,0.08
+Drainage,0.07,0.03
+Precip,0.06,0.05
+NDVI,0.02,0.02
+Lithology,0.09,0.3
+Soil,0.03,0.02
+LULC,0.19,0.22

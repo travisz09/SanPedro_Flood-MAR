@@ -15,13 +15,13 @@ from sys import argv
 nl = '\n'  # var can be used in f-strings to represent newline character
 tb = '\t'  # var can be used in f-strings to represent tab character
 
-#For inline variable substitution, parameters passed as a String are evaluated using locals(), globals() and isinstance(). To override, substitute values directly.
-def FeatToRast(Feat, Value_Field, Output, Snap_Raster):  # Feature to Raster
+def FeatToRast(Feat, Value_Field, Output, Snap_Raster, Mask_Geom):  # Feature to Raster
 
     # To allow overwriting outputs change overwriteOutput option to True.
     arcpy.env.overwriteOutput = True
-    arcpy.env.snapRaster = Snap_Raster
-    resolution = str(arcpy.management.GetRasterProperties(Snap_Raster, 'CELLSIZEX')) + ' Meters'
+    arcpy.env.extent = Mask_Geom  # Default processing extent
+    arcpy.env.mask = Mask_Geom  # Default processing mask
+    arcpy.env.snapRaster = Snap_Raster  # Default processing snap raster
 
     # Process: Feature to Raster (ConvertFeatureToRaster) (ra)
     print('\tConverting Features to Raster...')

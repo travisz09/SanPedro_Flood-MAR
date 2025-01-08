@@ -28,6 +28,8 @@ Soils,Group A,1
 Soils,Group B,3
 Soils,Group C,4
 Soils,Group D,5
+Soils,Group A/D,3
+Soils,Group B/D,3
 Soils,Group C/D,5
 LULC,1,1
 LULC,2,1

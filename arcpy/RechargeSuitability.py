@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
-Name:       Flood Suitability
-Objective:  Compute flooding suitability analysis as a part of ATUR project
+Name:       Recharge Suitability
+Objective:  Compute recharge suitability analysis as a part of ATUR project
 Author:     Travis Zalesky
 Date:       1/6/25
 
@@ -18,7 +18,7 @@ import pandas as pd
 # Update ws as needed!
 ws = "D:/Saved_GIS_Projects/ATUR_Temp/Temp_Workspace"
 ap.env.workspace = ws  # Set default arcpy workspace
-gdb_name = 'SanPedro_Flooding.gdb'
+gdb_name = 'SanPedro_Recharge.gdb'
 gdb = f'{ws}/{gdb_name}'
 
 # Input data absolute filepaths
@@ -35,8 +35,8 @@ Lineaments_filePath = r'C:\Users\travisz09\Documents\ArcGIS\Packages\LineamentDe
 NDVI_filePath = r"C:\GIS_Projects\ATUR\Data\Climate\NDVI_10yrMean.tif"
 LULC_filePath = r"C:\GIS_Projects\ATUR\Data\LULC\ESRI_LULC_30m_clip.tif"
 # Classification Schema Tables
-contClassifications_filePath = r"C:\GIS_Projects\ATUR\Documents\Quarto\SanPedro_Flood-MAR\SanPedro_Flood-MAR\arcpy\Classification_Tables\Flooding_ContinuousClassificationSchemas.csv"
-catClassifications_filePath = r"C:\GIS_Projects\ATUR\Documents\Quarto\SanPedro_Flood-MAR\SanPedro_Flood-MAR\arcpy\Classification_Tables\Flooding_CategoricalClassificationSchemas.csv"
+contClassifications_filePath = r"C:\GIS_Projects\ATUR\Documents\Quarto\SanPedro_Flood-MAR\SanPedro_Flood-MAR\arcpy\Classification_Tables\Recharge_ContinuousClassificationSchemas.csv"
+catClassifications_filePath = r"C:\GIS_Projects\ATUR\Documents\Quarto\SanPedro_Flood-MAR\SanPedro_Flood-MAR\arcpy\Classification_Tables\Recharge_CategoricalClassificationSchemas.csv"
 # Layer Weights Table
 layerWeights = r"C:\GIS_Projects\ATUR\Documents\Quarto\SanPedro_Flood-MAR\SanPedro_Flood-MAR\arcpy\Classification_Tables\LayerWeights.csv"
 
@@ -139,20 +139,20 @@ Soil_Classified = CategoricalClassification(Soils_filePath, catClassifications, 
 LULC_Classified = CategoricalClassification(LULC_filePath, catClassifications, 'LULC', f'{gdb}/Classified_LULC')
 
 # Suitability Analysis (Raster Calculator)
-# Read in layer weights, drop rechargeWeights (floodingWeights only)
-floodWeights = pd.read_csv(layerWeights).drop('rechargeWeight', axis=1)
+# Read in layer weights, drop floodingWeights (rechargeWeights only)
+rechargeWeights = pd.read_csv(layerWeights).drop('floodingWeight', axis=1)
 # Assign weights
-demWeight = floodWeights[floodWeights['layer'] == 'DEM']['floodingWeight'].values[0]
-slopeWeight = floodWeights[floodWeights['layer'] == 'Slope']['floodingWeight'].values[0]
-lineamentWeight = floodWeights[floodWeights['layer'] == 'Lineaments']['floodingWeight'].values[0]
-drainageWeight = floodWeights[floodWeights['layer'] == 'Drainage']['floodingWeight'].values[0]
-precipWeight = floodWeights[floodWeights['layer'] == 'Precip']['floodingWeight'].values[0]
-ndviWeight = floodWeights[floodWeights['layer'] == 'NDVI']['floodingWeight'].values[0]
-lithoWeight = floodWeights[floodWeights['layer'] == 'Lithology']['floodingWeight'].values[0]
-soilWeight = floodWeights[floodWeights['layer'] == 'Soil']['floodingWeight'].values[0]
-lulcWeight = floodWeights[floodWeights['layer'] == 'LULC']['floodingWeight'].values[0]
+demWeight = rechargeWeights[rechargeWeights['layer'] == 'DEM']['rechargeWeight'].values[0]
+slopeWeight = rechargeWeights[rechargeWeights['layer'] == 'Slope']['rechargeWeight'].values[0]
+lineamentWeight = rechargeWeights[rechargeWeights['layer'] == 'Lineaments']['rechargeWeight'].values[0]
+drainageWeight = rechargeWeights[rechargeWeights['layer'] == 'Drainage']['rechargeWeight'].values[0]
+precipWeight = rechargeWeights[rechargeWeights['layer'] == 'Precip']['rechargeWeight'].values[0]
+ndviWeight = rechargeWeights[rechargeWeights['layer'] == 'NDVI']['rechargeWeight'].values[0]
+lithoWeight = rechargeWeights[rechargeWeights['layer'] == 'Lithology']['rechargeWeight'].values[0]
+soilWeight = rechargeWeights[rechargeWeights['layer'] == 'Soil']['rechargeWeight'].values[0]
+lulcWeight = rechargeWeights[rechargeWeights['layer'] == 'LULC']['rechargeWeight'].values[0]
 
 print('Calculating Raster Math...')
 print('\tExpression:', '(DEM_Classified * demWeight) + (Slope_Classified * slopeWeight) + (Lineaments_Classified * lineamentWeight) + (Drainage_Classified * drainageWeight) + (Precip_Classified * precipWeight) + (NDVI_Classified * ndviWeight) + (Litho_Classified * lithoWeight) + (Soil_Classified * soilWeight) + (LULC_Classified * lulcWeight)')
-floodSuitability = (DEM_Classified * demWeight) + (Slope_Classified * slopeWeight) + (Lineaments_Classified * lineamentWeight) + (Drainage_Classified * drainageWeight) + (Precip_Classified * precipWeight) + (NDVI_Classified * ndviWeight) + (Litho_Classified * lithoWeight) + (Soil_Classified * soilWeight) + (LULC_Classified * lulcWeight)
-floodSuitability.save(f'{gdb}/Flooding_Suitability')
+rechargeSuitability = (DEM_Classified * demWeight) + (Slope_Classified * slopeWeight) + (Lineaments_Classified * lineamentWeight) + (Drainage_Classified * drainageWeight) + (Precip_Classified * precipWeight) + (NDVI_Classified * ndviWeight) + (Litho_Classified * lithoWeight) + (Soil_Classified * soilWeight) + (LULC_Classified * lulcWeight)
+rechargeSuitability.save(f'{gdb}/Recharge_Suitability')

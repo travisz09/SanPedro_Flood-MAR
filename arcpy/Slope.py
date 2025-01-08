@@ -15,11 +15,14 @@ from sys import argv
 nl = '\n'  # var can be used in f-strings to represent newline character
 tb = '\t'  # var can be used in f-strings to represent tab character
 
-#For inline variable substitution, parameters passed as a String are evaluated using locals(), globals() and isinstance(). To override, substitute values directly.
-def CalcSlope(DEM, Slope):  # Slope
+def CalcSlope(DEM, Slope, Snap_Raster, Mask_Geom):  # Slope
 
     # To allow overwriting outputs change overwriteOutput option to True.
     arcpy.env.overwriteOutput = True
+    arcpy.env.extent = Mask_Geom  # Default processing extent
+    arcpy.env.mask = Mask_Geom  # Default processing mask
+    arcpy.env.snapRaster = Snap_Raster  # Default processing snap raster
+
 
     # Process: Slope (Slope) (sa)
     outSlope = arcpy.sa.Slope(DEM, 'DEGREE', method='PLANAR')

@@ -15,8 +15,8 @@ from sys import argv
 nl = '\n'  # var can be used in f-strings to represent newline character
 tb = '\t'  # var can be used in f-strings to represent tab character
 
-#For inline variable substitution, parameters passed as a String are evaluated using locals(), globals() and isinstance(). To override, substitute values directly.
-def ContinuousClassification(Raster, ReclassTable, LayerName, Output, Value='VALUE'):  # Continuous Classification
+# For classifying an input raster to discrete "levels".
+def DiscreteClassification(Raster, ReclassTable, LayerName, Output, Value='VALUE'):  # Discrete Classification
 
     # Modify Reclass Table
     # Filter Layer from Layers in ReclassTable, drop 'layer' column
@@ -44,7 +44,7 @@ def ContinuousClassification(Raster, ReclassTable, LayerName, Output, Value='VAL
     arcpy.env.overwriteOutput = True
     
     # Process: Feature to Raster (ConvertFeatureToRaster) (ra)
-    print('\tRemapping', LayerName, 'data using a continuous classification schema...')
+    print('\tRemapping', LayerName, 'data using a discrete classification schema...')
     # print formatted reclassification table
     print('\n'.join('\t\t' + l for l in table.to_string().splitlines()))
     # Reclassify
@@ -55,6 +55,7 @@ def ContinuousClassification(Raster, ReclassTable, LayerName, Output, Value='VAL
 
     return outRaster
 
+# For classifying a categorical raster.
 def CategoricalClassification(Raster, ReclassTable, LayerName, Output, Value='VALUE'):  # Categorical Classification
     
     # Modify Reclass Table
@@ -96,3 +97,6 @@ def CategoricalClassification(Raster, ReclassTable, LayerName, Output, Value='VA
     outRaster.save(Output)  # save output
 
     return outRaster
+
+# For categorizing an input raster using a continuous function (i.e. linear, etc.)
+# TODO: def ContinuousClassification():  # Continuous Classification

@@ -1,0 +1,43 @@
+﻿layer,oldValue,newValue
+Lithology,Early Proterozoic granitic rocks,1
+Lithology,"Quaternary surficial deposits, undivided",5
+Lithology,Early Proterozoic metasedimentary rocks,2
+Lithology,Pliocene to middle Miocene deposits,4
+Lithology,Early Tertiary to Late Cretaceous granitic rocks,3
+Lithology,Middle Proterozoic diabase,1
+Lithology,Cretaceous to Late Jurassic sedimentary rocks with minor volcanic rocks,3
+Lithology,"Mississippian, Devonian, and Cambrian sedimentary rocks",2
+Lithology,Paleozoic sedimentary rocks,2
+Lithology,Early Tertiary to Late Cretaceous volcanic rocks,3
+Lithology,Jurassic volcanic rocks,2
+Lithology,Middle Miocene to Oligocene granitic rocks,1
+Lithology,Middle Miocene to Oligocene volcanic rocks,2
+Lithology,Jurassic granitic rocks,1
+Lithology,Early Proterozoic metamorphic rocks,1
+Lithology,Early Tertiary to Late Cretaceous muscovite-bearing granitic rocks,1
+Lithology,Holocene surficial deposits,5
+Lithology,Middle Miocene to Oligocene sedimentary rocks,1
+Lithology,Early Pleistocene to latest Pliocene surficial deposits,4
+Lithology,Middle Proterozoic sedimentary rocks,2
+Lithology,Middle Proterozoic granitic rocks,2
+Lithology,Permian to Pennsylvanian sedimentary rocks,2
+Lithology,Jurassic sedimentary and volcanic rocks,3
+Lithology,Tertiary to Early Proterozoic gneissic rocks,1
+Lithology,Holocene river alluvium,5
+Soils,Group A,5
+Soils,Group B,4
+Soils,Group C,2
+Soils,Group D,1
+Soils,Group A/D,4
+Soils,Group B/D,3
+Soils,Group C/D,1
+LULC,1,5
+LULC,2,4
+LULC,3,3
+LULC,4,5
+LULC,5,3
+LULC,6,3
+LULC,7,1
+LULC,8,2
+LULC,9,1
+LULC,10,NODATA

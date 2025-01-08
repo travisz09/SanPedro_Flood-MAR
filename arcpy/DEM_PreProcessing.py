@@ -15,12 +15,14 @@ from sys import argv
 nl = '\n'  # var can be used in f-strings to represent newline character
 tb = '\t'  # var can be used in f-strings to represent tab character
 
-#For inline variable substitution, parameters passed as a String are evaluated using locals(), globals() and isinstance(). To override, substitute values directly.
-def DEMPreProcessing(DEM, Filled_DEM, Z_limit=None):  # DEM_PreProcessing
+def DEMPreProcessing(DEM, Filled_DEM, Snap_Raster, Mask_Geom, Z_limit=None):  # DEM_PreProcessing
 
     # To allow overwriting outputs change overwriteOutput option to True.
     arcpy.env.overwriteOutput = True
-
+    arcpy.env.extent = Mask_Geom  # Default processing extent
+    arcpy.env.mask = Mask_Geom  # Default processing mask
+    arcpy.env.snapRaster = Snap_Raster  # Default processing snap raster
+    
     # Process: Fill (Fill) (sa)
     print('\tFilling DEM...')
     if Z_limit in locals():  # If Z_limit param is given...
