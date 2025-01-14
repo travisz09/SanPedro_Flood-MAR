@@ -46,7 +46,7 @@ def DiscreteClassification(Raster, ReclassTable, LayerName, Output, Value='VALUE
     # Process: Feature to Raster (ConvertFeatureToRaster) (ra)
     print('\tRemapping', LayerName, 'data using a discrete classification schema...')
     # print formatted reclassification table
-    print('\n'.join('\t\t' + l for l in table.to_string().splitlines()))
+    print('\n'.join('\t\t' + line for line in table.to_string().splitlines()))
     # Reclassify
     outRaster = arcpy.sa.Reclassify(Raster, Value, remap=remap, missing_values='NODATA')
     # Print messages
@@ -62,7 +62,7 @@ def CategoricalClassification(Raster, ReclassTable, LayerName, Output, Value='VA
     # Filter Layer from Layers in ReclassTable, drop 'layer' column
     table = ReclassTable[ReclassTable['layer'] == LayerName].drop('layer', axis=1)
     # Remap must be given as a string, formatted as "oldValue newValue;..."
-    # Any oldValue in remap which contains " "(s) must be wrapped in '' (e.g. "'Early Proterozoic granitic rocks' 1;...")
+    # Any oldValue in remap which contain spaces must be wrapped in '' (e.g. '"Early Proterozoic granitic rocks" 1;...')
     # Convert table to nested list
     nestedList = table.values.tolist()
     # Convert nestedList to formatted string
@@ -89,7 +89,7 @@ def CategoricalClassification(Raster, ReclassTable, LayerName, Output, Value='VA
     # Process: Feature to Raster (ConvertFeatureToRaster) (ra)
     print('\tRemapping', LayerName, 'data using a categorical classification schema...')
     # print formatted reclassification table
-    print('\n'.join('\t\t' + l for l in table.to_string().splitlines()))
+    print('\n'.join('\t\t' + line for line in table.to_string().splitlines()))
     # Reclassify
     outRaster = arcpy.sa.Reclassify(Raster, Value, remap=remap, missing_values='NODATA')
     # Print messages

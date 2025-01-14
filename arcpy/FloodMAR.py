@@ -21,7 +21,8 @@ import pandas as pd
 # Workspace (ws)
 # Reproduce workflow in temporary workspace to preserve initial analysis results (generated via Model Builder).
 # Update ws as needed!
-ws = "D:/Saved_GIS_Projects/ATUR_Temp/Temp_Workspace"
+watershedName = 'ATUR'  # Name of watershed or extent to be used in processing (ATUR for maximum state-wide extent)
+ws = f"D:/Saved_GIS_Projects/ATUR_Temp/Temp_Workspace"
 ap.env.workspace = ws  # Set default arcpy workspace
 gdb_name = 'FloodMAR.gdb'
 gdb = f'{ws}/{gdb_name}'
@@ -49,8 +50,8 @@ else:
     out_gdb = ap.management.CreateFileGDB(ws, gdb_name)
 
 # Get suitability analysis layers
-floodSuitability = ap.sa.Raster(f'{ws}/SanPedro_Flooding.gdb/Flooding_Suitability')
-rechargeSuitability = ap.sa.Raster(f'{ws}/SanPedro_Recharge.gdb/Recharge_Suitability')
+floodSuitability = ap.sa.Raster(f'{ws}/{watershedName}/Flooding.gdb/Flooding_Suitability')
+rechargeSuitability = ap.sa.Raster(f'{ws}/{watershedName}/Recharge.gdb/Recharge_Suitability')
 
 # Get min and max values for each layer
 floodMin = floodSuitability.minimum
@@ -66,4 +67,4 @@ rechargeSuitability = (rechargeSuitability - rechargeMin)/(rechargeMax - recharg
 print('Calculating Raster Math...')
 print('\tExpression: Flood_Suitability * Recharge_Suitability')
 floodMar = floodSuitability * rechargeSuitability
-floodMar.save(f'{gdb}/FloodMAR_Suitability')
+floodMar.save(f'{gdb}/{watershedName}_FloodMAR')

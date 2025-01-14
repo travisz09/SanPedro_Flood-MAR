@@ -12,26 +12,27 @@ Based on San Pedro Flood-MAR model builder, Zalesky, Dec. 2024
 # Imports
 import arcpy as ap
 import pandas as pd
+import os
 
 # Workspace (ws)
 # Reproduce workflow in temporary workspace to preserve initial analysis results (generated via Model Builder).
 # Update ws as needed!
-ws = "D:/Saved_GIS_Projects/ATUR_Temp/Temp_Workspace"
+watershedName = 'ATUR'  # Name of watershed or extent to be used in processing (ATUR for maximum state-wide extent)
+ws = f"D:/Saved_GIS_Projects/ATUR_Temp/Temp_Workspace/{watershedName}"
+# Make ws dir if it does not already exist
+os.makedirs(ws, exist_ok=True)
 ap.env.workspace = ws  # Set default arcpy workspace
-gdb_name = 'SanPedro_Flooding.gdb'
+gdb_name = f'Flooding.gdb'
 gdb = f'{ws}/{gdb_name}'
 
 # Input data absolute filepaths
-# San Pedro watershed data may be minimally pre-processed from raw data files
-# TODO: Change all datasets to full ATUR extent and include clipping step (partially complete)
-extentFeat = r"C:\GIS_Projects\ATUR\Data\Arizona_Boundary\SanPedroWatershed.shp"  # i.e. mask
+# All input layers for maximum available extent, clipping and processing extent determined by extentFeat (shapefile)
+extentFeat = r"C:\GIS_Projects\ATUR\Data\Arizona_Boundary\WBDHU8_OuterBoundary_Project.shp"  # i.e. mask
 DEM_filePath = r"C:\GIS_Projects\ATUR\Data\DEM\Study_area_SRTM.tif"
 Precip_filePath = r"C:\GIS_Projects\ATUR\Data\Climate\PRISM_ppt_30yrnormal_800m.tif"
 Litho_filePath = r"C:\GIS_Projects\ATUR\Data\Geology\GeologicUnits\Geology of Arizona - Units - SGMC.shp"
 Soils_filePath = r"C:\GIS_Projects\ATUR\Data\Soils\AZ_Soil_Hydric_Group.lpkx"
-# TODO: Ask Ryan for state-wide lineaments density layer
-# Linaments not currently available for full ATUR extent
-Lineaments_filePath = r'C:\Users\travisz09\Documents\ArcGIS\Packages\LineamentDensity_550d0d\p30\LineamentDensity.lyrx'
+Lineaments_filePath = r'C:\GIS_Projects\ATUR\Data\Geology\Faults\Arizona_Lineament_Density.lpkx'
 NDVI_filePath = r"C:\GIS_Projects\ATUR\Data\Climate\NDVI_10yrMean.tif"
 LULC_filePath = r"C:\GIS_Projects\ATUR\Data\LULC\ESRI_LULC_30m_clip.tif"
 # Classification Schema Tables
