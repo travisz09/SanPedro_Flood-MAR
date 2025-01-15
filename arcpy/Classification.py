@@ -99,4 +99,19 @@ def CategoricalClassification(Raster, ReclassTable, LayerName, Output, Value='VA
     return outRaster
 
 # For categorizing an input raster using a continuous function (i.e. linear, etc.)
-# TODO: def ContinuousClassification():  # Continuous Classification
+def ContinuousClassification(Raster, Function, LayerName, Output, From=1, To=5):  # Continuous Classification
+
+    # To allow overwriting outputs change overwriteOutput option to True.
+    arcpy.env.overwriteOutput = True
+    
+    # Process: Feature to Raster (ConvertFeatureToRaster) (ra)
+    print('\tRemapping', LayerName, 'data using a continuous classification function...')
+    # Print classification function
+    print(f'\t\t{Function}')
+    # Reclassify
+    outRaster = arcpy.sa.RescaleByFunction(Raster, Function, From, To)
+    # Print messages
+    print(f'\t\t\t{arcpy.GetMessages().replace(nl, nl+tb+tb+tb)}')
+    outRaster.save(Output)  # save output
+
+    return outRaster

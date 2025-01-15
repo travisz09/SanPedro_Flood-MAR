@@ -43,25 +43,15 @@ def PreprocessLayers(workspace, extentFeat, dem, precipitation, lithology):
 
         
     # PREPROCESSING -------------------
-    # DEM Preprocessing ------------
-    # Refer to DEM_PreProcessing.py for details
-    # Import preprocessing function from external script
-    from DEM_PreProcessing import DEMPreProcessing
-
-    # Preprocess DEM
-    # Requires: DEM=<input DEM>, Filled_DEM=<output DEM>
-    print('DEM Preprocessing...')
-    filledDEM = DEMPreProcessing(dem, f'{gdb}/Filled_SRTM', dem, extentFeat)
-
     # Hydrologic Conditioning and Streams ------------
     # Refer to Hydrologic_Conditioning.py for details
     # Import hydrologic conditioning function from external script
     from Hydrologic_Conditioning import HydrologicConditioning
 
-    # Condition filled DEM
-    # Requires: Filled_DEM=<input DEM>, FlowDir=<intermediate output>, FlowAcc=<intermediate output>, StreamsRast=<intermediate output>, StreamsFeat=<output stream features polyline>
+    # Condition DEM
+    # Requires: DEM=<input DEM>, FlowDir=<intermediate output>, FlowAcc=<intermediate output>, StreamsRast=<intermediate output>, StreamsFeat=<output stream features polyline>
     print('Hydrologically Conditioning DEM...')
-    streams = HydrologicConditioning(filledDEM, f'{gdb}/Flow_Direction', f'{gdb}/Flow_Accumulation', f'{gdb}/Streams_Raster', f'{gdb}/Stream_Features')
+    streams = HydrologicConditioning(dem, f'{gdb}/Flow_Direction', f'{gdb}/Flow_Accumulation', f'{gdb}/Streams_Raster', f'{gdb}/Stream_Features')
 
     # Drainage Density -------------
     # Refer to Drainage_Density.py for details
@@ -81,7 +71,7 @@ def PreprocessLayers(workspace, extentFeat, dem, precipitation, lithology):
     # Calculate Slope
     # Requires: DEM=<input DEM>, Slope=<output slope raster>
     print('Calculating Slope...')
-    slope = CalcSlope(filledDEM, f'{gdb}/Slope', dem, Mask_Geom=extentFeat)
+    slope = CalcSlope(dem, f'{gdb}/Slope', dem, Mask_Geom=extentFeat)
 
     # Precipitation Preprocessing --------------
     # Refer to Resample_Raster.py for details

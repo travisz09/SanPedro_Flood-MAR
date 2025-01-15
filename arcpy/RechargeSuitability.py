@@ -17,7 +17,7 @@ import os
 # Workspace (ws)
 # Reproduce workflow in temporary workspace to preserve initial analysis results (generated via Model Builder).
 # Update ws as needed!
-watershedName = 'ATUR'  # Name of watershed or extent to be used in processing (ATUR for maximum state-wide extent)
+watershedName = 'SanPedro'  # Name of watershed or extent to be used in processing (ATUR for maximum state-wide extent)
 ws = f"D:/Saved_GIS_Projects/ATUR_Temp/Temp_Workspace/{watershedName}"
 # Make ws dir if it does not already exist
 os.makedirs(ws, exist_ok=True)
@@ -27,7 +27,7 @@ gdb = f'{ws}/{gdb_name}'
 
 # Input data absolute filepaths
 # All input layers for maximum available extent, clipping and processing extent determined by extentFeat (shapefile)
-extentFeat = r"C:\GIS_Projects\ATUR\Data\Arizona_Boundary\WBDHU8_OuterBoundary_Project.shp"  # i.e. mask
+extentFeat = r"C:\GIS_Projects\ATUR\Data\Arizona_Boundary\SanPedroWatershed.shp"  # i.e. mask
 DEM_filePath = r"C:\GIS_Projects\ATUR\Data\DEM\Study_area_SRTM.tif"
 Precip_filePath = r"C:\GIS_Projects\ATUR\Data\Climate\PRISM_ppt_30yrnormal_800m.tif"
 Litho_filePath = r"C:\GIS_Projects\ATUR\Data\Geology\GeologicUnits\Geology of Arizona - Units - SGMC.shp"
@@ -75,7 +75,7 @@ if ap.Exists('LayerPreprocessing.gdb'):
     print('\t\tFeatures:', ap.ListFeatureClasses())
     print('\t\tRasters:', ap.ListRasters())
     # Check if preprocessing gdb has all requisite files (not including intermediate outputs)
-    if all(items in ap.ListRasters() for items in ['Filled_SRTM', 'Drainage_Density', 'Slope', 'Precipitation', 'Lithology']):
+    if all(items in ap.ListRasters() for items in ['Drainage_Density', 'Slope', 'Precipitation', 'Lithology']):
         # If all files are available
         print('\tAll requisite files are available. No layer preprocessing required.')
     else:
@@ -98,7 +98,6 @@ else:
 
 # Access Preprocessing GDB, set vars to appropriate data layer
 ap.env.workspace = f'{ws}/LayerPreprocessing.gdb'
-filledDEM = f'{ap.env.workspace}/Filled_SRTM'
 slope = f'{ap.env.workspace}/Slope'
 drainage = f'{ap.env.workspace}/Drainage_Density'
 precip = f'{ap.env.workspace}/Precipitation'
@@ -114,23 +113,88 @@ catClassifications = pd.read_csv(catClassifications_filePath)
 # Import classification functions from external script
 from Classification import DiscreteClassification
 from Classification import CategoricalClassification
-# TODO: from Classification import ContinuousClassification
+from Classification import ContinuousClassification
 # Functions require: Raster=<input raster to classify>, ReclassTable=<df containing reclassification schema>, LayerName=<used to filter ReclassTable>, Output=<output raster>, Value=<raster band/attribute to reclassify, default = 'VALUE'>
+# Continuous classification requires a function input, one of TfExponential, TfGaussian, TfLarge, TfLinear, TfLogarithm, TfLogisticDecay, TfLogisticGrowth, TfMSLarge, TfMSSmall, TfNear, TfPower, TfSmall, or TfSymmetricLinear
+# See https://pro.arcgis.com/en/pro-app/3.3/tool-reference/spatial-analyst/rescale-by-function.htm for details on each classification function.
 
 print('Classifying Layers...')
 # Continuous Layers (Discrete Classification)
 # DEM
-DEM_Classified = DiscreteClassification(filledDEM, contClassifications, 'DEM', f'{gdb}/Classified_DEM')
+dem = ap.Raster(DEM_filePath)
+# Calculate statistics, only necessary for 'raw' data (not preprocessed)
+ap.management.CalculateStatistics(dem, area_of_interest=extentFeat)
+demMin = dem.minimum  # Caution! Some sinks (elev. < 0) exist in the DEM, particularly near the coast, use .minimum with caution
+demMax = dem.maximum
+lowerThreshold = 0
+valueBelowThreshold = 5
+upperThreshold = None
+valueAboveThreshold = 0
+# TfLinear: Set minimum > maximum for a negative slope
+demFunction = ap.sa.TfLinear(minimum=demMax, maximum=demMin, lowerThreshold=lowerThreshold, valueBelowThreshold=valueBelowThreshold, upperThreshold=upperThreshold, valueAboveThreshold=valueAboveThreshold)
+DEM_Classified = ContinuousClassification(DEM_filePath, demFunction, 'DEM', f'{gdb}/Classified_DEM')
+
 # Slope
-Slope_Classified = DiscreteClassification(slope, contClassifications, 'Slope', f'{gdb}/Classified_Slope')
+slopeMin = ap.Raster(slope).minimum
+slopeMax = ap.Raster(slope).maximum
+lowerThreshold = None
+valueBelowThreshold = 5
+upperThreshold = None
+valueAboveThreshold = 0
+# TfLinear: Set minimum > maximum for a negative slope
+slopeFunction = ap.sa.TfLinear(minimum=slopeMax, maximum=slopeMin, lowerThreshold=lowerThreshold, valueBelowThreshold=valueBelowThreshold, upperThreshold=upperThreshold, valueAboveThreshold=valueAboveThreshold)
+Slope_Classified = ContinuousClassification(slope, slopeFunction, 'Slope', f'{gdb}/Classified_Slope')
+
 # Lineament Density
-Lineaments_Classified = DiscreteClassification(Lineaments_filePath, contClassifications, 'Lineaments', f'{gdb}/Classified_LineamentDensity')
+line = ap.Raster(Lineaments_filePath)
+# Calculate statistics, only necessary for 'raw' data (not preprocessed)
+ap.management.CalculateStatistics(line, area_of_interest=extentFeat)
+lineMin = line.minimum
+lineMax = line.maximum
+lowerThreshold = None
+valueBelowThreshold = 5
+upperThreshold = None
+valueAboveThreshold = 0
+# TfLinear: Set minimum > maximum for a negative slope
+lineamentsFunction = ap.sa.TfLinear(minimum=lineMin, maximum=lineMax, lowerThreshold=lowerThreshold, valueBelowThreshold=valueBelowThreshold, upperThreshold=upperThreshold, valueAboveThreshold=valueAboveThreshold)
+Lineaments_Classified = ContinuousClassification(Lineaments_filePath, lineamentsFunction, 'Lineaments', f'{gdb}/Classified_LineamentDensity')
+
 # Drainage Density
-Drainage_Classified = DiscreteClassification(drainage, contClassifications, 'Drainage', f'{gdb}/Classified_DrainageDensity')
+drainMin = ap.Raster(drainage).minimum
+drainMax = ap.Raster(drainage).maximum
+lowerThreshold = None
+valueBelowThreshold = 0
+upperThreshold = None
+valueAboveThreshold = 5
+# TfLinear: Set minimum > maximum for a negative slope
+lineamentsFunction = ap.sa.TfLinear(minimum=drainMax, maximum=drainMin, lowerThreshold=lowerThreshold, valueBelowThreshold=valueBelowThreshold, upperThreshold=upperThreshold, valueAboveThreshold=valueAboveThreshold)
+Drainage_Classified = ContinuousClassification(drainage, lineamentsFunction, 'Drainage', f'{gdb}/Classified_DrainageDensity')
+
 # Precipitation
-Precip_Classified = DiscreteClassification(precip, contClassifications, 'Precip', f'{gdb}/Classified_Precipitation')
+precipMin = ap.Raster(precip).minimum
+precipMax = ap.Raster(precip).maximum
+lowerThreshold = None
+valueBelowThreshold = 0
+upperThreshold = None
+valueAboveThreshold = 5
+# TfLinear: Set minimum > maximum for a negative slope
+precipFunction = ap.sa.TfLinear(minimum=precipMin, maximum=precipMax, lowerThreshold=lowerThreshold, valueBelowThreshold=valueBelowThreshold, upperThreshold=upperThreshold, valueAboveThreshold=valueAboveThreshold)
+Precip_Classified = ContinuousClassification(precip, precipFunction, 'Precip', f'{gdb}/Classified_Precipitation')
+
 # NDVI
-NDVI_Classified = DiscreteClassification(NDVI_filePath, contClassifications, 'NDVI', f'{gdb}/Classified_NDVI')
+ndvi = ap.Raster(NDVI_filePath)
+# Calculate statistics, only necessary for 'raw' data (not preprocessed)
+ap.management.CalculateStatistics(ndvi, area_of_interest=extentFeat)
+ndviMin = ndvi.minimum
+ndviMax = ndvi.maximum
+lowerThreshold = None
+valueBelowThreshold = 5
+upperThreshold = None
+valueAboveThreshold = 0
+# TfLinear: Set minimum > maximum for a negative slope
+ndviFunction = ap.sa.TfLinear(minimum=ndviMin, maximum=ndviMax, lowerThreshold=lowerThreshold, valueBelowThreshold=valueBelowThreshold, upperThreshold=upperThreshold, valueAboveThreshold=valueAboveThreshold)
+NDVI_Classified = ContinuousClassification(NDVI_filePath, ndviFunction, 'NDVI', f'{gdb}/Classified_NDVI')
+
 # Categorical Layers
 # Lithology
 Litho_Classified = CategoricalClassification(litho, catClassifications, 'Lithology', f'{gdb}/Classified_Lithology', Value='UNIT_NAME')
@@ -154,6 +218,6 @@ soilWeight = rechargeWeights[rechargeWeights['layer'] == 'Soil']['rechargeWeight
 lulcWeight = rechargeWeights[rechargeWeights['layer'] == 'LULC']['rechargeWeight'].values[0]
 
 print('Calculating Raster Math...')
-print('\tExpression:', '(DEM_Classified * demWeight) + (Slope_Classified * slopeWeight) + (Lineaments_Classified * lineamentWeight) + (Drainage_Classified * drainageWeight) + (Precip_Classified * precipWeight) + (NDVI_Classified * ndviWeight) + (Litho_Classified * lithoWeight) + (Soil_Classified * soilWeight) + (LULC_Classified * lulcWeight)')
+print('\tExpression:', f'(DEM_Classified * {demWeight}) + (Slope_Classified * {slopeWeight}) + (Lineaments_Classified * {lineamentWeight}) + (Drainage_Classified * {drainageWeight}) + (Precip_Classified * {precipWeight}) + (NDVI_Classified * {ndviWeight}) + (Litho_Classified * {lithoWeight}) + (Soil_Classified * {soilWeight}) + (LULC_Classified * {lulcWeight})')
 rechargeSuitability = (DEM_Classified * demWeight) + (Slope_Classified * slopeWeight) + (Lineaments_Classified * lineamentWeight) + (Drainage_Classified * drainageWeight) + (Precip_Classified * precipWeight) + (NDVI_Classified * ndviWeight) + (Litho_Classified * lithoWeight) + (Soil_Classified * soilWeight) + (LULC_Classified * lulcWeight)
 rechargeSuitability.save(f'{gdb}/Recharge_Suitability')

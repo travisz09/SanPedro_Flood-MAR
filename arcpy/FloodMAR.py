@@ -21,7 +21,7 @@ import pandas as pd
 # Workspace (ws)
 # Reproduce workflow in temporary workspace to preserve initial analysis results (generated via Model Builder).
 # Update ws as needed!
-watershedName = 'ATUR'  # Name of watershed or extent to be used in processing (ATUR for maximum state-wide extent)
+watershedName = 'SanPedro'  # Name of watershed or extent to be used in processing (ATUR for maximum state-wide extent)
 ws = f"D:/Saved_GIS_Projects/ATUR_Temp/Temp_Workspace"
 ap.env.workspace = ws  # Set default arcpy workspace
 gdb_name = 'FloodMAR.gdb'

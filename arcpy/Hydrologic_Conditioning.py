@@ -16,14 +16,14 @@ from sys import argv
 nl = '\n'  # var can be used in f-strings to represent newline character
 tb = '\t'  # var can be used in f-strings to represent tab character
 
-def HydrologicConditioning(Filled_DEM, FlowDir, FlowAcc, StreamsRast, StreamsFeat):  # Hydrologic_Conditioning
+def HydrologicConditioning(DEM, FlowDir, FlowAcc, StreamsRast, StreamsFeat):  # Hydrologic_Conditioning
 
     # To allow overwriting outputs change overwriteOutput option to True.
     arcpy.env.overwriteOutput = True
 
     # Process: Flow Direction (Flow Direction) (sa)
     print('\tFlow Direction...')
-    outFlowDir = arcpy.sa.FlowDirection(Filled_DEM, force_flow='FORCE', flow_direction_type='D8')
+    outFlowDir = arcpy.sa.FlowDirection(DEM, force_flow='FORCE', flow_direction_type='D8')
     print(f'\t\t{arcpy.GetMessages().replace(nl, nl+tb+tb)}')
     outFlowDir.save(FlowDir)
 
