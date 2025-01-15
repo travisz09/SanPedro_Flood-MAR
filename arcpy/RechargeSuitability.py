@@ -17,7 +17,7 @@ import os
 # Workspace (ws)
 # Reproduce workflow in temporary workspace to preserve initial analysis results (generated via Model Builder).
 # Update ws as needed!
-watershedName = 'SanPedro'  # Name of watershed or extent to be used in processing (ATUR for maximum state-wide extent)
+watershedName = 'Salt'  # Name of watershed or extent to be used in processing (ATUR for maximum state-wide extent)
 ws = f"D:/Saved_GIS_Projects/ATUR_Temp/Temp_Workspace/{watershedName}"
 # Make ws dir if it does not already exist
 os.makedirs(ws, exist_ok=True)
@@ -27,7 +27,7 @@ gdb = f'{ws}/{gdb_name}'
 
 # Input data absolute filepaths
 # All input layers for maximum available extent, clipping and processing extent determined by extentFeat (shapefile)
-extentFeat = r"C:\GIS_Projects\ATUR\Data\Arizona_Boundary\SanPedroWatershed.shp"  # i.e. mask
+extentFeat = r"C:\GIS_Projects\ATUR\Data\Arizona_Boundary\Salt.shp"  # i.e. mask
 DEM_filePath = r"C:\GIS_Projects\ATUR\Data\DEM\Study_area_SRTM.tif"
 Precip_filePath = r"C:\GIS_Projects\ATUR\Data\Climate\PRISM_ppt_30yrnormal_800m.tif"
 Litho_filePath = r"C:\GIS_Projects\ATUR\Data\Geology\GeologicUnits\Geology of Arizona - Units - SGMC.shp"
